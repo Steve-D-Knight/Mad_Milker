@@ -1,0 +1,178 @@
+body{
+	background-image:url(pics/background_1.jpg);
+	background-color:#A8C9D2;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+table{
+	white-space:nowrap;
+}
+.button_notgrey{
+background: rgb(150,150,150);
+background: linear-gradient(60deg, rgba(150,150,150,0.8) 0%, rgba(255,255,255,0.8) 49%, rgba(245,248,248,0.8) 49%, rgba(81,130,135,0.8) 100%);
+}
+.button_grey{
+background: rgb(0,0,0);
+background: linear-gradient(60deg, rgba(0,0,0,0.8) 0%, rgba(212,212,212,0.8) 49%, rgba(201,201,201,0.8) 49%, rgba(0,0,0,0.8) 100%);
+}	
+.div-table{
+	display:block;
+	margin-bottom: -1;
+}
+.div-table-col1{
+	display: inline-block;
+	min-width: 265;
+}
+.div-table-col2{
+	display: inline-block;
+	min-width: 70px;
+	margin-left: 3px;
+}
+.div-table-col3{
+	display: inline-block;
+	min-width: 70px;
+	margin-left: 3px;
+}
+.div-table-col4{
+	display: inline-block;
+	min-width: 190;
+}
+button{
+	background: rgb(150,150,150);
+	background: linear-gradient(60deg, rgba(150,150,150,0.8) 0%, rgba(255,255,255,0.8) 49%, rgba(245,248,248,0.8) 49%, rgba(81,130,135,0.8) 100%);
+	min-width: 100%;
+	padding: 5px;
+	border-radius: 4px;
+	margin-bottom:3;
+	margin-right:1;
+}
+button:hover {
+    border-color: white;
+}
+.button_background{
+	background-image: url(pics/sky.png), url(pics/grass1.png);
+	background-position: left top, left bottom;
+	background-repeat: repeat-x, repeat;
+	color: black;
+}
+.button_background_grey{
+	background-image: url(pics/sky_grey.png), url(pics/mud_grey.png);
+	background-position: left top, left bottom;
+	background-repeat: repeat-x, repeat;
+	color: white;
+}
+.hide{
+	display: none;
+}
+button:hover .hide{
+	display: block;
+}
+#inline{
+	display: inline-block;
+}
+#imagesize{
+	max-height: 64px;
+}
+#spec_lvl_imagesize{
+	max-height: 64px;
+	max-width: 32px;
+}
+#imagesize:hover{
+	height: 100%;
+}
+#Teeny{
+	height: 10px;
+}
+#fence{
+	background-image: url(pics/fence.png);
+	background-color: #afcc7c;
+	}
+#fence:before{
+	background-image: url(pics/fence.png);
+	background-color: #afcc7c;
+	}
+.right{
+	float: right;
+}
+.left{
+	float: left;
+	text-align: left;
+	vertical-align: middle;
+}
+#buy_mult{
+	min-width: 80px;
+	width: 50%;
+	display: inline-block;
+}
+#buy_mult2{
+	height: 29px;
+	padding: 3px;
+	border-radius: 4px;
+	margin-bottom: 1px;
+}
+#buy_mult3{
+	min-width: 30%;
+}
+#buy_mult4{
+	height: 28px;
+	padding: 3px;
+	border-radius: 4px;
+	margin-bottom: 2px;
+}
+#buy_mult_image{
+	height: 30px;
+}
+#Rarity_Poor{
+	border-color: #9d9d9d;
+}
+#Rarity_Poor:hover{
+	border-color: black;
+}
+#Rarity_Common{
+	border-color: #ffffff;
+}
+#Rarity_Common:hover{
+	border-color: black;
+}
+#Rarity_Uncommon{
+	border-color: #1eff00;
+}
+#Rarity_Uncommon:hover{
+	border-color: black;
+}
+#Rarity_Rare{
+	border-color: #0070dd;
+}
+#Rarity_Rare:hover{
+	border-color: black;
+}
+#Rarity_Epic{
+	border-color: #a335ee;
+}
+#Rarity_Epic:hover{
+	border-color: black;
+}
+#Rarity_Legendary{
+	border-color: #ff8000;
+}
+#Rarity_Legendary:hover{
+	border-color: black;
+}
+.tooltip .tooltiptext {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px;
+	border-radius: 4px;
+	position: absolute;
+}
+.tooltip:hover .tooltiptext{
+	visibility: visible;
+}
+
+
+
+
+
