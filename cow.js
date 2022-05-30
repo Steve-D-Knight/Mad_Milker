@@ -41,6 +41,48 @@ CowInfo[36] = 	{Name:'Ra', 					Rarity:"Rarity_Legendary", 	Cow_image: 'Ra_cow_m
 CowInfo[37] = 	{Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_cow.png', 			Bull_image: 'hathor_bull.png'};
 /*cows end*/
 
+//Other Cow Ideas
+// SarCowphagus - sarcophogus themed cow
+// Accowntant
+// Cownt Dracular
+// Cattlefish
+// Bullfrog - just a frog
+// Cower Rangers - a load of different colours, maybe a combined "zord" cow as well
+// Moose - just a moose
+// Cowzilla - godzilla cow
+// Moothra - Mothra Cow
+// Moouse - a mouse cow, maybe just a mouse
+// Close encownters - alien or space ship cow
+// Mootians - Martian cow
+// Cowculator - calculator cow
+// Moosician - some sort of musical cow
+// Moodus - Midus cow, like just a gold cow or something
+// Mootant - Mutant cow
+// Moovie cow - not sure but goes with the matrix cows
+// Matrix cow - both a Matrix the film and Matrix the maths thing
+// Moozarella - cheese cow
+// Cowcium - Calcium cow
+// Skeleton cow
+// cash cow
+// Moostache
+// Other Egyption Gods
+//		- Anubis - Jackal
+//		- Apis - Bull
+// 		- Apophis - Snake
+//		- Bastet - Cat
+// 		- Horus - Falcon ---- 	not sure how to differentiate between Horus and Ra, though the "eye of Horus" is probably the way to go
+//								Horus is the Sky god where Ra is a Sun god, possible use that?
+// 		- Khepri - Scarab
+// 		- Sekhmet - Lioness
+//		- Thoth - Sacred Ibis (a kinda crane thing)
+//		- Amun - Ram
+//		Done ------> Sobek - Crocodile
+//		Done ------> Ra - Falcon
+//		Done ------> Hathor - Cow
+
+
+
+
 var NumberofCOWS = CowInfo.length - 1; 
 
 function Names(){
