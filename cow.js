@@ -36,8 +36,9 @@ CowInfo[31] = 	{Name:'Dark-Cow', 				Rarity:"Rarity_Rare", 		Cow_image: 'mk2_cow
 CowInfo[32] = 	{Name:'Glacial-Cow', 			Rarity:"Rarity_Rare", 		Cow_image: 'mk2_cow13.png', 			Bull_image: 'mk2_bull13.png'};
 CowInfo[33] = 	{Name:'Volcanic-Cow', 			Rarity:"Rarity_Rare", 		Cow_image: 'mk2_cow14.png', 			Bull_image: 'mk2_bull14.png'};
 CowInfo[34] = 	{Name:'Trojan-Cow',				Rarity:"Rarity_Epic", 		Cow_image: 'Trojan_cow.png', 			Bull_image: 'Trojan_bull.png'};
-CowInfo[35] = 	{Name:'Ra', 					Rarity:"Rarity_Legendary", 	Cow_image: 'Ra_cow_mk2.png', 			Bull_image: 'Ra_bull.png'};
-CowInfo[36] = 	{Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_cow.png', 			Bull_image: 'hathor_bull.png'};
+CowInfo[35] = 	{Name:'Sobek', 					Rarity:"Rarity_Legendary", 	Cow_image: 'sobek_cow.png', 			Bull_image: 'sobek_bull.png'};
+CowInfo[36] = 	{Name:'Ra', 					Rarity:"Rarity_Legendary", 	Cow_image: 'Ra_cow_mk2.png', 			Bull_image: 'Ra_bull.png'};
+CowInfo[37] = 	{Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_cow.png', 			Bull_image: 'hathor_bull.png'};
 /*cows end*/
 
 var NumberofCOWS = CowInfo.length - 1; 
