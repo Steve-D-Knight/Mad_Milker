@@ -499,8 +499,6 @@ function buybullx1000(bullnumberx1000){
 	document.getElementById('COWS').innerHTML = COWS;
 };
 
-
-
 function buySpecialist(Spec_Number){
 	if((Milk >= Specialists_Cost[Spec_Number])){
 		Specialists[Spec_Number] = Specialists[Spec_Number] + 1;

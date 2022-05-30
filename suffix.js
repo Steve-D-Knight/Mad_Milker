@@ -176,16 +176,4 @@ function addsuffix(cost_num_suffix){
 	};
 
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 };
