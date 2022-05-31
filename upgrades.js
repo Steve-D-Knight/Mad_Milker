@@ -1,8 +1,25 @@
-var Specialist_training_Cost = 		[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];		
-var Specialist_training_Cost_Base = [100, 500, 1e3, 1e4, 1e5, 1e6, 1e7, 1e8, 1e9, 1e10, 1e11, 1e12, 1e13, 1e14, 1e15, 1e16, 1e17, 1e18, 1e19, 1e20, 1e21, 1e22, 1e24, 1e25, 1e26, 1e27, 1e28, 1e29, 1e30, 1e31, 1e32, 1e33, 1e34, 1e35, 1e36, 1e37, 1e38, 1e39, 1e40];
-var Spec_Level = 					[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];							
-var Spec_train_power = 				[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
-var Spec_train_power_base = 		[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+var Specialist_training_Cost = [];		
+var Specialist_training_Cost_Base = [];
+var Spec_Level = [];							
+var Spec_train_power = [];
+var Spec_train_power_base = [];
+
+for (var upgrades_init_index = 0; upgrades_init_index < NumberofCOWS+1; upgrades_init_index++) {
+	Specialist_training_Cost[upgrades_init_index] = 1;	
+	Spec_Level[upgrades_init_index] = 1;	
+	Spec_train_power[upgrades_init_index] = 1;	
+	Spec_train_power_base[upgrades_init_index] = 1;	
+	if(upgrades_init_index == 0){
+		Specialist_training_Cost_Base[upgrades_init_index] = 100;	
+	}
+	else if(upgrades_init_index == 1){
+		Specialist_training_Cost_Base[upgrades_init_index] = 500;	
+	}
+	else{
+		Specialist_training_Cost_Base[upgrades_init_index] = Math.pow(10,(upgrades_init_index + 1));
+	};
+};
+
 var UPGRADES;
 var MMUPGRADES;
 var WRISTTRAINING;

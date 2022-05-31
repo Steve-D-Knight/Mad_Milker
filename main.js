@@ -1,4 +1,4 @@
-var Milk = 0; // NEEDS to be saved (is saved)
+var Milk = 1e54; // NEEDS to be saved (is saved)
 var ClickPower = 1; // don't save calculation
 var COWS; // don't save HTML genoration
 var BULLS; // don't save HTML genoration
@@ -9,18 +9,18 @@ var MILKMAID_DATA = []; // don't save HTML genoration
 var MilkMaids = 0; // NEEDS to be saved (is saved)																				
 var Milkmaidcost = 10; // don't save (calculation)
 var BaseMilkmaidcost = 10; // don't save (won't change)
-var cows = 			[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; // NEEDS to be saved (is saved)
-var cowsenabled = 	[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];	// NEEDS to be saved (is saved)
-var bulls = 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; // NEEDS to be saved (is saved)
-var cowcost = 		[55, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000, 3100, 3200, 3300, 3400, 3500, 3600, 3700, 3800, 3900, 4000]; // don't save (calculation)
-var basecowcost = 	[55, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000, 3100, 3200, 3300, 3400, 3500, 3600, 3700, 3800, 3900, 4000]; // don't save (won't change)
-var boughtcows = 	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];	// NEEDS to be saved (is saved)
-var bullcost = [500, 2e3, 1e4, 1e5, 1e6, 1e7, 1e8, 1e9, 1e10, 1e11, 1e12, 1e13, 1e14, 1e15, 1e16, 1e17, 1e18, 1e19, 1e20, 1e21, 1e22, 1e24, 1e25, 1e26, 1e27, 1e28, 1e29, 1e30, 1e31, 1e32, 1e33, 1e34, 1e35, 1e36, 1e37, 1e38, 1e39, 1e40]; // don't save (calculation)
-var basebullcost = [500, 2e3, 1e4, 1e5, 1e6, 1e7, 1e8, 1e9, 1e10, 1e11, 1e12, 1e13, 1e14, 1e15, 1e16, 1e17, 1e18, 1e19, 1e20, 1e21, 1e22, 1e24, 1e25, 1e26, 1e27, 1e28, 1e29, 1e30, 1e31, 1e32, 1e33, 1e34, 1e35, 1e36, 1e37, 1e38, 1e39, 1e40]; // don't save (won't change)
-var boughtbulls = 	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];	// NEEDS to be saved (is saved)
-var Total_cows = 	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; // don't save (calculation)
-var Total_ALL_cows = 1;																									// don't save (calculation)			
-var Total_bulls = 	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; // don't save (calculation)
+var cows = 			[]; // NEEDS to be saved (is saved)
+var cowsenabled = 	[];	// NEEDS to be saved (is saved)
+var bulls = 		[]; // NEEDS to be saved (is saved)
+var cowcost = 		[]; // don't save (calculation)
+var basecowcost = 	[]; // don't save (won't change)
+var boughtcows = 	[];	// NEEDS to be saved (is saved)
+var bullcost = []; // don't save (calculation)
+var basebullcost = []; // don't save (won't change)
+var boughtbulls = 	[];	// NEEDS to be saved (is saved)
+var Total_cows = []; // don't save (calculation)
+var Total_ALL_cows = 1;// don't save (calculation)			
+var Total_bulls = 	[]; // don't save (calculation)
 var Total_ALL_bulls = 0; // don't save (calculation)
 var SPECIALISTS; 					// don't save HTML genoration
 var SPECIALISTS_DATA = [];			// don't save HTML genoration
@@ -31,14 +31,51 @@ var SPECIALISTS_DATA_xALL = [];		// don't save HTML genoration
 var SPECIALIST_TRAINING;			// don't save HTML genoration
 var SPECIALIST_TRAINING_DATA = [];	// don't save HTML genoration
 var ALLSPEC_price = 0;																			
-var Specialists = 			[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; // NEEDS to be saved (is saved)
-var Specialists_Cost = 		[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000, 3100, 3200, 3300, 3400, 3500, 3600, 3700, 3800, 3900, 4000]; // don't save (calculation)
-var Specialists_Cost_Base = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000, 3100, 3200, 3300, 3400, 3500, 3600, 3700, 3800, 3900, 4000]; // don't save (won't change)
+var Specialists = []; // NEEDS to be saved (is saved)
+var Specialists_Cost = []; // don't save (calculation)
+var Specialists_Cost_Base = []; // don't save (won't change)
 var Specialist_Level = []; // NEEDS to be saved (is saved)
 var Specialist_training_Unlock = 1; // NEEDS to be saved (is saved)
 var Total_Specialists = 0; // don't save (calculation)
-var Spec_Power = [	1, 5, Math.pow(5, 2), Math.pow(5, 3), Math.pow(5, 4), Math.pow(5, 5), Math.pow(5, 6), Math.pow(5, 7), Math.pow(5, 8), Math.pow(5, 9), Math.pow(5, 10), Math.pow(5, 11), Math.pow(5, 12), Math.pow(5, 13), Math.pow(5, 14), Math.pow(5, 15), Math.pow(5, 16), Math.pow(5, 17), Math.pow(5, 18), Math.pow(5, 19), Math.pow(5, 20), Math.pow(5, 21), Math.pow(5, 22), Math.pow(5, 23), Math.pow(5, 24), Math.pow(5, 25), Math.pow(5, 26), Math.pow(5, 27), Math.pow(5, 28), Math.pow(5, 29), Math.pow(5, 30), Math.pow(5, 31), Math.pow(5, 32), Math.pow(5, 33), Math.pow(5, 34), Math.pow(5, 35), Math.pow(5, 36), Math.pow(5, 37), Math.pow(5, 38), Math.pow(5, 39), Math.pow(5, 40)]; // don't save (calculation)
-var suffix = ['', 'k', 'M', 'B', 'T', 'Qa', 'Qi', 'Sx', 'Sp', 'Oc', 'No', 'Dc', 'Ud', 'Dd', 'Td', 'Qad', 'Qid', 'Sxd', 'Spd', 'Ocd', 'Nod', 'Vg', 'Uvg', 'Dvg', 'Tvg', 'Qavg', 'Qivg', 'Sxvg', 'Spvg', 'Ocvg', 'Novg', 'Tg', 'Utg', 'Dtg', 'Qatg', 'Qitg', 'Sxtg', 'Sptg', 'Octg', 'Notg', 'G', 'Ug', 'Dg', 'Tg', 'Qag', 'Qig', 'Sxg', 'Spg', 'Ocg', 'Nog', 'Quite a lot'];
+var Spec_Power = [];
+
+// this for loop initializes all of the variables that need an array the same length as the number of cows
+for (var spec_power_index = 0; spec_power_index < NumberofCOWS+1; spec_power_index++) {
+	Spec_Power[spec_power_index] = Math.pow(5, spec_power_index);	
+	Specialists_Cost[spec_power_index] = (spec_power_index + 1) * 100;
+	Specialists_Cost_Base[spec_power_index] = (spec_power_index + 1) * 100;
+	Specialists[spec_power_index] = 0;
+	Total_bulls[spec_power_index] = 0;
+	Total_cows[spec_power_index] = 0;
+	boughtbulls[spec_power_index] = 0;
+	boughtcows[spec_power_index] = 0;
+	bulls[spec_power_index] = 0;
+	if(spec_power_index == 0){
+		cows[spec_power_index] = 1;
+		cowsenabled[spec_power_index] = 1;
+		cowcost[spec_power_index] = 55;
+		basecowcost[spec_power_index] = 55;
+		bullcost[spec_power_index] = 500;
+		basebullcost[spec_power_index] = 500;
+	}
+	else if(spec_power_index == 1){
+		cows[spec_power_index] = 0;
+		cowsenabled[spec_power_index] = 0;
+		cowcost[spec_power_index] = (spec_power_index) * 100;
+		basecowcost[spec_power_index] = (spec_power_index) * 100;
+		bullcost[spec_power_index] = 2e3;
+		basebullcost[spec_power_index] = 2e3;
+	}
+	else{
+		cows[spec_power_index] = 0;
+		cowsenabled[spec_power_index] = 0;
+		cowcost[spec_power_index] = (spec_power_index) * 100;
+		basecowcost[spec_power_index] = (spec_power_index) * 100;
+		bullcost[spec_power_index] = Math.pow(10,(spec_power_index + 2));
+		basebullcost[spec_power_index] = Math.pow(10,(spec_power_index + 2));
+	};
+};
+
 var Milk_calc = 0;
 var Milk_bottle_icon = ' <img src="pics/milk_bottle.png" id="Teeny">';
 var spec_image = [];

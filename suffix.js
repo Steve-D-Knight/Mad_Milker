@@ -14,6 +14,9 @@ var milkmaid_output_calc2 = 0;
 var milkmaid_power_calc = 0;
 var MM_upgrade_cost_calc = 0;
 
+
+// This is the function that adds the SI suffixes to any number.
+var suffix = ['', 'k', 'M', 'B', 'T', 'Qa', 'Qi', 'Sx', 'Sp', 'Oc', 'No', 'Dc', 'Ud', 'Dd', 'Td', 'Qad', 'Qid', 'Sxd', 'Spd', 'Ocd', 'Nod', 'Vg', 'Uvg', 'Dvg', 'Tvg', 'Qavg', 'Qivg', 'Sxvg', 'Spvg', 'Ocvg', 'Novg', 'Tg', 'Utg', 'Dtg', 'Qatg', 'Qitg', 'Sxtg', 'Sptg', 'Octg', 'Notg', 'G', 'Ug', 'Dg', 'Tg', 'Qag', 'Qig', 'Sxg', 'Spg', 'Ocg', 'Nog', 'Quite a lot'];
 function Arbitrary_addsuffix(value){
 	if(value < 1000){
 		return Math.floor(value);

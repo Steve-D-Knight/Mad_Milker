@@ -41,7 +41,7 @@ CowInfo[36] = 	{Name:'Ra', 					Rarity:"Rarity_Legendary", 	Cow_image: 'Ra_cow_m
 CowInfo[37] = 	{Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_cow.png', 			Bull_image: 'hathor_bull.png'};
 /*cows end*/
 
-//Other Cow Ideas
+// --------- Other Cow Ideas -------------
 // SarCowphagus - sarcophogus themed cow
 // Accowntant
 // Cownt Dracular
@@ -79,6 +79,19 @@ CowInfo[37] = 	{Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hatho
 //		Done ------> Sobek - Crocodile
 //		Done ------> Ra - Falcon
 //		Done ------> Hathor - Cow
+
+// ------------ Non Cow Ideas ---------
+//	-- Single button for buy 1/10/100/1000 etc
+// 		To remove clutter, having a button that changes all of the buy options between the Buy 
+//		1/10/100/1000 options, it should also allow the player to buy however many of the thing 
+// 		that they can afford. 
+//		so if they have the buy 100 option selected but can only afford 50 they still buy 50.
+
+//	-- Milkmaid priority buy specialists
+// 		It is pretty easy to get to a point where milkmaids are more powerfull than some of the specialists,
+//		so having an option to keep a number of cows without specialists would meen you dont have to wait the 
+//		10s for more cows to spawn. 
+
 
 
 
