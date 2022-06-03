@@ -28,10 +28,10 @@ function SPEC_TRAINING(M){
 	COSTS(M);
 	if(cowsenabled[M] == 1){
 		if(Milk >= Specialist_training_Cost[M]){
-			SPECIALIST_TRAINING_DATA[M] = '<div><button onmousedown="trainSpec(' + M + ')" class="button_notgrey"><div class="left">Train Specialists<div style="font-weight:bold;">' + Specialist_training_Cost_calc[M] + ' Milk</div>Level: ' + Spec_Level[M] + ' <br />Power Gain:<br />' + Arbitrary_addsuffix(Spec_Power[M]) + '<br /></div><div class="right"><img src="rank/rank(' + Spec_Level[M] + ').png" id="spec_lvl_imagesize"></div></button></div>';
+			SPECIALIST_TRAINING_DATA[M] = '<div><button onmousedown="trainSpec(' + M + ')" class="button_notgrey"><div class="left">Train Specialists<div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialist_training_Cost[M]) + ' Milk</div>Level: ' + Spec_Level[M] + ' <br />Power Gain:<br />' + Arbitrary_addsuffix(Spec_Power[M]) + '<br /></div><div class="right"><img src="rank/rank(' + Spec_Level[M] + ').png" id="spec_lvl_imagesize"></div></button></div>';
 		}
 		else{
-			SPECIALIST_TRAINING_DATA[M] = '<div><button onmousedown="trainSpec(' + M + ')" class="button_grey"><div class="left">Train Specialists<div style="font-weight:bold;">' + Specialist_training_Cost_calc[M] + ' Milk</div>Level: ' + Spec_Level[M] + ' <br />Power Gain:<br />' + Arbitrary_addsuffix(Spec_Power[M]) + '<br /></div><div class="right"><img src="rank/rank(' + Spec_Level[M] + ').png" id="spec_lvl_imagesize"></div></button></div>';
+			SPECIALIST_TRAINING_DATA[M] = '<div><button onmousedown="trainSpec(' + M + ')" class="button_grey"><div class="left">Train Specialists<div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialist_training_Cost[M]) + ' Milk</div>Level: ' + Spec_Level[M] + ' <br />Power Gain:<br />' + Arbitrary_addsuffix(Spec_Power[M]) + '<br /></div><div class="right"><img src="rank/rank(' + Spec_Level[M] + ').png" id="spec_lvl_imagesize"></div></button></div>';
 		};
 	}
 	else{
@@ -59,10 +59,10 @@ function UPGRADES_HTML(){
 	
 	if(MilkMaids >= 100){
 		if(Milk >= MM_upgrade_cost){
-			MMUPGRADES = '<div class="tooltip"><button onmousedown="MilkMaid_upgrade()" class="button_notgrey"><div class="left"><br />Power Up Milk Maids<div style="font-weight:bold;">' + MM_upgrade_cost_calc + ' Milk</div>Level: ' + MM_upgrade_level + '<br /><br /></div><div class="right">' + MM_upgrade_img + '</div><span class="tooltiptext">Doubles Power of Milk Maids</span></button></div>';
+			MMUPGRADES = '<div class="tooltip"><button onmousedown="MilkMaid_upgrade()" class="button_notgrey"><div class="left"><br />Power Up Milk Maids<div style="font-weight:bold;">' + Arbitrary_addsuffix(MM_upgrade_cost) + ' Milk</div>Level: ' + MM_upgrade_level + '<br /><br /></div><div class="right">' + MM_upgrade_img + '</div><span class="tooltiptext">Doubles Power of Milk Maids</span></button></div>';
 		}
 		else{
-			MMUPGRADES = '<div class="tooltip"><button onmousedown="MilkMaid_upgrade()" class="button_grey"><div class="left"><br />Power Up Milk Maids<div style="font-weight:bold;">' + MM_upgrade_cost_calc + ' Milk</div>Level: ' + MM_upgrade_level + '<br /><br /></div><div class="right">' + MM_upgrade_img + '</div><span class="tooltiptext">Doubles Power of Milk Maids</span></button></div>';
+			MMUPGRADES = '<div class="tooltip"><button onmousedown="MilkMaid_upgrade()" class="button_grey"><div class="left"><br />Power Up Milk Maids<div style="font-weight:bold;">' + Arbitrary_addsuffix(MM_upgrade_cost) + ' Milk</div>Level: ' + MM_upgrade_level + '<br /><br /></div><div class="right">' + MM_upgrade_img + '</div><span class="tooltiptext">Doubles Power of Milk Maids</span></button></div>';
 		};
 	}
 	else{

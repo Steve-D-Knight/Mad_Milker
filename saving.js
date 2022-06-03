@@ -173,3 +173,8 @@ window.setInterval(function Stats(){
 	STATS = STATS + '</tbody></table>';
 	document.getElementById('STATS').innerHTML = STATS;
 }, 50);
+
+
+//This runs when the game is reset and means that the last save should be auto loaded and then auto save should be turned on.
+load(); //loads the save game
+autosave(); //Changes the state of the autosave, which should be off, so should now be on.

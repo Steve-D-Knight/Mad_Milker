@@ -1,4 +1,4 @@
-var Milk = 1e54; // NEEDS to be saved (is saved)
+var Milk = 0; // NEEDS to be saved (is saved)
 var ClickPower = 1; // don't save calculation
 var COWS; // don't save HTML genoration
 var BULLS; // don't save HTML genoration
@@ -76,7 +76,6 @@ for (var spec_power_index = 0; spec_power_index < NumberofCOWS+1; spec_power_ind
 	};
 };
 
-var Milk_calc = 0;
 var Milk_bottle_icon = ' <img src="pics/milk_bottle.png" id="Teeny">';
 var spec_image = [];
 var SpecialistxALL_ALL_DATA;
@@ -88,17 +87,10 @@ function MilkClick(){
 	MILK_();
 };
 function MILK_(){
-	addsuffix_milk();
-	MILK = '<div><button onmousedown="MilkClick()"><div class="left">Milk Cow<br />Milk per click:<br />' + Arbitrary_addsuffix(ClickPower) + ' </div><div class="right"><img src="pics/milkbucket.png"></div></button></div><div>Milk: ' + Milk_calc + ' litres </div>' + '<div>MpS: ' + MPS_out_calc + '</div>'
+	MILK = '<div><button onmousedown="MilkClick()"><div class="left">Milk Cow<br />Milk per click:<br />' + Arbitrary_addsuffix(ClickPower) + ' </div><div class="right"><img src="pics/milkbucket.png"></div></button></div><div>Milk: ' + Arbitrary_addsuffix(Milk) + ' litres </div>' + '<div>MpS: ' + MPS_out_calc + '</div>'
 	document.getElementById('MILK').innerHTML = MILK;
 };
-function addsuffix_milk(){
-	var tier0 = Math.log10(Milk) / 3 | 0;
-	var suffix_symble0 = suffix[tier0];
-	var scale0 = Math.pow(10, tier0 * 3);
-	var scaled0 = Milk / scale0;
-	Milk_calc = scaled0.toFixed(3) + suffix_symble0;
-};
+
 var COW_COST_X10 = [];
 var COW_COST_X100 = [];
 var COW_COST_X1000 = [];
@@ -321,22 +313,22 @@ function UNMILKEDCOWS_(){
 function MILKMAID_(){
 	MM_IMG();
 	if(Milk >= Milkmaidcost){
-		MILKMAID_DATA[0] = '<div class="tooltip"><button onmousedown="buymilkmaids()" class="button_notgrey">Buy Milk Maids<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Milkmaidcost) + ' Milk</div><div>Milk Maids: ' + Arbitrary_addsuffix(MilkMaids) + '<br />Power: ' + milkmaid_power_calc + '<br />Cowtput: ' + MILKMAID_OUTPUT + '</div>' + MM_img + '<span class="tooltiptext">Milk maids milk 1 free cow every 1 second.</span></button></div>';
+		MILKMAID_DATA[0] = '<div class="tooltip"><button onmousedown="buymilkmaids()" class="button_notgrey">Buy Milk Maids<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Milkmaidcost) + ' Milk</div><div>Milk Maids: ' + Arbitrary_addsuffix(MilkMaids) + '<br />Power: ' + Arbitrary_addsuffix(MilkMaidBonus) + '<br />Cowtput: ' + MILKMAID_OUTPUT + '</div>' + MM_img + '<span class="tooltiptext">Milk maids milk 1 free cow every 1 second.</span></button></div>';
 	}
 	else{
-		MILKMAID_DATA[0] = '<div class="tooltip"><button onmousedown="buymilkmaids()" class="button_grey">Buy Milk Maids<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Milkmaidcost) + ' Milk</div><div>Milk Maids: ' + Arbitrary_addsuffix(MilkMaids) + '<br />Power: ' + milkmaid_power_calc + '<br />Cowtput: ' + MILKMAID_OUTPUT + '</div>' + MM_img + '<span class="tooltiptext">Milk maids milk 1 free cow every 1 second.</span></button></div>';
+		MILKMAID_DATA[0] = '<div class="tooltip"><button onmousedown="buymilkmaids()" class="button_grey">Buy Milk Maids<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Milkmaidcost) + ' Milk</div><div>Milk Maids: ' + Arbitrary_addsuffix(MilkMaids) + '<br />Power: ' + Arbitrary_addsuffix(MilkMaidBonus) + '<br />Cowtput: ' + MILKMAID_OUTPUT + '</div>' + MM_img + '<span class="tooltiptext">Milk maids milk 1 free cow every 1 second.</span></button></div>';
 	};
 	if(Milk >= MM_COST_10){
-		MILKMAID_DATA[1] = '<div><button onmousedown="buymilkmaids_10()" class="button_notgrey">Buy 10<br /><div style="font-weight:bold;">' + MM_COST_10_calc + Milk_bottle_icon + '</div></button></div>'
+		MILKMAID_DATA[1] = '<div><button onmousedown="buymilkmaids_10()" class="button_notgrey">Buy 10<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(MM_COST_10) + Milk_bottle_icon + '</div></button></div>'
 	}
 	else{
-		MILKMAID_DATA[1] = '<div><button onmousedown="buymilkmaids_10()"  class="button_grey">Buy 10<br /><div style="font-weight:bold;">' + MM_COST_10_calc + Milk_bottle_icon + '</div></button></div>'
+		MILKMAID_DATA[1] = '<div><button onmousedown="buymilkmaids_10()"  class="button_grey">Buy 10<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(MM_COST_10) + Milk_bottle_icon + '</div></button></div>'
 	};
 	if(Milk >= MM_COST_100){
-		MILKMAID_DATA[2] = '<div><button onmousedown="buymilkmaids_100()" class="button_notgrey">Buy 100<br /><div style="font-weight:bold;">' + MM_COST_100_calc + Milk_bottle_icon + '</div></button></div>'
+		MILKMAID_DATA[2] = '<div><button onmousedown="buymilkmaids_100()" class="button_notgrey">Buy 100<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(MM_COST_100) + Milk_bottle_icon + '</div></button></div>'
 	}
 	else{
-		MILKMAID_DATA[2] = '<div><button onmousedown="buymilkmaids_100()" class="button_grey">Buy 100<br /><div style="font-weight:bold;">' + MM_COST_100_calc + Milk_bottle_icon + '</div></button></div>'
+		MILKMAID_DATA[2] = '<div><button onmousedown="buymilkmaids_100()" class="button_grey">Buy 100<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(MM_COST_100) + Milk_bottle_icon + '</div></button></div>'
 	};
 };
 var MM_COST_10 = 0;
@@ -398,11 +390,11 @@ window.setInterval(function MilkMaid_Milking(){
 	if((unmilkedcows) > 0){
 		if(MilkMaids >= (unmilkedcows)){
 			Milk = Milk + ((unmilkedcows) * MilkMaidBonus);
-			MILKMAID_OUTPUT = milkmaid_output_calc1;
+			MILKMAID_OUTPUT = Arbitrary_addsuffix((unmilkedcows) * MilkMaidBonus);
 		}
 		else{
 			Milk = Milk + (MilkMaids * MilkMaidBonus);
-			MILKMAID_OUTPUT = milkmaid_output_calc2;
+			MILKMAID_OUTPUT = Arbitrary_addsuffix(MilkMaids * MilkMaidBonus);
 		};
 	}
 	else{
@@ -471,7 +463,7 @@ function BULLS_(B){
 		else{
 			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_background_grey"';
 		};
-		 BULLS_DATA[B] = BULLS_DATA[B] + 'id="' + CowInfo[B].Rarity + '" ><div class="left"><br />Buy Bulls<br /><div style="font-weight:bold;">' + bullcost_calc[B] + ' Milk</div>Bulls: ' + Arbitrary_addsuffix(Total_bulls[B]) + '<br /><br /></div><div class="right"><img src="pics/cow/' + CowInfo[B].Bull_image +'" id="imagesize"></div><span class="tooltiptext">Bulls create more cows every 10 seconds (requires at least 1 cow and 1 bull)</span></button></div>'
+		 BULLS_DATA[B] = BULLS_DATA[B] + 'id="' + CowInfo[B].Rarity + '" ><div class="left"><br />Buy Bulls<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(bullcost[B]) + ' Milk</div>Bulls: ' + Arbitrary_addsuffix(Total_bulls[B]) + '<br /><br /></div><div class="right"><img src="pics/cow/' + CowInfo[B].Bull_image +'" id="imagesize"></div><span class="tooltiptext">Bulls create more cows every 10 seconds (requires at least 1 cow and 1 bull)</span></button></div>'
 		BULLS_DATA[B] =BULLS_DATA[B] + '</div><div class="div-table-col3">';
 		BULLS_DATA[B] = BULLS_DATA[B] + '<div class="tooltip"><button width="24%" onmousedown="buybullx10(' + B + ')' + '" '
 		if (Milk >= BULL_COST_X10[B]){
