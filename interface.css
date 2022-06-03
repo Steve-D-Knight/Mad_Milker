@@ -17,17 +17,23 @@ background: rgb(0,0,0);
 background: linear-gradient(60deg, rgba(0,0,0,0.8) 0%, rgba(212,212,212,0.8) 49%, rgba(201,201,201,0.8) 49%, rgba(0,0,0,0.8) 100%);
 }	
 .div-table{
-	display:block;
 	margin-bottom: -1;
+	display: grid;
+ 	grid-template-columns: repeat(2, 1);
+ 	gap: 0px;
 }
 .div-table-col1{
-	display: inline-block;
+	display: grid;
 	min-width: 265;
+	grid-column: 1 / 2;
 }
 .div-table-col2{
-	display: inline-block;
+	grid-column: 2 / 2;
 	min-width: 70px;
 	margin-left: 3px;
+	display: grid;
+ 	grid-template-columns: repeat(1, 3);
+ 	gap: 0px;
 }
 .div-table-col3{
 	display: inline-block;
@@ -119,6 +125,7 @@ button:hover .hide{
 	padding: 3px;
 	border-radius: 4px;
 	margin-bottom: 2px;
+
 }
 #buy_mult_image{
 	height: 30px;

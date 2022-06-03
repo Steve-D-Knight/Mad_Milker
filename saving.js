@@ -1,7 +1,9 @@
 var SAVING;
-
 var save = 0;
+
 function save_(){
+	var date_at_save = new Date();
+	var time_at_save = date_at_save.getTime();
 	save = {
 		Milk : Milk,
 		MilkMaids : MilkMaids,
@@ -22,6 +24,8 @@ function save_(){
 		Spec_names : Spec_names,
 		Active_time : Active_time,
 		Time2Cow_active : Time2Cow_active,
+		MPS_out_calc : MPS_out_calc,
+		time_at_save : time_at_save,
 	};
 	localStorage.setItem("save",JSON.stringify(save));
 }
@@ -55,6 +59,9 @@ function load(){
 		if (typeof savegame.Spec_names !== "undefined") Spec_names = savegame.Spec_names;
 		if (typeof savegame.Active_time !== "undefined") Active_time = savegame.Active_time;
 		if (typeof savegame.Time2Cow_active !== "undefined") Time2Cow_active = savegame.Time2Cow_active;
+		if (typeof savegame.MPS_out_calc !== "undefined") MPS_out_calc = savegame.MPS_out_calc;
+		if (typeof savegame.time_at_save !== "undefined") time_at_save = savegame.time_at_save;
+	
 	Load_start_time = date.getTime();
 	Active_time_load = Active_time;
 }

@@ -210,6 +210,8 @@ function SPECIALISTS_(G){
 		SPECIALISTS_DATA_xTEN[G] = '';
 		SPECIALISTS_DATA_xALL[G] = '';
 	};
+
+	
 };
 function SPEC_IMAGE(P){
 	if(Spec_Level[P] <= 5){
@@ -271,7 +273,7 @@ window.setInterval(function COWS_update(){
 			Total_ALL_bulls = Total_ALL_bulls + Total_bulls[i];
 			Total_Specialists = Total_Specialists + Specialists[i];
 			SPECIALISTS = SPECIALISTS + SPECIALISTS_DATA[i];
-			SPECIALISTS_BUYMULT = SPECIALISTS_BUYMULT + SPECIALISTS_DATA_xTEN[i] + SPECIALISTS_DATA_x100[i] + SPECIALISTS_DATA_xALL[i];
+			SPECIALISTS_BUYMULT = SPECIALISTS_BUYMULT + '<div class="div-table-col2">' + SPECIALISTS_DATA_xTEN[i] + SPECIALISTS_DATA_x100[i] + SPECIALISTS_DATA_xALL[i] + '</div>';
 			BULLS = BULLS + BULLS_DATA[i];
 			COWS = COWS + COWS_DATA[i];
 			SPECIALIST_TRAINING = SPECIALIST_TRAINING + SPECIALIST_TRAINING_DATA[i];
@@ -476,7 +478,7 @@ function BULLS_(B){
 			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_background_grey"';
 		};
 		 BULLS_DATA[B] = BULLS_DATA[B] + 'id="' + CowInfo[B].Rarity + '" ><div class="left"><br />Buy Bulls<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(bullcost[B]) + ' Milk</div>Bulls: ' + Arbitrary_addsuffix(Total_bulls[B]) + '<br /><br /></div><div class="right"><img src="pics/cow/' + CowInfo[B].Bull_image +'" id="imagesize"></div><span class="tooltiptext">Bulls create more cows every 10 seconds (requires at least 1 cow and 1 bull)</span></button></div>'
-		BULLS_DATA[B] =BULLS_DATA[B] + '</div><div class="div-table-col3">';
+		BULLS_DATA[B] =BULLS_DATA[B] + '</div><div class="div-table-col2">';
 		BULLS_DATA[B] = BULLS_DATA[B] + '<div class="tooltip"><button width="24%" onmousedown="buybullx10(' + B + ')' + '" '
 		if (Milk >= BULL_COST_X10[B]){
 			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_notgrey" '
