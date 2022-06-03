@@ -76,7 +76,7 @@ for (var spec_power_index = 0; spec_power_index < NumberofCOWS+1; spec_power_ind
 	};
 };
 
-var Milk_bottle_icon = ' <img src="pics/milk_bottle.png" id="Teeny">';
+var Milk_bottle_icon = ' <img src="pics/Milk_bottle.png" id="Teeny">';
 var spec_image = [];
 var SpecialistxALL_ALL_DATA;
 var UNMILKEDCOWS;
@@ -228,34 +228,34 @@ function Total_cows_(totalcowscounter){
 	Total_bulls[totalcowscounter] = bulls[totalcowscounter] + boughtbulls[totalcowscounter];
 };
 function total_cows(){
-	for (var D = 0; D <= NumberofCOWS; D++){
-		Total_cows_(D);
+	for(var i = 0; i <= NumberofCOWS; i++){
+		Total_cows_(i);
 	};
 };
-var DoOnceLatch = 0;
+
 var Spec_names = [];
+for(i = 0; i <= NumberofCOWS; i++){
+	Spec_names[i] = Names(); 
+};
+
 window.setInterval(function COWS_update(){
 	MILK_();
 	total_cows();
 	MILKMAID_();
 	SpecialistxALL_ALL();
 	UNMILKEDCOWS_();
-	for(var E = 0; E <= NumberofCOWS; E++){
-		COSTS(E);
-		COWS_(E);
-		BULLS_(E);
-		SPECIALISTS_(E);
-		SPEC_TRAINING(E);
-		if(DoOnceLatch == 0){
-			Spec_names[E] = Names(); 
-		};
+	for(i = 0; i <= NumberofCOWS; i++){
+		COSTS(i);
+		COWS_(i);
+		BULLS_(i);
+		SPECIALISTS_(i);
+		SPEC_TRAINING(i);
 	}; 
-	DoOnceLatch = 1;
-	for(var F = 1; F <= NumberofCOWS; F++){
-		COW_enable(F);
+	for(i = 1; i <= NumberofCOWS; i++){
+		COW_enable(i);
 	};
-	for(L = (NumberofCOWS + 1); L >= 0; L--){
-		if(L == NumberofCOWS + 1){
+	for(i = (NumberofCOWS + 1); i >= 0; i--){
+		if(i == NumberofCOWS + 1){
 			Total_ALL_cows = 0;
 			Total_ALL_bulls = 0;
 			Total_Specialists = 0;
@@ -267,15 +267,15 @@ window.setInterval(function COWS_update(){
 			ALLSPEC_price = 0;
 		}
 		else{
-			Total_ALL_cows = Total_ALL_cows + Total_cows[L];
-			Total_ALL_bulls = Total_ALL_bulls + Total_bulls[L];
-			Total_Specialists = Total_Specialists + Specialists[L];
-			SPECIALISTS = SPECIALISTS + SPECIALISTS_DATA[L];
-			SPECIALISTS_BUYMULT = SPECIALISTS_BUYMULT + SPECIALISTS_DATA_xTEN[L] + SPECIALISTS_DATA_x100[L] + SPECIALISTS_DATA_xALL[L];
-			BULLS = BULLS + BULLS_DATA[L];
-			COWS = COWS + COWS_DATA[L];
-			SPECIALIST_TRAINING = SPECIALIST_TRAINING + SPECIALIST_TRAINING_DATA[L];
-			ALLSPEC_price = ALLSPEC_price + ((Total_cows[L] - Specialists[L]) * Specialists_Cost[L]);
+			Total_ALL_cows = Total_ALL_cows + Total_cows[i];
+			Total_ALL_bulls = Total_ALL_bulls + Total_bulls[i];
+			Total_Specialists = Total_Specialists + Specialists[i];
+			SPECIALISTS = SPECIALISTS + SPECIALISTS_DATA[i];
+			SPECIALISTS_BUYMULT = SPECIALISTS_BUYMULT + SPECIALISTS_DATA_xTEN[i] + SPECIALISTS_DATA_x100[i] + SPECIALISTS_DATA_xALL[i];
+			BULLS = BULLS + BULLS_DATA[i];
+			COWS = COWS + COWS_DATA[i];
+			SPECIALIST_TRAINING = SPECIALIST_TRAINING + SPECIALIST_TRAINING_DATA[i];
+			ALLSPEC_price = ALLSPEC_price + ((Total_cows[i] - Specialists[i]) * Specialists_Cost[i]);
 		};
 	};
 	MILKMAID = '<br />' + MILKMAID_DATA[0] + MILKMAID_DATA[1] + MILKMAID_DATA[2] + '<br />' + SpecialistxALL_ALL_DATA;
@@ -289,34 +289,35 @@ window.setInterval(function COWS_update(){
 	document.getElementById('SAVING').innerHTML = SAVING;
 	UPGRADES_HTML();
 }, 25);	
+
 var MILKEDCOWS;
 function UNMILKEDCOWS_(){
 	var Milked_cows = 0;
-	for(costsfor1 = 0; costsfor1 < NumberofCOWS; costsfor1++){
-		if(costsfor1 == 0){
+	for(i = 0; i < NumberofCOWS; i++){
+		if(i == 0){
 			unmilkedcows = 0;
 			Milked_cows = 0;
 		};
-		if(Specialists[costsfor1] >= Total_cows[costsfor1]){
+		if(Specialists[i] >= Total_cows[i]){
 			unmilkedcows = unmilkedcows + 0;
-			Milked_cows = Milked_cows + Total_cows[costsfor1];
+			Milked_cows = Milked_cows + Total_cows[i];
 		}
 		else{
-			Milked_cows = Milked_cows + Specialists[costsfor1];
-			unmilkedcows = unmilkedcows + Total_cows[costsfor1] - Specialists[costsfor1];
+			Milked_cows = Milked_cows + Specialists[i];
+			unmilkedcows = unmilkedcows + Total_cows[i] - Specialists[i];
 		};
 	};
 	Milked_cows = Milked_cows;
 	UNMILKEDCOWS = Arbitrary_addsuffix(unmilkedcows);
 	MILKEDCOWS = Arbitrary_addsuffix(Milked_cows);
 };
+
 function MILKMAID_(){
-	MM_IMG();
 	if(Milk >= Milkmaidcost){
-		MILKMAID_DATA[0] = '<div class="tooltip"><button onmousedown="buymilkmaids()" class="button_notgrey">Buy Milk Maids<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Milkmaidcost) + ' Milk</div><div>Milk Maids: ' + Arbitrary_addsuffix(MilkMaids) + '<br />Power: ' + Arbitrary_addsuffix(MilkMaidBonus) + '<br />Cowtput: ' + MILKMAID_OUTPUT + '</div>' + MM_img + '<span class="tooltiptext">Milk maids milk 1 free cow every 1 second.</span></button></div>';
+		MILKMAID_DATA[0] = '<div class="tooltip"><button onmousedown="buymilkmaids()" class="button_notgrey">Buy Milk Maids<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Milkmaidcost) + ' Milk</div><div>Milk Maids: ' + Arbitrary_addsuffix(MilkMaids) + '<br />Power: ' + Arbitrary_addsuffix(MilkMaidBonus) + '<br />Cowtput: ' + MILKMAID_OUTPUT + '</div>' + MM_IMG() + '<span class="tooltiptext">Milk maids milk 1 free cow every 1 second.</span></button></div>';
 	}
 	else{
-		MILKMAID_DATA[0] = '<div class="tooltip"><button onmousedown="buymilkmaids()" class="button_grey">Buy Milk Maids<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Milkmaidcost) + ' Milk</div><div>Milk Maids: ' + Arbitrary_addsuffix(MilkMaids) + '<br />Power: ' + Arbitrary_addsuffix(MilkMaidBonus) + '<br />Cowtput: ' + MILKMAID_OUTPUT + '</div>' + MM_img + '<span class="tooltiptext">Milk maids milk 1 free cow every 1 second.</span></button></div>';
+		MILKMAID_DATA[0] = '<div class="tooltip"><button onmousedown="buymilkmaids()" class="button_grey">Buy Milk Maids<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Milkmaidcost) + ' Milk</div><div>Milk Maids: ' + Arbitrary_addsuffix(MilkMaids) + '<br />Power: ' + Arbitrary_addsuffix(MilkMaidBonus) + '<br />Cowtput: ' + MILKMAID_OUTPUT + '</div>' + MM_IMG() + '<span class="tooltiptext">Milk maids milk 1 free cow every 1 second.</span></button></div>';
 	};
 	if(Milk >= MM_COST_10){
 		MILKMAID_DATA[1] = '<div><button onmousedown="buymilkmaids_10()" class="button_notgrey">Buy 10<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(MM_COST_10) + Milk_bottle_icon + '</div></button></div>'
@@ -331,35 +332,39 @@ function MILKMAID_(){
 		MILKMAID_DATA[2] = '<div><button onmousedown="buymilkmaids_100()" class="button_grey">Buy 100<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(MM_COST_100) + Milk_bottle_icon + '</div></button></div>'
 	};
 };
+
 var MM_COST_10 = 0;
 var MM_COST_100 = 0;
-var MM_img;
 function MM_IMG(){
 	if(MM_upgrade_level <= 19){
-		MM_img = '<img src="pics/mk3_milkmaid_demon_lvl' + MM_upgrade_level + '.png" id="imagesize">';
+		return '<img src="pics/mk3_milkmaid_demon_lvl' + MM_upgrade_level + '.png" id="imagesize">';
 	}
 	else{
-		MM_img = '<img src="pics/mk3_milkmaid_demon_lvl' + 19 + '.png" id="imagesize">';
+		return '<img src="pics/mk3_milkmaid_demon_lvl' + 19 + '.png" id="imagesize">';
 	};
 };
+
 function MM_cost_10_(){
 	var MM_TEMP = MilkMaids + 10;
 	var MM_calc1 = Math.floor(BaseMilkmaidcost * (Math.pow(1.008,MilkMaids) / (1 - 1.008)));
 	var MM_calc2 = Math.floor(BaseMilkmaidcost * (Math.pow(1.008,MM_TEMP) / (1 - 1.008)));
 	MM_COST_10 = MM_calc1 - MM_calc2;
 };
+
 function MM_cost_100_(){
 	var MM_TEMP = MilkMaids + 100;
 	var MM_calc1 = Math.floor(BaseMilkmaidcost * (Math.pow(1.008,MilkMaids) / (1 - 1.008)));
 	var MM_calc2 = Math.floor(BaseMilkmaidcost * (Math.pow(1.008,MM_TEMP) / (1 - 1.008)));
 	MM_COST_100 = MM_calc1 - MM_calc2;
 };
+
 function Times_X_calculator(input_item_number, input_price_base, input_price_multiplyer, input_TIMES_X){
 	var X_calc_temp = input_item_number + input_TIMES_X;
 	var X_calc1 = Math.floor(input_price_base * (Math.pow(input_price_multiplyer,input_item_number) / (1 - input_price_multiplyer)));
 	var X_calc2 = Math.floor(input_price_base * (Math.pow(input_price_multiplyer,X_calc_temp) / (1 - input_price_multiplyer)));
 	return X_calc1 - X_calc2;
 };
+
 function buymilkmaids(){
 	if(Milk >= Milkmaidcost){
 		MilkMaids = MilkMaids + 1;
@@ -368,6 +373,7 @@ function buymilkmaids(){
 	MILK_();
 	document.getElementById('MILKMAID').innerHTML = MILKMAID;
 };
+
 function buymilkmaids_10(){
 	if(Milk >= MM_COST_10){
 		MilkMaids = MilkMaids + 10;
@@ -376,6 +382,7 @@ function buymilkmaids_10(){
 	MILK_();
 	document.getElementById('MILKMAID').innerHTML = MILKMAID;
 };
+
 function buymilkmaids_100(){
 	if(Milk >= MM_COST_100){
 		MilkMaids = MilkMaids + 100;
@@ -384,6 +391,7 @@ function buymilkmaids_100(){
 	MILK_();
 	document.getElementById('MILKMAID').innerHTML = MILKMAID;
 };
+
 var MilkMaidBonus = 1;
 var MILKMAID_OUTPUT = 0;
 window.setInterval(function MilkMaid_Milking(){
@@ -402,22 +410,26 @@ window.setInterval(function MilkMaid_Milking(){
 	};
 	MILK_();
 }, 1000);
+
 window.setInterval(function Specialist_Milking(){
 	total_cows();
-	for(var H = 0; H <= NumberofCOWS; H++){
-		Spec_Milk(H);
+	for(i = 0; i <= NumberofCOWS; i++){
+		Spec_Milk(i);
 	};
 	MILK_();
 	document.getElementById('COWS').innerHTML = COWS;
 }, 500);
-function Spec_Milk(I){
-		Milk = Milk + Spec_Milk_Value(I);
+
+function Spec_Milk(K){
+	Milk = Milk + Spec_Milk_Value(K);
 };
+
 window.setInterval(function reproduction(){
-	for(var K = 0; K <= NumberofCOWS; K++){
-		Reproduction(K);
+	for(i = 0; i <= NumberofCOWS; i++){
+		Reproduction(i);
 	};
 }, 10000);
+
 function Reproduction(J){
 	if((Total_bulls[J] > 0) && (Total_cows[J] > 0)){
 		var randomnumber = Math.random();
@@ -569,8 +581,8 @@ function buySpecialistxALL(Spec_NumberD){
 	document.getElementById('COWS').innerHTML = COWS;
 };
 function buySpecialistxALL_ALL(){
-	for(var ALL_Spec = 0; ALL_Spec <= NumberofCOWS; ALL_Spec++){
-		buySpecialistxALL(ALL_Spec);
+	for(i = 0; i <= NumberofCOWS; i++){
+		buySpecialistxALL(i);
 	};
 };
 function SpecialistxALL_ALL(){

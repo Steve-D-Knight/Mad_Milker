@@ -1,0 +1,1 @@
+Game is uploaded to https://main.d2o4cvpe064z63.amplifyapp.com/
