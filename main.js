@@ -87,7 +87,7 @@ function MilkClick(){
 	MILK_();
 };
 function MILK_(){
-	MILK = '<div><button onmousedown="MilkClick()"><div class="left">Milk Cow<br />Milk per click:<br />' + Arbitrary_addsuffix(ClickPower) + ' </div><div class="right"><img src="pics/milkbucket.png"></div></button></div><div>Milk: ' + Arbitrary_addsuffix(Milk) + ' litres </div>' + '<div>MpS: ' + MPS_out_calc + '</div>'
+	MILK = '<div class="div-table"><div class="div-table-col-milk"><button onmousedown="MilkClick()"><div class="left">Milk Cow<br />Milk per click:<br />' + Arbitrary_addsuffix(ClickPower) + ' </div><div class="right"><img src="pics/milkbucket.png"></div></button></div><div>Milk: ' + Arbitrary_addsuffix(Milk) + ' litres </div>' + '<div>MpS: ' + MPS_out_calc + '</div></div>'
 	document.getElementById('MILK').innerHTML = MILK;
 };
 
@@ -180,10 +180,10 @@ function SPECIALISTS_(G){
 	SPEC_IMAGE(G);
 	if(cowsenabled[G] == 1){
 		if(Milk >= Specialists_Cost[G]){
-			SPECIALISTS_DATA[G] = '<div class="div-table"><div class="div-table-col-spec"><div class="tooltip"><button onmousedown="buySpecialist(' + G + ')" class="button_notgrey"><div class="left">Buy Specialist<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialists_Cost[G]) + ' Milk</div> Specialists: <br />' + Arbitrary_addsuffix(Specialists[G]) + '<div>Power: ' + Arbitrary_addsuffix((Spec_Power[G] * (Spec_Level[G] * Spec_train_power_base[G]))) + '</div></div><div class="right">' + spec_image[G] + '</div><span class="tooltiptext">Specialists Milk 1 cow every 0.5 seconds. They take priorety over milk maids.<br />' + Spec_names[G] + ' produces ' + Arbitrary_addsuffix(Spec_Milk_Value(G)) + ' Milk per tick (' + Arbitrary_addsuffix(Spec_Milk_Value(G)*2) + ' MpS)</span></button></div></div></div>';
+			SPECIALISTS_DATA[G] = '<div class="div-table"><div class="div-table-col-spec"><div class="tooltip"><button onmousedown="buySpecialist(' + G + ')" class="button_notgrey"><div class="left">Buy Specialist<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialists_Cost[G]) + ' Milk</div> Specialists: <br />' + Arbitrary_addsuffix(Specialists[G]) + '<div>Power: ' + Arbitrary_addsuffix(Spec_power_value(G)) + '</div></div><div class="right">' + spec_image[G] + '</div><span class="tooltiptext">Specialists Milk 1 cow every 0.5 seconds. They take priorety over milk maids.<br />' + Spec_names[G] + ' produces ' + Arbitrary_addsuffix(Spec_Milk_Value(G)) + ' Milk per tick (' + Arbitrary_addsuffix(Spec_Milk_Value(G)*2) + ' MpS)</span></button></div></div></div>';
 		}
 		else{
-			SPECIALISTS_DATA[G] = '<div class="div-table"><div class="div-table-col-spec"><div class="tooltip"><button onmousedown="buySpecialist(' + G + ')" class="button_grey"><div class="left">Buy Specialist<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialists_Cost[G]) + ' Milk</div> Specialists: <br />' + Arbitrary_addsuffix(Specialists[G]) + '<div>Power: ' + Arbitrary_addsuffix((Spec_Power[G] * (Spec_Level[G] * Spec_train_power_base[G]))) + '</div></div><div class="right">' + spec_image[G] + '</div><span class="tooltiptext">Specialists Milk 1 cow every 0.5 seconds. They take priorety over milk maids.<br />' + Spec_names[G] + ' produces ' + Arbitrary_addsuffix(Spec_Milk_Value(G)) + ' Milk per tick (' + Arbitrary_addsuffix(Spec_Milk_Value(G)*2) + ' MpS)</span></button></div></div></div>';
+			SPECIALISTS_DATA[G] = '<div class="div-table"><div class="div-table-col-spec"><div class="tooltip"><button onmousedown="buySpecialist(' + G + ')" class="button_grey"><div class="left">Buy Specialist<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialists_Cost[G]) + ' Milk</div> Specialists: <br />' + Arbitrary_addsuffix(Specialists[G]) + '<div>Power: ' + Arbitrary_addsuffix(Spec_power_value(G)) + '</div></div><div class="right">' + spec_image[G] + '</div><span class="tooltiptext">Specialists Milk 1 cow every 0.5 seconds. They take priorety over milk maids.<br />' + Spec_names[G] + ' produces ' + Arbitrary_addsuffix(Spec_Milk_Value(G)) + ' Milk per tick (' + Arbitrary_addsuffix(Spec_Milk_Value(G)*2) + ' MpS)</span></button></div></div></div>';
 		};
 		if(Milk >= (Specialists_Cost[G] * 10)){
 			SPECIALISTS_DATA_xTEN[G] = '<div class="tooltip"><button onmousedown="buySpecialistxTEN(' + G + ')" class="button_notgrey" id="buy_mult2">Buy 10<span class="tooltiptext">Buy 10 Specialists for ' + Arbitrary_addsuffix((10 * Specialists_Cost[G])) + ' Milk</span></button></div>';
@@ -447,6 +447,9 @@ function Reproduction(J){
 		};
 	};
 };
+function Spec_power_value(SPV){
+	return (Spec_Power[SPV] * (Spec_Level[SPV] * Spec_train_power_base[SPV]));
+};
 function Spec_Milk_Value(SMV){
 	if(Spec_Level[SMV] >= 50){
 		Spec_train_power_base[SMV] = 1000;
@@ -455,12 +458,13 @@ function Spec_Milk_Value(SMV){
 		Spec_train_power_base[SMV] = 1;
 	};
 	if(Specialists[SMV] >= Total_cows[SMV]){
-		return (Total_cows[SMV] * Spec_Power[SMV] * (Spec_Level[SMV] * Spec_train_power_base[SMV]));
+		return (Total_cows[SMV] * Spec_power_value(SMV));
 	}
 	else{
-		return (Specialists[SMV] * Spec_Power[SMV] * (Spec_Level[SMV] * Spec_train_power_base[SMV]));
+		return (Specialists[SMV] * Spec_power_value(SMV));
 	};
 };
+
 var BULL_COST_X10 = [];
 var BULL_COST_X100 = [];
 var BULL_COST_X1000 = [];

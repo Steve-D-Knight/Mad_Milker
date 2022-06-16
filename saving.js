@@ -169,7 +169,7 @@ window.setInterval(function Stats(){
 	for(k = NumberofCOWS; k >= 0; k--){
 		if(cowsenabled[k] != 0){
 			if(nextcowlatch == 0){
-				STATS = STATS + '<tr><td>Cow ' + (k+2) + ': </td><td>--</td></tr>';
+				STATS = STATS + '<tr><td>Cow ' + (k+2) + '/' + (NumberofCOWS + 1) + ': </td><td>--</td></tr>';
 				nextcowlatch = 1;
 			};
 			if(k > 0){

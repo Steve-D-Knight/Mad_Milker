@@ -57,6 +57,10 @@ background: linear-gradient(60deg, rgba(0,0,0,0.8) 0%, rgba(212,212,212,0.8) 49%
 	display: inline-block;
 	min-width: 150;
 }
+.div-table-col-milk{	
+	display: inline-block;
+	min-width: 150;
+}
 button{
 	background: rgb(150,150,150);
 	background: linear-gradient(60deg, rgba(150,150,150,0.8) 0%, rgba(255,255,255,0.8) 49%, rgba(245,248,248,0.8) 49%, rgba(81,130,135,0.8) 100%);

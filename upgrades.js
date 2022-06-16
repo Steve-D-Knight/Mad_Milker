@@ -29,10 +29,10 @@ function SPEC_TRAINING(M){
 	if(cowsenabled[M] == 1){
 		SPECIALIST_TRAINING_DATA[M] = '<div class="div-table"><div class="div-table-col-sectraining">';
 		if(Milk >= Specialist_training_Cost[M]){
-			SPECIALIST_TRAINING_DATA[M] = SPECIALIST_TRAINING_DATA[M] + '<div><button onmousedown="trainSpec(' + M + ')" class="button_notgrey"><div class="left">Train Specialists<div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialist_training_Cost[M]) + ' Milk</div>Level: ' + Spec_Level[M] + ' <br />Power Gain:<br />' + Arbitrary_addsuffix(Spec_Power[M]) + '<br /></div><div class="right"><img src="rank/rank(' + Spec_Level[M] + ').png" id="spec_lvl_imagesize"></div></button></div>';
+			SPECIALIST_TRAINING_DATA[M] = SPECIALIST_TRAINING_DATA[M] + '<div><button onmousedown="trainSpec(' + M + ')" class="button_notgrey"><div class="left">Train Specialists<div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialist_training_Cost[M]) + ' Milk</div>Level: ' + Spec_Level[M] + ' <br />Power Gain:<br />' + Arbitrary_addsuffix(Spec_Power[M] * Spec_train_power_base[M]) + '<br /></div><div class="right"><img src="rank/rank(' + Spec_Level[M] + ').png" id="spec_lvl_imagesize"></div></button></div>';
 		}
 		else{
-			SPECIALIST_TRAINING_DATA[M] = SPECIALIST_TRAINING_DATA[M] + '<div><button onmousedown="trainSpec(' + M + ')" class="button_grey"><div class="left">Train Specialists<div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialist_training_Cost[M]) + ' Milk</div>Level: ' + Spec_Level[M] + ' <br />Power Gain:<br />' + Arbitrary_addsuffix(Spec_Power[M]) + '<br /></div><div class="right"><img src="rank/rank(' + Spec_Level[M] + ').png" id="spec_lvl_imagesize"></div></button></div>';
+			SPECIALIST_TRAINING_DATA[M] = SPECIALIST_TRAINING_DATA[M] + '<div><button onmousedown="trainSpec(' + M + ')" class="button_grey"><div class="left">Train Specialists<div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialist_training_Cost[M]) + ' Milk</div>Level: ' + Spec_Level[M] + ' <br />Power Gain:<br />' + Arbitrary_addsuffix(Spec_Power[M] * Spec_train_power_base[M]) + '<br /></div><div class="right"><img src="rank/rank(' + Spec_Level[M] + ').png" id="spec_lvl_imagesize"></div></button></div>';
 		};
 		SPECIALIST_TRAINING_DATA[M] = SPECIALIST_TRAINING_DATA[M] + '</div></div>'
 	}
