@@ -26,7 +26,7 @@ function Arbitrary_addsuffix(value){
 		var suffix_symble0 = suffix[tier0];
 		var scale0 = Math.pow(10, tier0 * 3);
 		var scaled0 = value / scale0;
-		return scaled0.toFixed(3) + suffix_symble0;
+		return scaled0.toFixed(2) + suffix_symble0;
 	};
 };
 

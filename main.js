@@ -180,10 +180,10 @@ function SPECIALISTS_(G){
 	SPEC_IMAGE(G);
 	if(cowsenabled[G] == 1){
 		if(Milk >= Specialists_Cost[G]){
-			SPECIALISTS_DATA[G] = '<div class="tooltip"><button onmousedown="buySpecialist(' + G + ')" class="button_notgrey"><div class="left">Buy Specialist<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialists_Cost[G]) + ' Milk</div> Specialists: ' + Arbitrary_addsuffix(Specialists[G]) + '<div>Power: ' + Arbitrary_addsuffix((Spec_Power[G] * (Spec_Level[G] * Spec_train_power_base[G]))) + '</div><br /></div><div class="right">' + spec_image[G] + '</div><span class="tooltiptext">Specialists Milk 1 cow every 0.5 seconds. They take priorety over milk maids.<br />' + Spec_names[G] + ' produces ' + Arbitrary_addsuffix(Spec_Milk_Value(G)) + ' Milk per tick (' + Arbitrary_addsuffix(Spec_Milk_Value(G)*2) + ' MpS)</span></button></div>';
+			SPECIALISTS_DATA[G] = '<div class="div-table"><div class="div-table-col-spec"><div class="tooltip"><button onmousedown="buySpecialist(' + G + ')" class="button_notgrey"><div class="left">Buy Specialist<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialists_Cost[G]) + ' Milk</div> Specialists: <br />' + Arbitrary_addsuffix(Specialists[G]) + '<div>Power: ' + Arbitrary_addsuffix((Spec_Power[G] * (Spec_Level[G] * Spec_train_power_base[G]))) + '</div></div><div class="right">' + spec_image[G] + '</div><span class="tooltiptext">Specialists Milk 1 cow every 0.5 seconds. They take priorety over milk maids.<br />' + Spec_names[G] + ' produces ' + Arbitrary_addsuffix(Spec_Milk_Value(G)) + ' Milk per tick (' + Arbitrary_addsuffix(Spec_Milk_Value(G)*2) + ' MpS)</span></button></div></div></div>';
 		}
 		else{
-			SPECIALISTS_DATA[G] = '<div class="tooltip"><button onmousedown="buySpecialist(' + G + ')" class="button_grey"><div class="left">Buy Specialist<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialists_Cost[G]) + ' Milk</div> Specialists: ' + Arbitrary_addsuffix(Specialists[G]) + '<div>Power: ' + Arbitrary_addsuffix((Spec_Power[G] * (Spec_Level[G] * Spec_train_power_base[G]))) + '</div><br /></div><div class="right">' + spec_image[G] + '</div><span class="tooltiptext">Specialists Milk 1 cow every 0.5 seconds. They take priorety over milk maids.<br />' + Spec_names[G] + ' produces ' + Arbitrary_addsuffix(Spec_Milk_Value(G)) + ' Milk per tick (' + Arbitrary_addsuffix(Spec_Milk_Value(G)*2) + ' MpS)</span></button></div>';
+			SPECIALISTS_DATA[G] = '<div class="div-table"><div class="div-table-col-spec"><div class="tooltip"><button onmousedown="buySpecialist(' + G + ')" class="button_grey"><div class="left">Buy Specialist<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialists_Cost[G]) + ' Milk</div> Specialists: <br />' + Arbitrary_addsuffix(Specialists[G]) + '<div>Power: ' + Arbitrary_addsuffix((Spec_Power[G] * (Spec_Level[G] * Spec_train_power_base[G]))) + '</div></div><div class="right">' + spec_image[G] + '</div><span class="tooltiptext">Specialists Milk 1 cow every 0.5 seconds. They take priorety over milk maids.<br />' + Spec_names[G] + ' produces ' + Arbitrary_addsuffix(Spec_Milk_Value(G)) + ' Milk per tick (' + Arbitrary_addsuffix(Spec_Milk_Value(G)*2) + ' MpS)</span></button></div></div></div>';
 		};
 		if(Milk >= (Specialists_Cost[G] * 10)){
 			SPECIALISTS_DATA_xTEN[G] = '<div class="tooltip"><button onmousedown="buySpecialistxTEN(' + G + ')" class="button_notgrey" id="buy_mult2">Buy 10<span class="tooltiptext">Buy 10 Specialists for ' + Arbitrary_addsuffix((10 * Specialists_Cost[G])) + ' Milk</span></button></div>';
@@ -470,15 +470,15 @@ function BULLS_(B){
 	BULL_COST_X100[B] = Times_X_calculator(boughtbulls[B], basebullcost[B], 1.1, 100);
 	BULL_COST_X1000[B] = Times_X_calculator(boughtbulls[B], basebullcost[B], 1.1, 1000);
 	if(cowsenabled[B] == 1){
-		BULLS_DATA[B] = '<div class="div-table"><div class="div-table-col4"><div class="tooltip"><button onmousedown="buybull(' + B + ")" + '" ';
+		BULLS_DATA[B] = '<div class="div-table"><div class="div-table-col-bulls"><div class="tooltip"><button onmousedown="buybull(' + B + ")" + '" ';
 		if (Milk >= bullcost[B]){
 			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_background"';
 		}
 		else{
 			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_background_grey"';
 		};
-		 BULLS_DATA[B] = BULLS_DATA[B] + 'id="' + CowInfo[B].Rarity + '" ><div class="left"><br />Buy Bulls<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(bullcost[B]) + ' Milk</div>Bulls: ' + Arbitrary_addsuffix(Total_bulls[B]) + '<br /><br /></div><div class="right"><img src="pics/cow/' + CowInfo[B].Bull_image +'" id="imagesize"></div><span class="tooltiptext">Bulls create more cows every 10 seconds (requires at least 1 cow and 1 bull)</span></button></div>'
-		BULLS_DATA[B] =BULLS_DATA[B] + '</div><div class="div-table-col2">';
+		BULLS_DATA[B] = BULLS_DATA[B] + 'id="' + CowInfo[B].Rarity + '" ><div class="left"><br />Buy Bulls<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(bullcost[B]) + ' Milk</div>Bulls: ' + Arbitrary_addsuffix(Total_bulls[B]) + '<br /><br /></div><div class="right"><img src="pics/cow/' + CowInfo[B].Bull_image +'" id="imagesize"></div><span class="tooltiptext">Bulls create more cows every 10 seconds (requires at least 1 cow and 1 bull)</span></button></div>';
+		BULLS_DATA[B] = BULLS_DATA[B] + '</div><div class="div-table-col2">';
 		BULLS_DATA[B] = BULLS_DATA[B] + '<div class="tooltip"><button width="24%" onmousedown="buybullx10(' + B + ')' + '" '
 		if (Milk >= BULL_COST_X10[B]){
 			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_notgrey" '
@@ -486,7 +486,7 @@ function BULLS_(B){
 		else{
 			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_grey" '
 		};
-		BULLS_DATA[B] = BULLS_DATA[B] + 'id="buy_mult4" >Buy 10<span class="tooltiptext">Buy 10 Cows for ' + Arbitrary_addsuffix(BULL_COST_X10[B]) + '</span></button></div>';
+		BULLS_DATA[B] = BULLS_DATA[B] + 'id="buy_mult4" >Buy 10<span class="tooltiptext">Buy 10 Bulls for ' + Arbitrary_addsuffix(BULL_COST_X10[B]) + '</span></button></div>';
 		BULLS_DATA[B] = BULLS_DATA[B] + '<div class="tooltip"><button width="24%" onmousedown="buybullx100(' + B + ')' + '" '
 		if (Milk >= BULL_COST_X100[B]){
 			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_notgrey"'
@@ -494,7 +494,7 @@ function BULLS_(B){
 		else{
 			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_grey"'
 		};
-		BULLS_DATA[B] = BULLS_DATA[B] + 'id="buy_mult4" >Buy 100<span class="tooltiptext">Buy 100 Cows for ' + Arbitrary_addsuffix(BULL_COST_X100[B]) + '</span></button></div>';
+		BULLS_DATA[B] = BULLS_DATA[B] + 'id="buy_mult4" >Buy 100<span class="tooltiptext">Buy 100 Bulls for ' + Arbitrary_addsuffix(BULL_COST_X100[B]) + '</span></button></div>';
 		BULLS_DATA[B] = BULLS_DATA[B] + '<div class="tooltip"><button width="24%" onmousedown="buybullx100(' + B + ')' + '" '
 		if (Milk >= BULL_COST_X1000[B]){
 			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_notgrey"'
@@ -502,7 +502,7 @@ function BULLS_(B){
 		else{
 			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_grey"'
 		};
-		BULLS_DATA[B] = BULLS_DATA[B] + 'id="buy_mult4" >Buy 1000<span class="tooltiptext">Buy 1000 Cows for ' + Arbitrary_addsuffix(BULL_COST_X1000[B]) + '</span></button></div>';
+		BULLS_DATA[B] = BULLS_DATA[B] + 'id="buy_mult4" >Buy 1000<span class="tooltiptext">Buy 1000 Bulls for ' + Arbitrary_addsuffix(BULL_COST_X1000[B]) + '</span></button></div>';
 		BULLS_DATA[B] = BULLS_DATA[B] + '</div></div>';
 	}
 	else{
