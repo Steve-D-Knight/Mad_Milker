@@ -258,14 +258,21 @@ window.setInterval(function COWS_update(){
 	};
 	for(i = (NumberofCOWS + 1); i >= 0; i--){
 		if(i == NumberofCOWS + 1){
+			var avaliable_cows;
+			for(k = NumberofCOWS; k >= 0; k--){
+				if(cowsenabled[k] != 0){
+					avaliable_cows = k+2;
+					break;
+				}
+			};
 			Total_ALL_cows = 0;
 			Total_ALL_bulls = 0;
 			Total_Specialists = 0;
-			SPECIALISTS = '';
-			SPECIALISTS_BUYMULT = '';
-			BULLS = '';
-			COWS = '';
-			SPECIALIST_TRAINING = '';
+			SPECIALISTS = '<div class="div-table"><div class="div-table-col-spec"><button id="silhouette" class="button_grey"></button></div></div>';
+			SPECIALISTS_BUYMULT = '<div class="div-table"><div class="div-table-col2"><button id="silhouette" class="button_grey"></button></div></div>';
+			BULLS = '<div class="div-table"><div class="div-table-col-bulls"><button id="silhouette" class="button_grey"><div class="right"><img src="pics/cow/silhouette_bull.png" id="imagesize"></div></button></div></div>';
+			COWS = '<div class="div-table"><div class="div-table-col1"><button id="silhouette" class="button_grey"><div class="left"><br />Unlock Cow ' + avaliable_cows + ' by aquiring<br />5 ' + (CowInfo[avaliable_cows-2].Name) + ' Bulls</div><div class="right"><img src="pics/cow/silhouette_cow.png" id="imagesize"></div></button></div></div>';
+			SPECIALIST_TRAINING = '<div class="div-table"><div class="div-table-col-sectraining"><button id="silhouette" class="button_grey"></div></button></div></div>';
 			ALLSPEC_price = 0;
 		}
 		else{
