@@ -106,11 +106,7 @@ window.setInterval(function MilkPS(){
 	else{
 		MPS_counter = MPS_counter + 1;
 	};
-	var tier0 = Math.log10(MPS_out) / 3 | 0;
-	var suffix_symble0 = suffix[tier0];
-	var scale0 = Math.pow(10, tier0 * 3);
-	var scaled0 = MPS_out / scale0;
-	MPS_out_calc = scaled0.toFixed(3) + suffix_symble0;
+	MPS_out_calc = Arbitrary_addsuffix(MPS_out);
 	Wrist_training_power_calculator();
 	MILK_();
 }, 250);
@@ -164,7 +160,7 @@ window.setInterval(function Stats(){
 	Live_time = (n - Load_start_time) / 1000;
 	Active_time = Active_time_load + Live_time;
 	Time2Cow_active[cow2time] = Active_time;
-	STATS = '<table><tbody><tr><td>Stats<br />Totals:</td></tr><tr><td>Clicks: </td><td>' + Arbitrary_addsuffix(Total_clicks) + '</td></tr><tr><td>Cows:</td><td>' + Arbitrary_addsuffix(Total_ALL_cows) + '</td></tr><tr><td>Bulls:</td><td>' + Arbitrary_addsuffix(Total_ALL_bulls) + '</td></tr><tr><td>Specialists:</td><td>' + Arbitrary_addsuffix(Total_Specialists) + '</td></tr><tr><td>Milked Cows:</td><td>' + MILKEDCOWS + '</td></tr><tr><td>Unmilked Cows:</td><td>' + UNMILKEDCOWS + '</td></tr><tr><td>Game Started:</td><td>' + Time_to_HTML(played_seconds) + ' Ago</td></tr><tr><td>Total Time Active:</td><td>' + Time_to_HTML(Active_time) + '</td></tr><tr><td>Played This Session:</td><td>' + Time_to_HTML(Live_time) + '</td></tr><tr><td>Time to unlock:</td><td>&nbsp;</td></tr>';
+	STATS = '<table><tbody><tr><td>Stats</td><td><button onmousedown="number_suffix_change()" class="SI_change_button">Change Number Suffix</button></td></tr><tr><td>Totals:</td></tr><tr><td>Clicks: </td><td>' + Arbitrary_addsuffix(Total_clicks) + '</td></tr><tr><td>Cows:</td><td>' + Arbitrary_addsuffix(Total_ALL_cows) + '</td></tr><tr><td>Bulls:</td><td>' + Arbitrary_addsuffix(Total_ALL_bulls) + '</td></tr><tr><td>Specialists:</td><td>' + Arbitrary_addsuffix(Total_Specialists) + '</td></tr><tr><td>Milked Cows:</td><td>' + MILKEDCOWS + '</td></tr><tr><td>Unmilked Cows:</td><td>' + UNMILKEDCOWS + '</td></tr><tr><td>Game Started:</td><td>' + Time_to_HTML(played_seconds) + ' Ago</td></tr><tr><td>Total Time Active:</td><td>' + Time_to_HTML(Active_time) + '</td></tr><tr><td>Played This Session:</td><td>' + Time_to_HTML(Live_time) + '</td></tr><tr><td>Time to unlock:</td><td>&nbsp;</td></tr>';
 	var nextcowlatch = 0;
 	for(k = NumberofCOWS; k >= 0; k--){
 		if(cowsenabled[k] != 0){
@@ -180,6 +176,11 @@ window.setInterval(function Stats(){
 	STATS = STATS + '</tbody></table>';
 	document.getElementById('STATS').innerHTML = STATS;
 }, 50);
+
+var Number_suffix = 0;
+function number_suffix_change(){
+	Number_suffix = !Number_suffix;
+};
 
 
 //This runs when the game is reset and means that the last save should be auto loaded and then auto save should be turned on.

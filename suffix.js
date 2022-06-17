@@ -18,15 +18,25 @@ var MM_upgrade_cost_calc = 0;
 // This is the function that adds the SI suffixes to any number.
 var suffix = ['', 'k', 'M', 'B', 'T', 'Qa', 'Qi', 'Sx', 'Sp', 'Oc', 'No', 'Dc', 'Ud', 'Dd', 'Td', 'Qad', 'Qid', 'Sxd', 'Spd', 'Ocd', 'Nod', 'Vg', 'Uvg', 'Dvg', 'Tvg', 'Qavg', 'Qivg', 'Sxvg', 'Spvg', 'Ocvg', 'Novg', 'Tg', 'Utg', 'Dtg', 'Qatg', 'Qitg', 'Sxtg', 'Sptg', 'Octg', 'Notg', 'G', 'Ug', 'Dg', 'Tg', 'Qag', 'Qig', 'Sxg', 'Spg', 'Ocg', 'Nog', 'Quite a lot'];
 function Arbitrary_addsuffix(value){
-	if(value < 1000){
-		return Math.floor(value);
+	if(Number_suffix == 0){
+		if(value < 1000){
+			return Math.floor(value);
+		}
+		else{
+			var tier0 = Math.log10(value) / 3 | 0;
+			var suffix_symble0 = suffix[tier0];
+			var scale0 = Math.pow(10, tier0 * 3);
+			var scaled0 = value / scale0;
+			return scaled0.toFixed(2) + suffix_symble0;
+		};
 	}
 	else{
-		var tier0 = Math.log10(value) / 3 | 0;
-		var suffix_symble0 = suffix[tier0];
-		var scale0 = Math.pow(10, tier0 * 3);
-		var scaled0 = value / scale0;
-		return scaled0.toFixed(2) + suffix_symble0;
+		if(value < 1000){
+			return Math.floor(value);
+		}
+		else{
+			return value.toExponential(2);
+		};
 	};
 };
 
