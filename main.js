@@ -240,6 +240,12 @@ for(i = 0; i <= NumberofCOWS; i++){
 	Spec_names[i] = Names(); 
 };
 
+var Visible_page = 0;
+function change_tab_button(){
+	Visible_page = !Visible_page;
+};
+
+
 window.setInterval(function COWS_update(){
 	MILK_();
 	total_cows();
@@ -268,7 +274,14 @@ window.setInterval(function COWS_update(){
 			Total_ALL_cows = 0;
 			Total_ALL_bulls = 0;
 			Total_Specialists = 0;
-			SPECIALISTS = '<div class="div-table"><div class="div-table-col-spec"><button id="silhouette" class="button_grey"></button></div></div>';
+			SPECIALISTS = '<div class="div-table"><div class="div-table-col-spec"><button onmousedown="change_tab_button()" id="silhouette" class="button_grey">' 
+			if(Visible_page == 0){
+				SPECIALISTS = SPECIALISTS + 'Stats Page';
+			}
+			else{
+				SPECIALISTS = SPECIALISTS + 'Return to game';
+			};	
+			SPECIALISTS = SPECIALISTS + '</button></div></div>';
 			SPECIALISTS_BUYMULT = '<div class="div-table"><div class="div-table-col2"><button id="silhouette" class="button_grey"></button></div></div>';
 			BULLS = '<div class="div-table"><div class="div-table-col-bulls"><button id="silhouette" class="button_grey"><div class="right"><img src="pics/cow/silhouette_bull.png" id="imagesize"></div></button></div></div>';
 			COWS = '<div class="div-table"><div class="div-table-col1"><button id="silhouette" class="button_grey"><div class="left"><br />Unlock Cow ' + avaliable_cows + ' by aquiring<br />5 ' + (CowInfo[avaliable_cows-2].Name) + ' Bulls</div><div class="right"><img src="pics/cow/silhouette_cow.png" id="imagesize"></div></button></div></div>';
@@ -279,16 +292,28 @@ window.setInterval(function COWS_update(){
 			Total_ALL_cows = Total_ALL_cows + Total_cows[i];
 			Total_ALL_bulls = Total_ALL_bulls + Total_bulls[i];
 			Total_Specialists = Total_Specialists + Specialists[i];
-			SPECIALISTS = SPECIALISTS + SPECIALISTS_DATA[i];
-			SPECIALISTS_BUYMULT = SPECIALISTS_BUYMULT + '<div class="div-table-col2">' + SPECIALISTS_DATA_xTEN[i] + SPECIALISTS_DATA_x100[i] + SPECIALISTS_DATA_xALL[i] + '</div>';
-			BULLS = BULLS + BULLS_DATA[i];
-			COWS = COWS + COWS_DATA[i];
-			SPECIALIST_TRAINING = SPECIALIST_TRAINING + SPECIALIST_TRAINING_DATA[i];
+
+			if(Visible_page == 0){
+				SPECIALISTS = SPECIALISTS + SPECIALISTS_DATA[i];
+				SPECIALISTS_BUYMULT = SPECIALISTS_BUYMULT + '<div class="div-table-col2">' + SPECIALISTS_DATA_xTEN[i] + SPECIALISTS_DATA_x100[i] + SPECIALISTS_DATA_xALL[i] + '</div>';
+				BULLS = BULLS + BULLS_DATA[i];
+				COWS = COWS + COWS_DATA[i];
+				SPECIALIST_TRAINING = SPECIALIST_TRAINING + SPECIALIST_TRAINING_DATA[i];
+			}
+			else{
+				SPECIALISTS = SPECIALISTS + '';
+				SPECIALISTS_BUYMULT = SPECIALISTS_BUYMULT + '';
+				BULLS = BULLS + '';
+				COWS = COWS + '';
+				SPECIALIST_TRAINING = SPECIALIST_TRAINING + '';
+			};
 			ALLSPEC_price = ALLSPEC_price + ((Total_cows[i] - Specialists[i]) * Specialists_Cost[i]);
 		};
 	};
+
 	MILKMAID = '<br />' + MILKMAID_DATA[0] + MILKMAID_DATA[1] + MILKMAID_DATA[2] + MILKMAID_DATA[3] + '<br />' + SpecialistxALL_ALL_DATA;
 	SAVING = 	'<br /><br /><br /><div><button onmousedown="save_()">Save</button></div>' + '<div><button onmousedown="load()">Load</button></div><br /><br />' + AUTOSAVE_DATA + '<br /><br /><br /><div><button onmousedown="delsave()">Delete Save</button></div>';
+
 	document.getElementById('MILKMAID').innerHTML = MILKMAID;
 	document.getElementById('COWS').innerHTML = COWS;
 	document.getElementById('BULLS').innerHTML = BULLS;
@@ -296,6 +321,7 @@ window.setInterval(function COWS_update(){
 	document.getElementById('SPECIALIST_TRAINING').innerHTML = SPECIALIST_TRAINING;
 	document.getElementById('SPECIALISTS_BUYMULT').innerHTML = SPECIALISTS_BUYMULT;
 	document.getElementById('SAVING').innerHTML = SAVING;
+
 	UPGRADES_HTML();
 }, 25);	
 
