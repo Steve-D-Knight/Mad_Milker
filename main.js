@@ -287,7 +287,7 @@ window.setInterval(function COWS_update(){
 			ALLSPEC_price = ALLSPEC_price + ((Total_cows[i] - Specialists[i]) * Specialists_Cost[i]);
 		};
 	};
-	MILKMAID = '<br />' + MILKMAID_DATA[0] + MILKMAID_DATA[1] + MILKMAID_DATA[2] + '<br />' + SpecialistxALL_ALL_DATA;
+	MILKMAID = '<br />' + MILKMAID_DATA[0] + MILKMAID_DATA[1] + MILKMAID_DATA[2] + MILKMAID_DATA[3] + '<br />' + SpecialistxALL_ALL_DATA;
 	SAVING = 	'<br /><br /><br /><div><button onmousedown="save_()">Save</button></div>' + '<div><button onmousedown="load()">Load</button></div><br /><br />' + AUTOSAVE_DATA + '<br /><br /><br /><div><button onmousedown="delsave()">Delete Save</button></div>';
 	document.getElementById('MILKMAID').innerHTML = MILKMAID;
 	document.getElementById('COWS').innerHTML = COWS;
@@ -340,6 +340,7 @@ function MILKMAID_(){
 	else{
 		MILKMAID_DATA[2] = '<div><button onmousedown="buymilkmaids_100()" class="button_grey">Buy 100<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(MM_COST_100) + Milk_bottle_icon + '</div></button></div>'
 	};
+	MILKMAID_DATA[3] = '<div><button onmousedown="Buy_MAX_MM()" class="button_notgrey">Buy Max (' + Arbitrary_addsuffix(Buy_MAX_MM_calculator(1)) + ')<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Buy_MAX_MM_calculator(0)) + Milk_bottle_icon + '</div></button></div>'
 };
 
 var MM_COST_10 = 0;
@@ -382,6 +383,34 @@ function buymilkmaids(){
 	MILK_();
 	document.getElementById('MILKMAID').innerHTML = MILKMAID;
 };
+var MM_cost_MAX = 0;
+var MM_cost_index = 0;
+function Buy_MAX_MM_calculator(show_num){
+	MM_cost_MAX = 0;
+	for(i = 0; i < 1000; i++){
+		MM_cost_MAX = MM_cost_MAX + Math.floor(BaseMilkmaidcost * Math.pow(1.008,(MilkMaids + i)));
+		MM_cost_index = i;
+		if((MM_cost_MAX + Math.floor(BaseMilkmaidcost * Math.pow(1.008,(MilkMaids + i)))) > Milk){
+			break;
+		};
+	};
+	if(show_num == 0){
+		return MM_cost_MAX;
+	}
+	else{
+		return MM_cost_index + 1;
+	};
+};
+function Buy_MAX_MM(){
+	if(Milk >= MM_cost_MAX){
+		MilkMaids = MilkMaids + MM_cost_index;
+		Milk = Milk - MM_cost_MAX;
+	};
+	MILK_();
+	document.getElementById('MILKMAID').innerHTML = MILKMAID;
+};
+
+
 
 function buymilkmaids_10(){
 	if(Milk >= MM_COST_10){
@@ -391,7 +420,6 @@ function buymilkmaids_10(){
 	MILK_();
 	document.getElementById('MILKMAID').innerHTML = MILKMAID;
 };
-
 function buymilkmaids_100(){
 	if(Milk >= MM_COST_100){
 		MilkMaids = MilkMaids + 100;
@@ -400,6 +428,8 @@ function buymilkmaids_100(){
 	MILK_();
 	document.getElementById('MILKMAID').innerHTML = MILKMAID;
 };
+
+
 
 var MilkMaidBonus = 1;
 var MILKMAID_OUTPUT = 0;
