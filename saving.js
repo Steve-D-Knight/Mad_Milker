@@ -111,6 +111,7 @@ window.setInterval(function MilkPS(){
 	MILK_();
 }, 250);
 var Time2Cow_total = [0];
+var TimebtwnCow = [0];
 var Time2Cow_active = [0];
 var cowtimer = 0;
 var cow2time = 0;
@@ -149,6 +150,7 @@ window.setInterval(function Stats(){
 	var d = new Date();
 	var n = d.getTime();
 	for(i = 0; i < NumberofCOWS; i++){
+		TimebtwnCow[i] = Time2Cow_active[i] - Time2Cow_active[i - 1];
 		if (cowsenabled[i] == 0){
 			cow2time = i;
 			break;
@@ -169,7 +171,7 @@ window.setInterval(function Stats(){
 				nextcowlatch = 1;
 			};
 			if(k > 0){
-				STATS = STATS + '<tr><td>' + CowInfo[k].Name + ':</td><td>Total: ' + Time_to_HTML(Time2Cow_total[k]) + '</td><td>&nbsp;&nbsp;/&nbsp;&nbsp;Active: ' + Time_to_HTML(Time2Cow_active[k]) + '</td></tr>';
+				STATS = STATS + '<tr><td>' + CowInfo[k].Name + ':</td><td>Total: ' + Time_to_HTML(Time2Cow_total[k]) + '</td><td>&nbsp;&nbsp;/&nbsp;&nbsp;Active: ' + Time_to_HTML(Time2Cow_active[k]) + '</td><td>&nbsp;&nbsp;/&nbsp;&nbsp;Time between cows: ' + Time_to_HTML(TimebtwnCow[k]) + '</td></tr>';
 			};
 		}
 	};
