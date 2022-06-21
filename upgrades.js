@@ -59,7 +59,7 @@ function UPGRADES_HTML(){
 	wrist_traingin_cost = Math.floor(500 * Math.pow(3, wrist_training_lvl));
 	MM_UPGRADE_IMG();
 	
-	if(MilkMaids >= 100){
+	if(MilkMaids >= 10){
 		if(Milk >= MM_upgrade_cost){
 			MMUPGRADES = '<div class="tooltip"><button onmousedown="MilkMaid_upgrade()" class="button_notgrey"><div class="left"><br />Power Up Milk Maids<div style="font-weight:bold;">' + Arbitrary_addsuffix(MM_upgrade_cost) + ' Milk</div>Level: ' + MM_upgrade_level + '<br /><br /></div><div class="right">' + MM_upgrade_img + '</div><span class="tooltiptext">Doubles Power of Milk Maids</span></button></div>';
 		}

@@ -170,6 +170,40 @@ function buycowx1000(cownumberx1000){
 	MILK_();
 	document.getElementById('COWS').innerHTML = COWS;
 };
+
+var cow_cost_MAX = 0;
+var cow_cost_index = 0;
+function Buy_MAX_cow_calculator(index, show_num){
+	cow_cost_MAX = 0;
+	for(i = 0; i < 1000; i++){
+		cow_cost_MAX = cow_cost_MAX + Math.floor(basecowcost[index] * Math.pow(1.1,(boughtcows[index]+i)));
+		//cow_cost_MAX = cow_cost_MAX + Math.floor(BaseMilkmaidcost * Math.pow(1.008,(MilkMaids + i)));
+		cow_cost_index = i;
+		if(cow_cost_MAX + Math.floor(basecowcost[index] * Math.pow(1.1,(boughtcows[index]+i))) > Milk){
+			break;
+		};
+	};
+	if(show_num == 0){
+		return cow_cost_MAX;
+	}
+	else{
+		return cow_cost_index + 1;
+	};
+};
+function Buy_MAX_MM(){
+	if(Milk >= cow_cost_MAX){
+		MilkMaids = MilkMaids + cow_cost_index;
+		Milk = Milk - cow_cost_MAX;
+	};
+	MILK_();
+	document.getElementById('MILKMAID').innerHTML = MILKMAID;
+};
+
+
+
+
+
+
 function COW_enable(C){
 	if(Total_bulls[C - 1] >= 5){
 		cowsenabled[C] = 1;
@@ -214,7 +248,7 @@ function SPECIALISTS_(G){
 	
 };
 function SPEC_IMAGE(P){
-	if(Spec_Level[P] <= 5){
+	if(Spec_Level[P] < 5){
 		spec_image[P] = '<img src="pics/mk3_milkmaid2.png" id="imagesize">';
 	}
 	else if(Spec_Level[P] <= 139){
@@ -514,12 +548,13 @@ function Spec_power_value(SPV){
 	return (Spec_Power[SPV] * (Spec_Level[SPV] * Spec_train_power_base[SPV]));
 };
 function Spec_Milk_Value(SMV){
-	if(Spec_Level[SMV] >= 50){
-		Spec_train_power_base[SMV] = 1000;
-	}
-	else{
-		Spec_train_power_base[SMV] = 1;
-	};
+	// if(Spec_Level[SMV] >= 50){
+	// 	Spec_train_power_base[SMV] = 1000;
+	// }
+	// else{
+	// 	Spec_train_power_base[SMV] = 1;
+	// };
+	Spec_train_power_base[SMV] = Math.pow(2, (Math.floor(Spec_Level[SMV] / 5)));
 	if(Specialists[SMV] >= Total_cows[SMV]){
 		return (Total_cows[SMV] * Spec_power_value(SMV));
 	}
