@@ -274,12 +274,6 @@ for(i = 0; i <= NumberofCOWS; i++){
 	Spec_names[i] = Names(); 
 };
 
-var Visible_page = 0;
-function change_tab_button(){
-	Visible_page = !Visible_page;
-};
-
-
 window.setInterval(function COWS_update(){
 	MILK_();
 	total_cows();
@@ -705,3 +699,7 @@ function SpecialistxALL_ALL(){
 };
 
 
+var Visible_page = 0;
+function change_tab_button(tab_number){
+	Visible_page = tab_number;
+};

@@ -163,7 +163,21 @@ window.setInterval(function Stats(){
 	Live_time = (n - Load_start_time) / 1000;
 	Active_time = Active_time_load + Live_time;
 	Time2Cow_active[cow2time] = Active_time;
-	STATS = '<table id="stats_table"><tbody><tr><td>Stats</td><td><button onmousedown="number_suffix_change()" class="SI_change_button">Change Number Suffix</button></td></tr><tr><td>Totals:</td></tr><tr><td>Clicks: </td><td>' + Arbitrary_addsuffix(Total_clicks) + '</td></tr><tr><td>Cows:</td><td>' + Arbitrary_addsuffix(Total_ALL_cows) + '</td></tr><tr><td>Bulls:</td><td>' + Arbitrary_addsuffix(Total_ALL_bulls) + '</td></tr><tr><td>Specialists:</td><td>' + Arbitrary_addsuffix(Total_Specialists) + '</td></tr><tr><td>Milked Cows:</td><td>' + MILKEDCOWS + '</td></tr><tr><td>Unmilked Cows:</td><td>' + UNMILKEDCOWS + '</td></tr><tr><td>Game Started:</td><td>' + Time_to_HTML(played_seconds) + ' Ago</td></tr><tr><td>Total Time Active:</td><td>' + Time_to_HTML(Active_time) + '</td></tr><tr><td>Played This Session:</td><td>' + Time_to_HTML(Live_time) + '</td></tr><tr><td>Time to unlock:</td><td>&nbsp;</td></tr>';
+
+	STATS = 		'<table id="stats_table"><tbody><tr><td>Stats</td>';
+	STATS = STATS + '<td><button onmousedown="number_suffix_change()" class="SI_change_button">Change Number Suffix</button></td></tr>';
+	STATS = STATS + '<tr><td>Totals:</td></tr>'
+	STATS = STATS + '<tr><td>Clicks: </td><td>' + Arbitrary_addsuffix(Total_clicks) + '</td></tr>';
+	STATS = STATS + '<tr><td>Cows:</td><td>' + Arbitrary_addsuffix(Total_ALL_cows) + '</td></tr>';
+	STATS = STATS + '<tr><td>Bulls:</td><td>' + Arbitrary_addsuffix(Total_ALL_bulls) + '</td></tr>';
+	STATS = STATS + '<tr><td>Specialists:</td><td>' + Arbitrary_addsuffix(Total_Specialists) + '</td></tr>';
+	STATS = STATS + '<tr><td>Milked Cows:</td><td>' + MILKEDCOWS + '</td></tr>';
+	STATS = STATS + '<tr><td>Unmilked Cows:</td><td>' + UNMILKEDCOWS + '</td></tr>';
+	STATS = STATS + '<tr><td>Game Started:</td><td>' + Time_to_HTML(played_seconds) + ' Ago</td></tr>';
+	STATS = STATS + '<tr><td>Total Time Active:</td><td>' + Time_to_HTML(Active_time) + '</td></tr>';
+	STATS = STATS + '<tr><td>Played This Session:</td><td>' + Time_to_HTML(Live_time) + '</td></tr>';
+	STATS = STATS + '<tr><td>Time to unlock:</td><td>&nbsp;</td></tr>'
+	
 	var nextcowlatch = 0;
 	for(k = NumberofCOWS; k >= 0; k--){
 		if(cowsenabled[k] != 0){

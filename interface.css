@@ -231,9 +231,35 @@ button:hover .hide{
 #HTML_cell{
 	margin-right: 1px;
 	width: fit-content;
-	grid-row: 2;
 }
 #HTML_header{
 	grid-column: 1 / 4;
-	grid-row: 1;
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+.Achievment_box_no{
+	background: rgb(0,0,0);
+	background: linear-gradient(60deg, rgba(0,0,0,0.8) 0%, rgba(212,212,212,0.8) 49%, rgba(201,201,201,0.8) 49%, rgba(0,0,0,0.8) 100%);
+	padding: 5px;
+	border-radius: 4px;
+	border: solid 3px;
+	overflow: hidden;
+}
+.Achievment_box_yes{
+	background: rgb(150,150,150);
+	background: linear-gradient(60deg, rgba(150,150,150,0.8) 0%, rgba(255,255,255,0.8) 49%, rgba(245,248,248,0.8) 49%, rgba(81,130,135,0.8) 100%);
+	padding: 5px;
+	border-radius: 4px;
+	border: solid 3px;
+	overflow: hidden;
+}
+.Achievment_container{
+	display: grid;
+	grid-template-columns: 60px 60px 60px 60px 60px 60px;
+	grid-auto-rows: 60px;
+	gap: 2px;
+	overflow: hidden;
+	color: white;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
