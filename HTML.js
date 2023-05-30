@@ -18,8 +18,8 @@ window.setInterval(function HTML_REFRESH(){
         for(sloop = NumberofCOWS; sloop >= 0; sloop--){
             MAINSTUFF = MAINSTUFF + '<div id="MAINSTUFF_cell">' + COWS_DATA[sloop] + '</div>';
             MAINSTUFF = MAINSTUFF + '<div id="MAINSTUFF_cell">' + SPECIALISTS_DATA[sloop] + '</div>';
-            MAINSTUFF = MAINSTUFF + '<div id="MAINSTUFF_cell">' + SPECIALIST_TRAINING_DATA[sloop] + '</div>';
             MAINSTUFF = MAINSTUFF + '<div id="MAINSTUFF_cell">' + '<div class="div-table-col2">' + SPECIALISTS_DATA_xTEN[sloop] + SPECIALISTS_DATA_x100[sloop] + SPECIALISTS_DATA_xALL[sloop] + '</div>' + '</div>';
+            MAINSTUFF = MAINSTUFF + '<div id="MAINSTUFF_cell">' + SPECIALIST_TRAINING_DATA[sloop] + '</div>';
             MAINSTUFF = MAINSTUFF + '<div id="MAINSTUFF_cell">' + BULLS_DATA[sloop] + '</div>';
         };
         MAINSTUFF = MAINSTUFF + '</div></div>'
