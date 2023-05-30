@@ -94,6 +94,13 @@ CowInfo.push({Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_
 // ------------ Non Cow Ideas ---------
 // -- Add back removed features --
 //		- Stats PAGE
+//		- missing tooltips
+//			- COWS
+//			- train specialists
+//			- milkmaid buy 10/100/max
+//			- MIlk (not sure if this ever had one)
+
+// -- fix wonky buy mult buttons
 
 // --- fix the refresh issues ---
 
@@ -113,6 +120,19 @@ CowInfo.push({Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_
 //		- different types of grass for cows
 // 		- feed upgrades?
 
+// -- Achievements
+//		- unlock each cow
+//		- X of each cow (10/100/1000/etc) [not sure what the best numbers are]
+//		- X of specialists
+//		- X of Milkmaids
+//		- X MILK
+//		- X Spec level
+//		- X clicks (am i even counting this?)
+// 		- X MPS
+//		- Achievments unlock something
+//			- bonus milk (multiply the milk from that cow for the chieve maybe?)
+//		- Achievment art
+//			- for each cow can probably do the head of the cow plus with the borderes used for the cow rarity
 
 
 
