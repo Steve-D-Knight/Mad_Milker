@@ -124,10 +124,11 @@ button:hover .hide{
 #buy_mult{
 	min-width: 80px;
 	width: 50%;
+	height: 31px;
 	display: inline-block;
 }
 #buy_mult2{
-	height: 29px;
+	height: 31px;
 	padding: 3px;
 	border-radius: 4px;
 }
@@ -135,7 +136,7 @@ button:hover .hide{
 	min-width: 30%;
 }
 #buy_mult4{
-	height: 28px;
+	height: 31px;
 	padding: 3px;
 	border-radius: 4px;
 }

@@ -302,14 +302,6 @@ window.setInterval(function COWS_update(){
 			Total_ALL_cows = 0;
 			Total_ALL_bulls = 0;
 			Total_Specialists = 0;
-			// SPECIALISTS = '<div class="div-table"><div class="div-table-col-spec"><button onmousedown="change_tab_button()" id="silhouette" class="button_grey">' 
-			// if(Visible_page == 0){
-			// 	SPECIALISTS = SPECIALISTS + 'Stats Page';
-			// }
-			// else{
-			// 	SPECIALISTS = SPECIALISTS + 'Return to game';
-			// };	
-			// SPECIALISTS = SPECIALISTS + '</button></div></div>';
 			SPECIALISTS = '';
 			SPECIALISTS_BUYMULT = '';
 			BULLS = '';
@@ -697,7 +689,6 @@ function SpecialistxALL_ALL(){
 		SpecialistxALL_ALL_DATA = '';
 	};
 };
-
 
 var Visible_page = 0;
 function change_tab_button(tab_number){

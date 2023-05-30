@@ -120,8 +120,8 @@ CowInfo.push({Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_
 // 		- feed upgrades?
 
 // -- Achievements
-//		- unlock each cow
-//		- X of each cow (10/100/1000/etc) [not sure what the best numbers are]
+//		Done ------> - unlock each cow
+//		Done ------> - X of each cow (10/100/1000/etc) [not sure what the best numbers are]
 //		- X of specialists
 //		- X of Milkmaids
 //		- X MILK
