@@ -93,7 +93,6 @@ CowInfo.push({Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_
 
 // ------------ Non Cow Ideas ---------
 // -- Add back removed features --
-//		- Stats PAGE
 //		- missing tooltips
 //			- COWS
 //			- train specialists

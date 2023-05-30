@@ -231,4 +231,9 @@ button:hover .hide{
 #HTML_cell{
 	margin-right: 1px;
 	width: fit-content;
+	grid-row: 2;
+}
+#HTML_header{
+	grid-column: 1 / 4;
+	grid-row: 1;
 }
