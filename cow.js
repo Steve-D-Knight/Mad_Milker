@@ -92,6 +92,8 @@ CowInfo.push({Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_
 //		Done ------> Hathor - Cow
 
 // ------------ Non Cow Ideas ---------
+// -- Add back removed features --
+//		- Stats PAGE
 
 // --- fix the refresh issues ---
 
