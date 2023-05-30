@@ -92,6 +92,9 @@ CowInfo.push({Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_
 //		Done ------> Hathor - Cow
 
 // ------------ Non Cow Ideas ---------
+
+// --- fix the refresh issues ---
+
 //	-- Single button for buy 1/10/100/1000 etc
 // 		To remove clutter, having a button that changes all of the buy options between the Buy 
 //		1/10/100/1000 options, it should also allow the player to buy however many of the thing 
@@ -102,6 +105,11 @@ CowInfo.push({Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_
 // 		It is pretty easy to get to a point where milkmaids are more powerfull than some of the specialists,
 //		so having an option to keep a number of cows without specialists would meen you dont have to wait the 
 //		10s for more cows to spawn. 
+
+// -- Upgrades --
+// 		- More upgrades for specialists
+//		- different types of grass for cows
+// 		- feed upgrades?
 
 
 

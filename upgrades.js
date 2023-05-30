@@ -46,7 +46,7 @@ function trainSpec(trainspec_number){
 		Milk = Milk - Specialist_training_Cost[trainspec_number];
 	};
 	MILK_();
-	document.getElementById('COWS').innerHTML = COWS;
+	// document.getElementById('COWS').innerHTML = COWS;
 };
 //cowcost[cost_num] = Math.floor(basecowcost[cost_num] * Math.pow(1.1,boughtcows[cost_num]));
 var MM_upgrade_cost = 0;
@@ -87,7 +87,7 @@ function UPGRADES_HTML(){
 		WRISTTRAINING = '';
 	};
 	UPGRADES = MMUPGRADES + WRISTTRAINING;
-	document.getElementById('UPGRADES').innerHTML = UPGRADES;
+	//document.getElementById('UPGRADES').innerHTML = UPGRADES;
 };
 var MM_upgrade_img = '<img src="pics/runes/rune(1).png" id="imagesize">';
 function MM_UPGRADE_IMG(){
@@ -104,7 +104,7 @@ function MilkMaid_upgrade(){
 		MM_upgrade_level = MM_upgrade_level + 1;
 	};
 	MILK_();
-	document.getElementById('UPGRADES').innerHTML = UPGRADES;
+	// document.getElementById('UPGRADES').innerHTML = UPGRADES;
 };
 var wrist_training_lvl = 0;
 var wrist_training_boost = 0;
@@ -115,7 +115,7 @@ function Wrist_training(){
 	};
 	MILK_();
 	Wrist_training_power_calculator();
-	document.getElementById('UPGRADES').innerHTML = UPGRADES;
+	// document.getElementById('UPGRADES').innerHTML = UPGRADES;
 };
 function Wrist_training_power_calculator(){
 	if(wrist_training_lvl > 0){

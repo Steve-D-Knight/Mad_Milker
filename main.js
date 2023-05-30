@@ -88,7 +88,7 @@ function MilkClick(){
 };
 function MILK_(){
 	MILK = '<div class="div-table"><div class="div-table-col-milk"><button onmousedown="MilkClick()"><div class="left">Milk Cow<br />Milk per click:<br />' + Arbitrary_addsuffix(ClickPower) + ' </div><div class="right"><img src="pics/milkbucket.png"></div></button></div><div>Milk: ' + Arbitrary_addsuffix(Milk) + ' litres </div>' + '<div>MpS: ' + MPS_out_calc + '</div></div>'
-	document.getElementById('MILK').innerHTML = MILK;
+	//document.getElementById('MILK').innerHTML = MILK;
 };
 
 var COW_COST_X10 = [];
@@ -144,7 +144,7 @@ function buycow(cownumber){
 		Milk = Milk - cowcost[cownumber];
 	};
 	MILK_();
-	document.getElementById('COWS').innerHTML = COWS;
+	// document.getElementById('COWS').innerHTML = COWS;
 };
 function buycowx10(cownumberx10){
 	if (Milk >= COW_COST_X10[cownumberx10]){
@@ -152,7 +152,7 @@ function buycowx10(cownumberx10){
 		Milk = Milk - COW_COST_X10[cownumberx10];
 	};
 	MILK_();
-	document.getElementById('COWS').innerHTML = COWS;
+	// document.getElementById('COWS').innerHTML = COWS;
 };
 function buycowx100(cownumberx100){
 	if (Milk >= COW_COST_X100[cownumberx100]){
@@ -160,7 +160,7 @@ function buycowx100(cownumberx100){
 		Milk = Milk - COW_COST_X100[cownumberx100];
 	};
 	MILK_();
-	document.getElementById('COWS').innerHTML = COWS;
+	// document.getElementById('COWS').innerHTML = COWS;
 };
 function buycowx1000(cownumberx1000){
 	if (Milk >= COW_COST_X1000[cownumberx1000]){
@@ -168,7 +168,7 @@ function buycowx1000(cownumberx1000){
 		Milk = Milk - COW_COST_X1000[cownumberx1000];
 	};
 	MILK_();
-	document.getElementById('COWS').innerHTML = COWS;
+	// document.getElementById('COWS').innerHTML = COWS;
 };
 
 var cow_cost_MAX = 0;
@@ -196,7 +196,7 @@ function Buy_MAX_MM(){
 		Milk = Milk - cow_cost_MAX;
 	};
 	MILK_();
-	document.getElementById('MILKMAID').innerHTML = MILKMAID;
+	// document.getElementById('MILKMAID').innerHTML = MILKMAID;
 };
 
 
@@ -308,18 +308,19 @@ window.setInterval(function COWS_update(){
 			Total_ALL_cows = 0;
 			Total_ALL_bulls = 0;
 			Total_Specialists = 0;
-			SPECIALISTS = '<div class="div-table"><div class="div-table-col-spec"><button onmousedown="change_tab_button()" id="silhouette" class="button_grey">' 
-			if(Visible_page == 0){
-				SPECIALISTS = SPECIALISTS + 'Stats Page';
-			}
-			else{
-				SPECIALISTS = SPECIALISTS + 'Return to game';
-			};	
-			SPECIALISTS = SPECIALISTS + '</button></div></div>';
-			SPECIALISTS_BUYMULT = '<div class="div-table"><div class="div-table-col2"><button id="silhouette" class="button_grey"></button></div></div>';
-			BULLS = '<div class="div-table"><div class="div-table-col-bulls"><button id="silhouette" class="button_grey"><div class="right"><img src="pics/cow/silhouette_bull.png" id="imagesize"></div></button></div></div>';
-			COWS = '<div class="div-table"><div class="div-table-col1"><button id="silhouette" class="button_grey"><div class="left"><br />Unlock Cow ' + avaliable_cows + ' by aquiring<br />5 ' + (CowInfo[avaliable_cows-2].Name) + ' Bulls</div><div class="right"><img src="pics/cow/silhouette_cow.png" id="imagesize"></div></button></div></div>';
-			SPECIALIST_TRAINING = '<div class="div-table"><div class="div-table-col-sectraining"><button id="silhouette" class="button_grey"></div></button></div></div>';
+			// SPECIALISTS = '<div class="div-table"><div class="div-table-col-spec"><button onmousedown="change_tab_button()" id="silhouette" class="button_grey">' 
+			// if(Visible_page == 0){
+			// 	SPECIALISTS = SPECIALISTS + 'Stats Page';
+			// }
+			// else{
+			// 	SPECIALISTS = SPECIALISTS + 'Return to game';
+			// };	
+			// SPECIALISTS = SPECIALISTS + '</button></div></div>';
+			SPECIALISTS = '';
+			SPECIALISTS_BUYMULT = '';
+			BULLS = '';
+			COWS = '';
+			SPECIALIST_TRAINING = '';
 			ALLSPEC_price = 0;
 		}
 		else{
@@ -348,13 +349,13 @@ window.setInterval(function COWS_update(){
 	MILKMAID = '<br />' + MILKMAID_DATA[0] + MILKMAID_DATA[1] + MILKMAID_DATA[2] + MILKMAID_DATA[3] + '<br />' + SpecialistxALL_ALL_DATA;
 	SAVING = 	'<br /><br /><br /><div><button onmousedown="save_()">Save</button></div>' + '<div><button onmousedown="load()">Load</button></div><br /><br />' + AUTOSAVE_DATA + '<br /><br /><br /><div><button onmousedown="delsave()">Delete Save</button></div>';
 
-	document.getElementById('MILKMAID').innerHTML = MILKMAID;
-	document.getElementById('COWS').innerHTML = COWS;
-	document.getElementById('BULLS').innerHTML = BULLS;
-	document.getElementById('SPECIALISTS').innerHTML = SPECIALISTS;
-	document.getElementById('SPECIALIST_TRAINING').innerHTML = SPECIALIST_TRAINING;
-	document.getElementById('SPECIALISTS_BUYMULT').innerHTML = SPECIALISTS_BUYMULT;
-	document.getElementById('SAVING').innerHTML = SAVING;
+	//document.getElementById('MILKMAID').innerHTML = MILKMAID;
+	//document.getElementById('COWS').innerHTML = COWS;
+	//document.getElementById('BULLS').innerHTML = BULLS;
+	//document.getElementById('SPECIALISTS').innerHTML = SPECIALISTS;
+	//document.getElementById('SPECIALIST_TRAINING').innerHTML = SPECIALIST_TRAINING;
+	//document.getElementById('SPECIALISTS_BUYMULT').innerHTML = SPECIALISTS_BUYMULT;
+	//document.getElementById('SAVING').innerHTML = SAVING;
 
 	UPGRADES_HTML();
 }, 25);	
@@ -441,7 +442,7 @@ function buymilkmaids(){
 		Milk = Milk - Milkmaidcost;
 	};
 	MILK_();
-	document.getElementById('MILKMAID').innerHTML = MILKMAID;
+	// document.getElementById('MILKMAID').innerHTML = MILKMAID;
 };
 var MM_cost_MAX = 0;
 var MM_cost_index = 0;
@@ -467,7 +468,7 @@ function Buy_MAX_MM(){
 		Milk = Milk - MM_cost_MAX;
 	};
 	MILK_();
-	document.getElementById('MILKMAID').innerHTML = MILKMAID;
+	// document.getElementById('MILKMAID').innerHTML = MILKMAID;
 };
 
 
@@ -478,7 +479,7 @@ function buymilkmaids_10(){
 		Milk = Milk - MM_COST_10;
 	};
 	MILK_();
-	document.getElementById('MILKMAID').innerHTML = MILKMAID;
+	// document.getElementById('MILKMAID').innerHTML = MILKMAID;
 };
 function buymilkmaids_100(){
 	if(Milk >= MM_COST_100){
@@ -486,7 +487,7 @@ function buymilkmaids_100(){
 		Milk = Milk - MM_COST_100;
 	};
 	MILK_();
-	document.getElementById('MILKMAID').innerHTML = MILKMAID;
+	// document.getElementById('MILKMAID').innerHTML = MILKMAID;
 };
 
 
@@ -516,7 +517,7 @@ window.setInterval(function Specialist_Milking(){
 		Spec_Milk(i);
 	};
 	MILK_();
-	document.getElementById('COWS').innerHTML = COWS;
+	// document.getElementById('COWS').innerHTML = COWS;
 }, 500);
 
 function Spec_Milk(K){
@@ -617,7 +618,7 @@ function buybull(bullnumber){
 		Milk = Milk - bullcost[bullnumber];
 	};
 	MILK_();
-	document.getElementById('COWS').innerHTML = COWS;
+	// document.getElementById('COWS').innerHTML = COWS;
 };
 function buybullx10(bullnumberx10){
 		if (Milk >= BULL_COST_X10[bullnumberx10]){
@@ -625,7 +626,7 @@ function buybullx10(bullnumberx10){
 		Milk = Milk - BULL_COST_X10[bullnumberx10];
 	};
 	MILK_();
-	document.getElementById('COWS').innerHTML = COWS;
+	// document.getElementById('COWS').innerHTML = COWS;
 };
 function buybullx100(bullnumberx100){
 		if (Milk >= BULL_COST_X100[bullnumberx100]){
@@ -633,7 +634,7 @@ function buybullx100(bullnumberx100){
 		Milk = Milk - BULL_COST_X100[bullnumberx100];
 	};
 	MILK_();
-	document.getElementById('COWS').innerHTML = COWS;
+	// document.getElementById('COWS').innerHTML = COWS;
 };
 function buybullx1000(bullnumberx1000){
 		if (Milk >= BULL_COST_X1000[bullnumberx1000]){
@@ -641,7 +642,7 @@ function buybullx1000(bullnumberx1000){
 		Milk = Milk - BULL_COST_X1000[bullnumberx1000];
 	};
 	MILK_();
-	document.getElementById('COWS').innerHTML = COWS;
+	// document.getElementById('COWS').innerHTML = COWS;
 };
 
 function buySpecialist(Spec_Number){
@@ -650,7 +651,7 @@ function buySpecialist(Spec_Number){
 		Milk = Milk - Specialists_Cost[Spec_Number];
 	};
 	MILK_();
-	document.getElementById('COWS').innerHTML = COWS;
+	// document.getElementById('COWS').innerHTML = COWS;
 };
 function buySpecialistx100(Spec_NumberB){
 	if(Milk >= (Specialists_Cost[Spec_NumberB] * 100)){ 
@@ -661,7 +662,7 @@ function buySpecialistx100(Spec_NumberB){
 		buySpecialistxALL(Spec_NumberB);
 	};
 	MILK_();
-	document.getElementById('COWS').innerHTML = COWS;
+	// document.getElementById('COWS').innerHTML = COWS;
 };
 function buySpecialistxTEN(Spec_Numberc){
 	if(Milk >= (Specialists_Cost[Spec_Numberc] * 10)){ 
@@ -672,7 +673,7 @@ function buySpecialistxTEN(Spec_Numberc){
 		buySpecialistxALL(Spec_Numberc);
 	};
 	MILK_();
-	document.getElementById('COWS').innerHTML = COWS;
+	// document.getElementById('COWS').innerHTML = COWS;
 };
 function buySpecialistxALL(Spec_NumberD){
 	if((Total_cows[Spec_NumberD] - Specialists[Spec_NumberD]) > 0){
@@ -682,7 +683,7 @@ function buySpecialistxALL(Spec_NumberD){
 		};
 	};
 	MILK_();
-	document.getElementById('COWS').innerHTML = COWS;
+	// document.getElementById('COWS').innerHTML = COWS;
 };
 function buySpecialistxALL_ALL(){
 	for(i = 0; i <= NumberofCOWS; i++){

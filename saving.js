@@ -64,6 +64,7 @@ function load(){
 	
 	Load_start_time = date.getTime();
 	Active_time_load = Active_time;
+	initialisation = 1;
 }
 function delsave(){
 	localStorage.removeItem("save")
@@ -182,7 +183,7 @@ window.setInterval(function Stats(){
 	else{
 		STATS = STATS;
 	};
-	document.getElementById('STATS').innerHTML = STATS;
+	// document.getElementById('STATS').innerHTML = STATS;
 }, 50);
 
 var Number_suffix = 0;
