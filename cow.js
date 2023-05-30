@@ -99,8 +99,6 @@ CowInfo.push({Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_
 //			- milkmaid buy 10/100/max
 //			- MIlk (not sure if this ever had one)
 
-// -- fix wonky buy mult buttons
-
 // --- fix the refresh issues ---
 
 //	-- Single button for buy 1/10/100/1000 etc
@@ -126,12 +124,12 @@ CowInfo.push({Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_
 //		- X of Milkmaids
 //		- X MILK
 //		- X Spec level
-//		- X clicks (am i even counting this?)
+//		- X clicks (I am recording how many clicks on the milk button)
 // 		- X MPS
 //		- Achievments unlock something
 //			- bonus milk (multiply the milk from that cow for the chieve maybe?)
 //		- Achievment art
-//			- for each cow can probably do the head of the cow plus with the borderes used for the cow rarity
+//			- for not cows/bulls/specialists i will need to make new art
 
 
 
