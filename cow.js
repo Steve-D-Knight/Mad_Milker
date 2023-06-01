@@ -101,6 +101,14 @@ CowInfo.push({Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_
 
 // --- fix the refresh issues ---
 
+//	-- new/different game mechanics --
+//		-- prestige --
+//			- IE. at some point in the game you restart and get a boost.
+//		-- change how cows are unlocked --
+//			- science maybe
+//		-- tech tree?
+//
+
 //	-- Single button for buy 1/10/100/1000 etc
 // 		To remove clutter, having a button that changes all of the buy options between the Buy 
 //		1/10/100/1000 options, it should also allow the player to buy however many of the thing 
@@ -130,6 +138,46 @@ CowInfo.push({Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_
 //			- bonus milk (multiply the milk from that cow for the chieve maybe?)
 //		- Achievment art
 //			- for not cows/bulls/specialists i will need to make new art
+
+// -- story line --
+//		- identical intro to jack and the bean stalk
+//		- but rather than magic beans the weird dude talks about just making milk into more cows
+
+// ------ Actual jack and the bean stalk intro ------
+// There was once upon a time a poor widow who had an only son named Jack, and a cow named Milky-White. 
+// All they had to live on was the milk the cow gave every morning, which they carried to the market and sold - until one morning Milky-White gave no milk.
+// “What shall we do, what shall we do?” said the widow, wringing her hands.
+// “Cheer up mother, I’ll go and get work somewhere,” said Jack.
+// “We’ve tried that before, and nobody would take you,” said his mother. “We must sell Milky-White and with the money, start a shop or something.”
+// “Alright, mother,” said Jack. “It’s market day today, and I’ll soon sell Milky-White, and then we’ll see what we can do.”
+// So he took the cow, and off he started. He hadn’t gone far when he met a funny looking old man, who said to him, “Good morning, Jack.”
+// “Good morning to you,” said Jack, and wondered how he knew his name.
+// “Well Jack, where are you off to?” Said the man.
+// “I’m going to market to sell our cow there.”
+// “Oh, you look the proper sort of chap to sell cows,” said the man. “I wonder if you know how many beans make five.”
+// “Two in each hand and one in your mouth,” said Jack, as sharp as a needle.
+// “Right you are,” says the man, “and here they are, the very beans themselves,” he went on, pulling out of his pocket a number of strange looking beans. 
+// “As you are so sharp,” said he, “I don’t mind doing a swap with you — your cow for these beans.”
+// “Go along,” said Jack. “You take me for a fool!”
+// “Ah! You don’t know what these beans are,” said the man. “If you plant them overnight, by morning they grow right up to the sky.”
+// “Really?” said Jack. “You don’t say so.”
+// “Yes, that is so. If it doesn’t turn out to be true you can have your cow back.”
+// “Right,” said Jack, and handed him over Milky-White, then pocketed the beans.
+
+// -- dumb version for game
+// Once upon a time a poor farmer was walking into town with a cow they planned on selling
+// a mysterious stranger beconed to the farmer from a allyway
+// "where are you taking that cow" - says the stranger
+// "If I sell this cow at the market I can afford this months rent" says the farmer
+// "why dont you milk the cow" - stranger
+// "A few liters of milk isnt going to get me enough money" - farmer
+// "well what if you use that milk to buy more cows" - stranger
+// "I am pretty sure you dont know how dairy farming works" - farmer
+// "how long have you got till rent is due? why not try it and if it doesnt work you can sell your cow before then" - stranger
+// "Look mate, I have a whole dairy farm, 1 cow isnt going to change how much milk i can produce by very much" - farmer
+// "alright then how about a bet, I take this cow for a little bit and if my plan works I keep the cow and if it doesnt I will pay double what this cow is worth" - stranger
+// "ok fine, but you better have that money ready." - farmer
+// ------- for some reason we are the stranger now lol ------
 
 
 
