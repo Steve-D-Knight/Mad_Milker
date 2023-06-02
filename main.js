@@ -61,6 +61,39 @@ function COWS_(A){
 	};
 };
 
+function buycow(cownumber){
+	if (Milk >= cowcost[cownumber]){
+		boughtcows[cownumber] = boughtcows[cownumber] + 1;
+		Milk = Milk - cowcost[cownumber];
+	};
+	MILK_();
+	// document.getElementById('COWS').innerHTML = COWS;
+};
+function buycowx10(cownumberx10){
+	if (Milk >= COW_COST_X10[cownumberx10]){
+		boughtcows[cownumberx10] = boughtcows[cownumberx10] + 10;
+		Milk = Milk - COW_COST_X10[cownumberx10];
+	};
+	MILK_();
+	// document.getElementById('COWS').innerHTML = COWS;
+};
+function buycowx100(cownumberx100){
+	if (Milk >= COW_COST_X100[cownumberx100]){
+		boughtcows[cownumberx100] = boughtcows[cownumberx100] + 100;
+		Milk = Milk - COW_COST_X100[cownumberx100];
+	};
+	MILK_();
+	// document.getElementById('COWS').innerHTML = COWS;
+};
+function buycowx1000(cownumberx1000){
+	if (Milk >= COW_COST_X1000[cownumberx1000]){
+		boughtcows[cownumberx1000] = boughtcows[cownumberx1000] + 1000;
+		Milk = Milk - COW_COST_X1000[cownumberx1000];
+	};
+	MILK_();
+	// document.getElementById('COWS').innerHTML = COWS;
+};
+
 var cow_cost_MAX = 0;
 var cow_cost_index = 0;
 function Buy_MAX_cow_calculator(index, show_num){
