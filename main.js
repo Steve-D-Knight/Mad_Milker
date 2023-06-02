@@ -1,4 +1,4 @@
-var Milk = 10e65; // NEEDS to be saved (is saved)
+var Milk = 0; // NEEDS to be saved (is saved)
 var ClickPower = 1; // don't save calculation
 var COWS; // don't save HTML genoration
 var BULLS; // don't save HTML genoration
