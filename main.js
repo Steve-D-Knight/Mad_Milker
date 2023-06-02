@@ -1,80 +1,3 @@
-var Milk = 0; // NEEDS to be saved (is saved)
-var ClickPower = 1; // don't save calculation
-var COWS; // don't save HTML genoration
-var BULLS; // don't save HTML genoration
-var COWS_DATA = []; // don't save HTML genoration
-var BULLS_DATA = []; // don't save HTML genoration
-var MILKMAID; // don't save HTML genoration
-var MILKMAID_DATA = []; // don't save HTML genoration
-var MilkMaids = 0; // NEEDS to be saved (is saved)																				
-var Milkmaidcost = 10; // don't save (calculation)
-var BaseMilkmaidcost = 10; // don't save (won't change)
-var cows = 			[]; // NEEDS to be saved (is saved)
-var cowsenabled = 	[];	// NEEDS to be saved (is saved)
-var bulls = 		[]; // NEEDS to be saved (is saved)
-var cowcost = 		[]; // don't save (calculation)
-var basecowcost = 	[]; // don't save (won't change)
-var boughtcows = 	[];	// NEEDS to be saved (is saved)
-var bullcost = []; // don't save (calculation)
-var basebullcost = []; // don't save (won't change)
-var boughtbulls = 	[];	// NEEDS to be saved (is saved)
-var Total_cows = []; // don't save (calculation)
-var Total_ALL_cows = 1;// don't save (calculation)			
-var Total_bulls = 	[]; // don't save (calculation)
-var Total_ALL_bulls = 0; // don't save (calculation)
-var SPECIALISTS; 					// don't save HTML genoration
-var SPECIALISTS_DATA = [];			// don't save HTML genoration
-var SPECIALISTS_BUYMULT;			// don't save HTML genoration																			
-var SPECIALISTS_DATA_x100 = [];		// don't save HTML genoration
-var SPECIALISTS_DATA_xTEN = [];		// don't save HTML genoration
-var SPECIALISTS_DATA_xALL = [];		// don't save HTML genoration
-var SPECIALIST_TRAINING;			// don't save HTML genoration
-var SPECIALIST_TRAINING_DATA = [];	// don't save HTML genoration
-var ALLSPEC_price = 0;																			
-var Specialists = []; // NEEDS to be saved (is saved)
-var Specialists_Cost = []; // don't save (calculation)
-var Specialists_Cost_Base = []; // don't save (won't change)
-var Specialist_Level = []; // NEEDS to be saved (is saved)
-var Specialist_training_Unlock = 1; // NEEDS to be saved (is saved)
-var Total_Specialists = 0; // don't save (calculation)
-var Spec_Power = [];
-
-// this for loop initializes all of the variables that need an array the same length as the number of cows
-for (var spec_power_index = 0; spec_power_index < NumberofCOWS+1; spec_power_index++) {
-	Spec_Power[spec_power_index] = Math.pow(5, spec_power_index);	
-	Specialists_Cost[spec_power_index] = (spec_power_index + 1) * 100;
-	Specialists_Cost_Base[spec_power_index] = (spec_power_index + 1) * 100;
-	Specialists[spec_power_index] = 0;
-	Total_bulls[spec_power_index] = 0;
-	Total_cows[spec_power_index] = 0;
-	boughtbulls[spec_power_index] = 0;
-	boughtcows[spec_power_index] = 0;
-	bulls[spec_power_index] = 0;
-	if(spec_power_index == 0){
-		cows[spec_power_index] = 1;
-		cowsenabled[spec_power_index] = 1;
-		cowcost[spec_power_index] = 55;
-		basecowcost[spec_power_index] = 55;
-		bullcost[spec_power_index] = 500;
-		basebullcost[spec_power_index] = 500;
-	}
-	else if(spec_power_index == 1){
-		cows[spec_power_index] = 0;
-		cowsenabled[spec_power_index] = 0;
-		cowcost[spec_power_index] = (spec_power_index) * 100;
-		basecowcost[spec_power_index] = (spec_power_index) * 100;
-		bullcost[spec_power_index] = 2e3;
-		basebullcost[spec_power_index] = 2e3;
-	}
-	else{
-		cows[spec_power_index] = 0;
-		cowsenabled[spec_power_index] = 0;
-		cowcost[spec_power_index] = (spec_power_index) * 100;
-		basecowcost[spec_power_index] = (spec_power_index) * 100;
-		bullcost[spec_power_index] = Math.pow(10,(spec_power_index + 2));
-		basebullcost[spec_power_index] = Math.pow(10,(spec_power_index + 2));
-	};
-};
 
 var Milk_bottle_icon = ' <img src="pics/Milk_bottle.png" id="Teeny">';
 var spec_image = [];
@@ -137,38 +60,6 @@ function COWS_(A){
 		COWS_DATA[A] = '';
 	};
 };
-function buycow(cownumber){
-	if (Milk >= cowcost[cownumber]){
-		boughtcows[cownumber] = boughtcows[cownumber] + 1;
-		Milk = Milk - cowcost[cownumber];
-	};
-	MILK_();
-	// document.getElementById('COWS').innerHTML = COWS;
-};
-function buycowx10(cownumberx10){
-	if (Milk >= COW_COST_X10[cownumberx10]){
-		boughtcows[cownumberx10] = boughtcows[cownumberx10] + 10;
-		Milk = Milk - COW_COST_X10[cownumberx10];
-	};
-	MILK_();
-	// document.getElementById('COWS').innerHTML = COWS;
-};
-function buycowx100(cownumberx100){
-	if (Milk >= COW_COST_X100[cownumberx100]){
-		boughtcows[cownumberx100] = boughtcows[cownumberx100] + 100;
-		Milk = Milk - COW_COST_X100[cownumberx100];
-	};
-	MILK_();
-	// document.getElementById('COWS').innerHTML = COWS;
-};
-function buycowx1000(cownumberx1000){
-	if (Milk >= COW_COST_X1000[cownumberx1000]){
-		boughtcows[cownumberx1000] = boughtcows[cownumberx1000] + 1000;
-		Milk = Milk - COW_COST_X1000[cownumberx1000];
-	};
-	MILK_();
-	// document.getElementById('COWS').innerHTML = COWS;
-};
 
 var cow_cost_MAX = 0;
 var cow_cost_index = 0;
@@ -197,11 +88,6 @@ function Buy_MAX_MM(){
 	MILK_();
 	// document.getElementById('MILKMAID').innerHTML = MILKMAID;
 };
-
-
-
-
-
 
 function COW_enable(C){
 	if(Total_bulls[C - 1] >= 5){
@@ -370,7 +256,12 @@ function MILKMAID_(){
 	else{
 		MILKMAID_DATA[2] = '<div><button onmousedown="buymilkmaids_100()" class="button_grey">Buy 100<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(MM_COST_100) + Milk_bottle_icon + '</div></button></div>'
 	};
-	MILKMAID_DATA[3] = '<div><button onmousedown="Buy_MAX_MM()" class="button_notgrey">Buy Max (' + Arbitrary_addsuffix(Buy_MAX_MM_calculator(1)) + ')<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Buy_MAX_MM_calculator(0)) + Milk_bottle_icon + '</div></button></div>'
+	if(Milk >= Milkmaidcost){
+		MILKMAID_DATA[3] = '<div><button onmousedown="Buy_MAX_MM()" class="button_notgrey">Buy Max (' + Arbitrary_addsuffix(Buy_MAX_MM_calculator(1)) + ')<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Buy_MAX_MM_calculator(0)) + Milk_bottle_icon + '</div></button></div>';
+	}
+	else{
+		MILKMAID_DATA[3] = '<div><button onmousedown="Buy_MAX_MM()" class="button_grey">Buy Max (' + Arbitrary_addsuffix(Buy_MAX_MM_calculator(1)) + ')<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Buy_MAX_MM_calculator(0)) + Milk_bottle_icon + '</div></button></div>';
+	};
 };
 
 var MM_COST_10 = 0;
@@ -417,13 +308,22 @@ var MM_cost_MAX = 0;
 var MM_cost_index = 0;
 function Buy_MAX_MM_calculator(show_num){
 	MM_cost_MAX = 0;
-	for(i = 0; i < 1000; i++){
-		MM_cost_MAX = MM_cost_MAX + Math.floor(BaseMilkmaidcost * Math.pow(1.008,(MilkMaids + i)));
-		MM_cost_index = i;
-		if((MM_cost_MAX + Math.floor(BaseMilkmaidcost * Math.pow(1.008,(MilkMaids + i)))) > Milk){
+	var buy_max_loop = 0;
+	while(1){
+		MM_cost_MAX = MM_cost_MAX + Math.floor(BaseMilkmaidcost * Math.pow(1.008,(MilkMaids + buy_max_loop)));
+		MM_cost_index = buy_max_loop;
+		if((MM_cost_MAX + Math.floor(BaseMilkmaidcost * Math.pow(1.008,(MilkMaids + buy_max_loop)))) > Milk){
 			break;
 		};
+		buy_max_loop++;
 	};
+	// for(i = 0; i < 1000; i++){
+	// 	MM_cost_MAX = MM_cost_MAX + Math.floor(BaseMilkmaidcost * Math.pow(1.008,(MilkMaids + i)));
+	// 	MM_cost_index = i;
+	// 	if((MM_cost_MAX + Math.floor(BaseMilkmaidcost * Math.pow(1.008,(MilkMaids + i)))) > Milk){
+	// 		break;
+	// 	};
+	// };
 	if(show_num == 0){
 		return MM_cost_MAX;
 	}

@@ -5,8 +5,6 @@ var LEFTSTUFF = '<div>LEFTSTUFF test</div>'
 var MAINSTUFF = '<div>MAINSTUFF test</div>'
 var RIGHTSTUFF = '<div>RIGHTSTUFF test</div>'
 
-
-
 window.setInterval(function HTML_REFRESH(){
     LEFTSTUFF = '<div id="LEFTSTUFF"><div id="LEFTSTUFF_inner">'+ MILK + MILKMAID + SAVING + '</div></div>';
 
@@ -35,7 +33,7 @@ window.setInterval(function HTML_REFRESH(){
         HEADER = HEADER + '<button onmousedown="change_tab_button(1)" class="button_grey" id="HTML_cell">Statistics</button>';
         HEADER = HEADER + '<button onmousedown="change_tab_button(0)" class="button_grey" id="HTML_cell">Return to game</button>';
         MAINSTUFF = ACHIEVMENTS;
-        RIGHTSTUFF = '';
+        RIGHTSTUFF = 'This is still a work in progress<br/>The images are a bit broken but you have the achievment if the box is white and not grey';
     };	
 
     HTML = '<div id="HTML">';
