@@ -2,55 +2,55 @@ var CowInfo = [];
 /*"normal" cows start*/
 // any cow whith a picture named "mk2_cow[number].png" is from when i was calling all of the different cow images by changing the image name directly
 // the current method is designed to be human readable which allows for actually seeing problems and better reordering of the cows if needed
-CowInfo.push({Name:'Brown Swiss', 			Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow0.png', 					Bull_image: 'mk2_bull0.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Norwegian Red', 		Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow1.png', 					Bull_image: 'mk2_bull1.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'English Longhorn', 		Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow2.png', 					Bull_image: 'mk2_bull2.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Aberdeen Angus', 		Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow3.png', 					Bull_image: 'mk2_bull3.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Holstein Friesian', 	Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow4.png', 					Bull_image: 'mk2_bull4.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Belgian Blue',			Rarity:"Rarity_Poor", 		Cow_image: 'belgian_blue_cow.png', 			Bull_image: 'belgian_blue_bull.png', 			Bull_Name: 'Bull'});
-CowInfo.push({Name:'Hereford',				Rarity:"Rarity_Poor", 		Cow_image: 'Hereford_cow.png', 				Bull_image: 'Hereford_bull.png', 				Bull_Name: 'Bull'});
-CowInfo.push({Name:'Glocester',				Rarity:"Rarity_Poor", 		Cow_image: 'glocester_cow.png', 			Bull_image: 'glocester_bull.png', 				Bull_Name: 'Bull'});
-CowInfo.push({Name:'Semmental',				Rarity:"Rarity_Poor", 		Cow_image: 'semmental_cow.png', 			Bull_image: 'semmental_bull.png', 				Bull_Name: 'Bull'});
-CowInfo.push({Name:'Irish Moiled',			Rarity:"Rarity_Poor", 		Cow_image: 'irish_moiled_cow.png', 			Bull_image: 'irish_moiled_bull.png', 			Bull_Name: 'Bull'});
-CowInfo.push({Name:'Belted Galloway', 		Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow6.png', 					Bull_image: 'mk2_bull6.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Charolais', 			Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow5.png', 					Bull_image: 'mk2_bull5.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Speckle Park',			Rarity:"Rarity_Poor", 		Cow_image: 'speckle_park_cow.png', 			Bull_image: 'speckle_park_bull.png', 			Bull_Name: 'Bull'});
-CowInfo.push({Name:'Texas Longhorn',		Rarity:"Rarity_Poor", 		Cow_image: 'Texas_longhorn_cow.png', 		Bull_image: 'Texas_longhorn_bull.png', 			Bull_Name: 'Bull'});
-CowInfo.push({Name:'Ankole-Watusi',			Rarity:"Rarity_Poor", 		Cow_image: 'ankole-watusi_cow.png', 		Bull_image: 'ankole-watusi_bull.png', 			Bull_Name: 'Bull'});
-CowInfo.push({Name:'White Park',			Rarity:"Rarity_Poor", 		Cow_image: 'white_park_cow.png', 			Bull_image: 'white_park_bull.png', 				Bull_Name: 'Bull'});
-CowInfo.push({Name:'Scottish Highland', 	Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow7.png', 					Bull_image: 'mk2_bull7.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Lakenvelder',			Rarity:"Rarity_Poor", 		Cow_image: 'lakenvelder_cow.png', 			Bull_image: 'lakenvelder_bull.png', 			Bull_Name: 'Bull'});
+CowInfo.push({Name:'Brown Swiss', 			Rarity:"Rarity_Poor", 		Cow_image: 'sprite_Brown_swiss_cow.png', 	Bull_image: 'mk2_bull0.png', 					Bull_Name: 'Bull',			Is_Sprite: 'YES'});
+CowInfo.push({Name:'Norwegian Red', 		Rarity:"Rarity_Poor", 		Cow_image: 'sprite_Norwegian_red_cow.png', 	Bull_image: 'mk2_bull1.png', 					Bull_Name: 'Bull',			Is_Sprite: 'YES'});
+CowInfo.push({Name:'English Longhorn', 		Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow2.png', 					Bull_image: 'mk2_bull2.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Aberdeen Angus', 		Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow3.png', 					Bull_image: 'mk2_bull3.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Holstein Friesian', 	Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow4.png', 					Bull_image: 'mk2_bull4.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Belgian Blue',			Rarity:"Rarity_Poor", 		Cow_image: 'belgian_blue_cow.png', 			Bull_image: 'belgian_blue_bull.png', 			Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Hereford',				Rarity:"Rarity_Poor", 		Cow_image: 'Hereford_cow.png', 				Bull_image: 'Hereford_bull.png', 				Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Glocester',				Rarity:"Rarity_Poor", 		Cow_image: 'glocester_cow.png', 			Bull_image: 'glocester_bull.png', 				Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Semmental',				Rarity:"Rarity_Poor", 		Cow_image: 'semmental_cow.png', 			Bull_image: 'semmental_bull.png', 				Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Irish Moiled',			Rarity:"Rarity_Poor", 		Cow_image: 'irish_moiled_cow.png', 			Bull_image: 'irish_moiled_bull.png', 			Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Belted Galloway', 		Rarity:"Rarity_Poor", 		Cow_image: 'sprite_Belted Galloway_cow.png', 	Bull_image: 'mk2_bull6.png', 					Bull_Name: 'Bull',			Is_Sprite: 'YES'});
+CowInfo.push({Name:'Charolais', 			Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow5.png', 					Bull_image: 'mk2_bull5.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Speckle Park',			Rarity:"Rarity_Poor", 		Cow_image: 'speckle_park_cow.png', 			Bull_image: 'speckle_park_bull.png', 			Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Texas Longhorn',		Rarity:"Rarity_Poor", 		Cow_image: 'Texas_longhorn_cow.png', 		Bull_image: 'Texas_longhorn_bull.png', 			Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Ankole-Watusi',			Rarity:"Rarity_Poor", 		Cow_image: 'ankole-watusi_cow.png', 		Bull_image: 'ankole-watusi_bull.png', 			Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'White Park',			Rarity:"Rarity_Poor", 		Cow_image: 'white_park_cow.png', 			Bull_image: 'white_park_bull.png', 				Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Scottish Highland', 	Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow7.png', 					Bull_image: 'mk2_bull7.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Lakenvelder',			Rarity:"Rarity_Poor", 		Cow_image: 'lakenvelder_cow.png', 			Bull_image: 'lakenvelder_bull.png', 			Bull_Name: 'Bull',			Is_Sprite: 'NO'});
 /*"normal cows" end weird cows start*/
-CowInfo.push({Name:'Australian Longhorn', 	Rarity:"Rarity_Common", 	Cow_image: 'mk2_cow10.png', 				Bull_image: 'mk2_bull10.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Mammuthus primigenius',	Rarity:"Rarity_Common", 	Cow_image: 'mk2_cow9.png', 					Bull_image: 'mk2_bull9.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Cowabunga', 			Rarity:"Rarity_Common", 	Cow_image: 'mk2_cow11.png', 				Bull_image: 'mk2_bull11.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Bit-Cow', 				Rarity:"Rarity_Common", 	Cow_image: 'bit_cow.png', 					Bull_image: 'bit_bull.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Moostache', 			Rarity:"Rarity_Common", 	Cow_image: 'moostache_cow.png', 			Bull_image: 'moostache_bull.png', 				Bull_Name: 'Bull'});
-CowInfo.push({Name:'Lacertilia Bos Taurus',	Rarity:"Rarity_Common", 	Cow_image: 'mk2_cow8.png', 					Bull_image: 'mk2_bull8.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'See-Cow', 				Rarity:"Rarity_Common", 	Cow_image: 'mk2_cow12.png', 				Bull_image: 'mk2_bull12.png', 					Bull_Name: 'See-Bull'});
-CowInfo.push({Name:'Mootant', 				Rarity:"Rarity_Common", 	Cow_image: 'Mutant_cow.png', 				Bull_image: 'Mutant_bull.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Sea-Cow', 				Rarity:"Rarity_Common", 	Cow_image: 'mk2_cow15.png', 				Bull_image: 'mk2_bull15.png', 					Bull_Name: 'Sea-Bull'});
-CowInfo.push({Name:'Byte-Cow', 				Rarity:"Rarity_Common", 	Cow_image: 'byte_cow.png', 					Bull_image: 'byte_bull.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Moose Cow',				Rarity:"Rarity_Common", 	Cow_image: 'Moose-cow.png', 				Bull_image: 'Moose-Bull.png', 					Bull_Name: 'Moose Bull'});
-CowInfo.push({Name:'Red Cower-Ranger', 		Rarity:"Rarity_Uncommon", 	Cow_image: 'red_cower_ranger_cow.png', 		Bull_image: 'red_cower_ranger_bull.png', 		Bull_Name: 'Bull'});
-CowInfo.push({Name:'Blue Cower-Ranger', 	Rarity:"Rarity_Uncommon", 	Cow_image: 'blue_cower_ranger_cow.png', 	Bull_image: 'blue_cower_ranger_bull.png', 		Bull_Name: 'Bull'});
-CowInfo.push({Name:'Pink Cower-Ranger', 	Rarity:"Rarity_Uncommon", 	Cow_image: 'pink_cower_ranger_cow.png', 	Bull_image: 'pink_cower_ranger_bull.png', 		Bull_Name: 'Bull'});
-CowInfo.push({Name:'Yellow Cower-Ranger', 	Rarity:"Rarity_Uncommon", 	Cow_image: 'yellow_cower_ranger_cow.png', 	Bull_image: 'yellow_cower_ranger_bull.png', 	Bull_Name: 'Bull'});
-CowInfo.push({Name:'Black Cower-Ranger', 	Rarity:"Rarity_Uncommon", 	Cow_image: 'black_cower_ranger_cow.png', 	Bull_image: 'black_cower_ranger_bull.png', 		Bull_Name: 'Bull'});
-CowInfo.push({Name:'Bite-Cow', 				Rarity:"Rarity_Uncommon", 	Cow_image: 'bite_cow.png', 					Bull_image: 'bite_bull.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Unihorn', 				Rarity:"Rarity_Uncommon", 	Cow_image: 'mk2_cow16.png', 				Bull_image: 'mk2_bull16.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Peregrine Cow',			Rarity:"Rarity_Uncommon", 	Cow_image: 'Falcon_cow.png', 				Bull_image: 'Falcon_bull.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Long Cow',				Rarity:"Rarity_Uncommon",	Cow_image: 'snek_female.png',				Bull_image: 'snek_male.png', 					Bull_Name: 'Long Bull'});
-CowInfo.push({Name:'Cowdozer',				Rarity:"Rarity_Uncommon",	Cow_image: 'bulldozer.png',					Bull_image: 'bulldozer.png', 					Bull_Name: 'Bulldozer'});
-CowInfo.push({Name:'White Cower-Ranger', 	Rarity:"Rarity_Rare", 		Cow_image: 'white_cower_ranger_cow.png', 	Bull_image: 'white_cower_ranger_bull.png', 		Bull_Name: 'Bull'});
-CowInfo.push({Name:'Light-Cow', 			Rarity:"Rarity_Rare", 		Cow_image: 'mk2_cow18.png', 				Bull_image: 'mk2_bull18.png', 					Bull_Name: 'Light-Bull'});
-CowInfo.push({Name:'Dark-Cow', 				Rarity:"Rarity_Rare", 		Cow_image: 'mk2_cow17.png', 				Bull_image: 'mk2_bull17.png', 					Bull_Name: 'Dark-Bull'});
-CowInfo.push({Name:'Glacial-Cow', 			Rarity:"Rarity_Rare", 		Cow_image: 'mk2_cow13.png', 				Bull_image: 'mk2_bull13.png', 					Bull_Name: 'Glacial-Bull'});
-CowInfo.push({Name:'Volcanic-Cow', 			Rarity:"Rarity_Rare", 		Cow_image: 'mk2_cow14.png', 				Bull_image: 'mk2_bull14.png', 					Bull_Name: 'Volcanic-Bull'});
-CowInfo.push({Name:'Trojan-Cow',			Rarity:"Rarity_Epic", 		Cow_image: 'Trojan_cow.png', 				Bull_image: 'Trojan_bull.png', 					Bull_Name: 'Trojan-Bull'});
-CowInfo.push({Name:'Sobek', 				Rarity:"Rarity_Legendary", 	Cow_image: 'sobek_cow.png', 				Bull_image: 'sobek_bull.png', 					Bull_Name: 'Bull'});
-CowInfo.push({Name:'Ra', 					Rarity:"Rarity_Legendary", 	Cow_image: 'Ra_cow_mk2.png', 				Bull_image: 'Ra_bull.png', 						Bull_Name: 'Bull'});
-CowInfo.push({Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_cow.png', 				Bull_image: 'hathor_bull.png', 					Bull_Name: 'Bull'});
+CowInfo.push({Name:'Australian Longhorn', 	Rarity:"Rarity_Common", 	Cow_image: 'mk2_cow10.png', 				Bull_image: 'mk2_bull10.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Mammuthus primigenius',	Rarity:"Rarity_Common", 	Cow_image: 'mk2_cow9.png', 					Bull_image: 'mk2_bull9.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Cowabunga', 			Rarity:"Rarity_Common", 	Cow_image: 'mk2_cow11.png', 				Bull_image: 'mk2_bull11.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Bit-Cow', 				Rarity:"Rarity_Common", 	Cow_image: 'bit_cow.png', 					Bull_image: 'bit_bull.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Moostache', 			Rarity:"Rarity_Common", 	Cow_image: 'moostache_cow.png', 			Bull_image: 'moostache_bull.png', 				Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Lacertilia Bos Taurus',	Rarity:"Rarity_Common", 	Cow_image: 'mk2_cow8.png', 					Bull_image: 'mk2_bull8.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'See-Cow', 				Rarity:"Rarity_Common", 	Cow_image: 'mk2_cow12.png', 				Bull_image: 'mk2_bull12.png', 					Bull_Name: 'See-Bull',		Is_Sprite: 'NO'});
+CowInfo.push({Name:'Mootant', 				Rarity:"Rarity_Common", 	Cow_image: 'Mutant_cow.png', 				Bull_image: 'Mutant_bull.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Sea-Cow', 				Rarity:"Rarity_Common", 	Cow_image: 'mk2_cow15.png', 				Bull_image: 'mk2_bull15.png', 					Bull_Name: 'Sea-Bull',		Is_Sprite: 'NO'});
+CowInfo.push({Name:'Byte-Cow', 				Rarity:"Rarity_Common", 	Cow_image: 'byte_cow.png', 					Bull_image: 'byte_bull.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Moose Cow',				Rarity:"Rarity_Common", 	Cow_image: 'Moose-cow.png', 				Bull_image: 'Moose-Bull.png', 					Bull_Name: 'Moose Bull',	Is_Sprite: 'NO'});
+CowInfo.push({Name:'Red Cower-Ranger', 		Rarity:"Rarity_Uncommon", 	Cow_image: 'red_cower_ranger_cow.png', 		Bull_image: 'red_cower_ranger_bull.png', 		Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Blue Cower-Ranger', 	Rarity:"Rarity_Uncommon", 	Cow_image: 'blue_cower_ranger_cow.png', 	Bull_image: 'blue_cower_ranger_bull.png', 		Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Pink Cower-Ranger', 	Rarity:"Rarity_Uncommon", 	Cow_image: 'pink_cower_ranger_cow.png', 	Bull_image: 'pink_cower_ranger_bull.png', 		Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Yellow Cower-Ranger', 	Rarity:"Rarity_Uncommon", 	Cow_image: 'yellow_cower_ranger_cow.png', 	Bull_image: 'yellow_cower_ranger_bull.png', 	Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Black Cower-Ranger', 	Rarity:"Rarity_Uncommon", 	Cow_image: 'black_cower_ranger_cow.png', 	Bull_image: 'black_cower_ranger_bull.png', 		Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Bite-Cow', 				Rarity:"Rarity_Uncommon", 	Cow_image: 'bite_cow.png', 					Bull_image: 'bite_bull.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Unihorn', 				Rarity:"Rarity_Uncommon", 	Cow_image: 'mk2_cow16.png', 				Bull_image: 'mk2_bull16.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Peregrine Cow',			Rarity:"Rarity_Uncommon", 	Cow_image: 'Falcon_cow.png', 				Bull_image: 'Falcon_bull.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Long Cow',				Rarity:"Rarity_Uncommon",	Cow_image: 'snek_female.png',				Bull_image: 'snek_male.png', 					Bull_Name: 'Long Bull',		Is_Sprite: 'NO'});
+CowInfo.push({Name:'Cowdozer',				Rarity:"Rarity_Uncommon",	Cow_image: 'bulldozer.png',					Bull_image: 'bulldozer.png', 					Bull_Name: 'Bulldozer',		Is_Sprite: 'NO'});
+CowInfo.push({Name:'White Cower-Ranger', 	Rarity:"Rarity_Rare", 		Cow_image: 'white_cower_ranger_cow.png', 	Bull_image: 'white_cower_ranger_bull.png', 		Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Light-Cow', 			Rarity:"Rarity_Rare", 		Cow_image: 'mk2_cow18.png', 				Bull_image: 'mk2_bull18.png', 					Bull_Name: 'Light-Bull',	Is_Sprite: 'NO'});
+CowInfo.push({Name:'Dark-Cow', 				Rarity:"Rarity_Rare", 		Cow_image: 'mk2_cow17.png', 				Bull_image: 'mk2_bull17.png', 					Bull_Name: 'Dark-Bull',		Is_Sprite: 'NO'});
+CowInfo.push({Name:'Glacial-Cow', 			Rarity:"Rarity_Rare", 		Cow_image: 'mk2_cow13.png', 				Bull_image: 'mk2_bull13.png', 					Bull_Name: 'Glacial-Bull',	Is_Sprite: 'NO'});
+CowInfo.push({Name:'Volcanic-Cow', 			Rarity:"Rarity_Rare", 		Cow_image: 'mk2_cow14.png', 				Bull_image: 'mk2_bull14.png', 					Bull_Name: 'Volcanic-Bull',	Is_Sprite: 'NO'});
+CowInfo.push({Name:'Trojan-Cow',			Rarity:"Rarity_Epic", 		Cow_image: 'Trojan_cow.png', 				Bull_image: 'Trojan_bull.png', 					Bull_Name: 'Trojan-Bull',	Is_Sprite: 'NO'});
+CowInfo.push({Name:'Sobek', 				Rarity:"Rarity_Legendary", 	Cow_image: 'sobek_cow.png', 				Bull_image: 'sobek_bull.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Ra', 					Rarity:"Rarity_Legendary", 	Cow_image: 'Ra_cow_mk2.png', 				Bull_image: 'Ra_bull.png', 						Bull_Name: 'Bull',			Is_Sprite: 'NO'});
+CowInfo.push({Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_cow.png', 				Bull_image: 'hathor_bull.png', 					Bull_Name: 'Bull',			Is_Sprite: 'NO'});
 /*cows end*/
 
 // --------- Other Cow Ideas -------------
@@ -79,6 +79,9 @@ CowInfo.push({Name:'Hathor', 				Rarity:"Rarity_Legendary", 	Cow_image: 'hathor_
 // Cowcium - Calcium cow
 // Skeleton cow
 // cash cow
+// long cow 2 - giraffe, maybe loonge cow maybe change the snake to like slithery cow or something
+// 		- giraffe
+//		- black and white giraffe "Holstein Friesian" long cow or something
 
 // Gem cows - Saphire/emerald/ruby/diamond/ect.
 // Other Egyption Gods

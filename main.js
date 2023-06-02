@@ -88,7 +88,6 @@ function MilkClick(){
 };
 function MILK_(){
 	MILK = '<div class="div-table"><div class="div-table-col-milk"><button onmousedown="MilkClick()"><div class="left">Milk Cow<br />Milk per click:<br />' + Arbitrary_addsuffix(ClickPower) + ' </div><div class="right"><img src="pics/milkbucket.png"></div></button></div><div>Milk: ' + Arbitrary_addsuffix(Milk) + ' litres </div>' + '<div>MpS: ' + MPS_out_calc + '</div></div>'
-	//document.getElementById('MILK').innerHTML = MILK;
 };
 
 var COW_COST_X10 = [];
@@ -102,10 +101,10 @@ function COWS_(A){
 	if(cowsenabled[A] == 1){
 		COWS_DATA[A] = '<div class="div-table"><div class="div-table-col1">';
 		if (Milk >= cowcost[A]){
-			COWS_DATA[A] = COWS_DATA[A] + '<button width="75%" onmousedown="buycow(' + A + ")" + '" id="' + CowInfo[A].Rarity + '" class="button_background"><div class="left">' + CowInfo[A].Name + '<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(cowcost[A]) + ' Milk</div> Cows: ' + Arbitrary_addsuffix(Total_cows[A]) + '<div> Unmilked Cows: ' + Arbitrary_addsuffix((Total_cows[A] - Specialists[A])) + '</div><br /></div><div class="right"><img src="pics/cow/' + CowInfo[A].Cow_image +'" id="imagesize"></div></button>';
+			COWS_DATA[A] = COWS_DATA[A] + '<button width="75%" onmousedown="buycow(' + A + ")" + '" id="' + CowInfo[A].Rarity + '" class="button_background"><div class="left">' + CowInfo[A].Name + '<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(cowcost[A]) + ' Milk</div> Cows: ' + Arbitrary_addsuffix(Total_cows[A]) + '<div> Unmilked Cows: ' + Arbitrary_addsuffix((Total_cows[A] - Specialists[A])) + '</div><br /></div><div class="right">' + SPRITE_animation(i) + '</div></button>';
 		}
 		else{
-			COWS_DATA[A] = COWS_DATA[A] + '<button onmousedown="buycow(' + A + ")" + '" id="' + CowInfo[A].Rarity + '" class="button_background_grey"><div class="left">' + CowInfo[A].Name + '<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(cowcost[A]) + ' Milk</div> Cows: ' + Arbitrary_addsuffix(Total_cows[A]) + '<div> Unmilked Cows: ' + Arbitrary_addsuffix((Total_cows[A] - Specialists[A])) + '</div><br /></div><div class="right"><img src="pics/cow/' + CowInfo[A].Cow_image +'" id="imagesize"></div></button>';
+			COWS_DATA[A] = COWS_DATA[A] + '<button onmousedown="buycow(' + A + ")" + '" id="' + CowInfo[A].Rarity + '" class="button_background_grey"><div class="left">' + CowInfo[A].Name + '<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(cowcost[A]) + ' Milk</div> Cows: ' + Arbitrary_addsuffix(Total_cows[A]) + '<div> Unmilked Cows: ' + Arbitrary_addsuffix((Total_cows[A] - Specialists[A])) + '</div><br /></div><div class="right">' + SPRITE_animation(i) + '</div></button>';
 		};
 		COWS_DATA[A] = COWS_DATA[A] + '</div><div class="div-table-col2">';
 		COWS_DATA[A] = COWS_DATA[A] + '<div class="tooltip"><button width="24%" onmousedown="buycowx10(' + A + ')' + '" '
@@ -292,13 +291,6 @@ window.setInterval(function COWS_update(){
 	};
 	for(i = (NumberofCOWS + 1); i >= 0; i--){
 		if(i == NumberofCOWS + 1){
-			var avaliable_cows;
-			for(k = NumberofCOWS; k >= 0; k--){
-				if(cowsenabled[k] != 0){
-					avaliable_cows = k+2;
-					break;
-				}
-			};
 			Total_ALL_cows = 0;
 			Total_ALL_bulls = 0;
 			Total_Specialists = 0;
@@ -334,15 +326,6 @@ window.setInterval(function COWS_update(){
 
 	MILKMAID = '<br />' + MILKMAID_DATA[0] + MILKMAID_DATA[1] + MILKMAID_DATA[2] + MILKMAID_DATA[3] + '<br />' + SpecialistxALL_ALL_DATA;
 	SAVING = 	'<br /><br /><br /><div><button onmousedown="save_()">Save</button></div>' + '<div><button onmousedown="load()">Load</button></div><br /><br />' + AUTOSAVE_DATA + '<br /><br /><br /><div><button onmousedown="delsave()">Delete Save</button></div>';
-
-	//document.getElementById('MILKMAID').innerHTML = MILKMAID;
-	//document.getElementById('COWS').innerHTML = COWS;
-	//document.getElementById('BULLS').innerHTML = BULLS;
-	//document.getElementById('SPECIALISTS').innerHTML = SPECIALISTS;
-	//document.getElementById('SPECIALIST_TRAINING').innerHTML = SPECIALIST_TRAINING;
-	//document.getElementById('SPECIALISTS_BUYMULT').innerHTML = SPECIALISTS_BUYMULT;
-	//document.getElementById('SAVING').innerHTML = SAVING;
-
 	UPGRADES_HTML();
 }, 25);	
 
@@ -566,7 +549,7 @@ function BULLS_(B){
 		else{
 			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_background_grey"';
 		};
-		BULLS_DATA[B] = BULLS_DATA[B] + 'id="' + CowInfo[B].Rarity + '" ><div class="left"><br />Buy ' + CowInfo[B].Bull_Name + '<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(bullcost[B]) + ' Milk</div>Bulls: ' + Arbitrary_addsuffix(Total_bulls[B]) + '<br /><br /></div><div class="right"><img src="pics/cow/' + CowInfo[B].Bull_image +'" id="imagesize"></div><span class="tooltiptext">Bulls create more cows every 10 seconds (requires at least 1 cow and 1 bull)</span></button></div>';
+		BULLS_DATA[B] = BULLS_DATA[B] + 'id="' + CowInfo[B].Rarity + '" ><div class="left"><br />Buy ' + CowInfo[B].Bull_Name + '<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(bullcost[B]) + ' Milk</div>Bulls: ' + Arbitrary_addsuffix(Total_bulls[B]) + '<br /><br /></div><div class="right"><img src="pics/cow/bull/' + CowInfo[B].Bull_image +'" id="imagesize"></div><span class="tooltiptext">Bulls create more cows every 10 seconds (requires at least 1 cow and 1 bull)</span></button></div>';
 		BULLS_DATA[B] = BULLS_DATA[B] + '</div><div class="div-table-col2">';
 		BULLS_DATA[B] = BULLS_DATA[B] + '<div class="tooltip"><button width="24%" onmousedown="buybullx10(' + B + ')' + '" '
 		if (Milk >= BULL_COST_X10[B]){

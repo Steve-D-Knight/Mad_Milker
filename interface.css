@@ -264,3 +264,19 @@ button:hover .hide{
 	color: white;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
+
+#Sprite1{
+	max-height: 64;
+	max-width: 84;
+	position: relative;
+	left: 0px;
+}
+#Sprite2{
+	max-height: 64;
+	max-width: 84;
+	position: relative;
+	left: -85px;
+}
+#sprite_container{
+	overflow: hidden;
+}
