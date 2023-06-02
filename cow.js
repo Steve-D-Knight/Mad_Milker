@@ -1,5 +1,7 @@
 var CowInfo = [];
 /*"normal" cows start*/
+// any cow whith a picture named "mk2_cow[number].png" is from when i was calling all of the different cow images by changing the image name directly
+// the current method is designed to be human readable which allows for actually seeing problems and better reordering of the cows if needed
 CowInfo.push({Name:'Brown Swiss', 			Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow0.png', 					Bull_image: 'mk2_bull0.png', 					Bull_Name: 'Bull'});
 CowInfo.push({Name:'Norwegian Red', 		Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow1.png', 					Bull_image: 'mk2_bull1.png', 					Bull_Name: 'Bull'});
 CowInfo.push({Name:'English Longhorn', 		Rarity:"Rarity_Poor", 		Cow_image: 'mk2_cow2.png', 					Bull_image: 'mk2_bull2.png', 					Bull_Name: 'Bull'});
