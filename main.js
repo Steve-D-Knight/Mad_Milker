@@ -1,4 +1,4 @@
-var Milk = 0; // NEEDS to be saved (is saved)
+var Milk = 10e65; // NEEDS to be saved (is saved)
 var ClickPower = 1; // don't save calculation
 var COWS; // don't save HTML genoration
 var BULLS; // don't save HTML genoration
@@ -566,7 +566,7 @@ function BULLS_(B){
 		else{
 			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_background_grey"';
 		};
-		BULLS_DATA[B] = BULLS_DATA[B] + 'id="' + CowInfo[B].Rarity + '" ><div class="left"><br />Buy Bulls<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(bullcost[B]) + ' Milk</div>Bulls: ' + Arbitrary_addsuffix(Total_bulls[B]) + '<br /><br /></div><div class="right"><img src="pics/cow/' + CowInfo[B].Bull_image +'" id="imagesize"></div><span class="tooltiptext">Bulls create more cows every 10 seconds (requires at least 1 cow and 1 bull)</span></button></div>';
+		BULLS_DATA[B] = BULLS_DATA[B] + 'id="' + CowInfo[B].Rarity + '" ><div class="left"><br />Buy ' + CowInfo[B].Bull_Name + '<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(bullcost[B]) + ' Milk</div>Bulls: ' + Arbitrary_addsuffix(Total_bulls[B]) + '<br /><br /></div><div class="right"><img src="pics/cow/' + CowInfo[B].Bull_image +'" id="imagesize"></div><span class="tooltiptext">Bulls create more cows every 10 seconds (requires at least 1 cow and 1 bull)</span></button></div>';
 		BULLS_DATA[B] = BULLS_DATA[B] + '</div><div class="div-table-col2">';
 		BULLS_DATA[B] = BULLS_DATA[B] + '<div class="tooltip"><button width="24%" onmousedown="buybullx10(' + B + ')' + '" '
 		if (Milk >= BULL_COST_X10[B]){
