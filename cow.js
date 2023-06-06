@@ -437,7 +437,13 @@ CowInfo.push({	Name:'Hathor',
 				Achievment_image_Xbull:'hathor_bull.png'});
 /*cows end*/
 
+var NumberofCOWS = CowInfo.length - 1;
+
+// -------------Game Notes--------------------------------------------
+
 // --------- Other Cow Ideas -------------
+// Negative cows - using some CSS I can just invert the colours of the images effectively doubling the number of cows
+// Hue shift/rotate cows - again with CSS i can change the colours of the images, this one will take some fine tuning to make sure the cows dont look bad
 // SarCowphagus - sarcophogus themed cow
 // Accowntant
 // Cownt Dracular
@@ -445,8 +451,12 @@ CowInfo.push({	Name:'Hathor',
 // Bullfrog - just a frog
 // Cower Rangers - a load of different colours, maybe a combined "zord" cow as well
 // 					- power ranger main set is Black/Blue/Yellow/Pink/Red with special power rangers being Green/white
+// Done ------->    - black/blue/yellow/pink/red/white
 //					- the origonal Megazord was a combination of Red/Black/Blue/Yellow/pink
+//					- a megazord isnt necessery but would be cool
 // Cowtron - voltron cow Black/Red/Green/Yellow/Blue cows combine into 1 voltron cow
+//			- I think the voltron base mechs are the same but with different colours
+//			- there is no point in doing this if i dont make a combined voltron cow though
 // Done ------> Moose - just a moose
 // Cowzilla - godzilla cow
 // Moothra - Mothra Cow
@@ -520,6 +530,7 @@ CowInfo.push({	Name:'Hathor',
 // -- Achievements
 //		Done ------> - unlock each cow
 //		Done ------> - X of each cow (10/100/1000/etc) [not sure what the best numbers are]
+//      Done ------> - X of each Bull
 //		- X of specialists
 //		- X of Milkmaids
 //		- X MILK
@@ -535,44 +546,44 @@ CowInfo.push({	Name:'Hathor',
 //		- identical intro to jack and the bean stalk
 //		- but rather than magic beans the weird dude talks about just making milk into more cows
 
-// ------ Actual jack and the bean stalk intro ------
-// There was once upon a time a poor widow who had an only son named Jack, and a cow named Milky-White. 
-// All they had to live on was the milk the cow gave every morning, which they carried to the market and sold - until one morning Milky-White gave no milk.
-// “What shall we do, what shall we do?” said the widow, wringing her hands.
-// “Cheer up mother, I’ll go and get work somewhere,” said Jack.
-// “We’ve tried that before, and nobody would take you,” said his mother. “We must sell Milky-White and with the money, start a shop or something.”
-// “Alright, mother,” said Jack. “It’s market day today, and I’ll soon sell Milky-White, and then we’ll see what we can do.”
-// So he took the cow, and off he started. He hadn’t gone far when he met a funny looking old man, who said to him, “Good morning, Jack.”
-// “Good morning to you,” said Jack, and wondered how he knew his name.
-// “Well Jack, where are you off to?” Said the man.
-// “I’m going to market to sell our cow there.”
-// “Oh, you look the proper sort of chap to sell cows,” said the man. “I wonder if you know how many beans make five.”
-// “Two in each hand and one in your mouth,” said Jack, as sharp as a needle.
-// “Right you are,” says the man, “and here they are, the very beans themselves,” he went on, pulling out of his pocket a number of strange looking beans. 
-// “As you are so sharp,” said he, “I don’t mind doing a swap with you — your cow for these beans.”
-// “Go along,” said Jack. “You take me for a fool!”
-// “Ah! You don’t know what these beans are,” said the man. “If you plant them overnight, by morning they grow right up to the sky.”
-// “Really?” said Jack. “You don’t say so.”
-// “Yes, that is so. If it doesn’t turn out to be true you can have your cow back.”
-// “Right,” said Jack, and handed him over Milky-White, then pocketed the beans.
+		// ------ Actual jack and the bean stalk intro ------
+		// There was once upon a time a poor widow who had an only son named Jack, and a cow named Milky-White. 
+		// All they had to live on was the milk the cow gave every morning, which they carried to the market and sold - until one morning Milky-White gave no milk.
+		// “What shall we do, what shall we do?” said the widow, wringing her hands.
+		// “Cheer up mother, I’ll go and get work somewhere,” said Jack.
+		// “We’ve tried that before, and nobody would take you,” said his mother. “We must sell Milky-White and with the money, start a shop or something.”
+		// “Alright, mother,” said Jack. “It’s market day today, and I’ll soon sell Milky-White, and then we’ll see what we can do.”
+		// So he took the cow, and off he started. He hadn’t gone far when he met a funny looking old man, who said to him, “Good morning, Jack.”
+		// “Good morning to you,” said Jack, and wondered how he knew his name.
+		// “Well Jack, where are you off to?” Said the man.
+		// “I’m going to market to sell our cow there.”
+		// “Oh, you look the proper sort of chap to sell cows,” said the man. “I wonder if you know how many beans make five.”
+		// “Two in each hand and one in your mouth,” said Jack, as sharp as a needle.
+		// “Right you are,” says the man, “and here they are, the very beans themselves,” he went on, pulling out of his pocket a number of strange looking beans. 
+		// “As you are so sharp,” said he, “I don’t mind doing a swap with you — your cow for these beans.”
+		// “Go along,” said Jack. “You take me for a fool!”
+		// “Ah! You don’t know what these beans are,” said the man. “If you plant them overnight, by morning they grow right up to the sky.”
+		// “Really?” said Jack. “You don’t say so.”
+		// “Yes, that is so. If it doesn’t turn out to be true you can have your cow back.”
+		// “Right,” said Jack, and handed him over Milky-White, then pocketed the beans.
 
-// -- dumb version for game
-// Once upon a time a poor farmer was walking into town with a cow they planned on selling
-// a mysterious stranger beconed to the farmer from a allyway
-// "where are you taking that cow" - says the stranger
-// "If I sell this cow at the market I can afford this months rent" says the farmer
-// "why dont you milk the cow" - stranger
-// "A few liters of milk isnt going to get me enough money" - farmer
-// "well what if you use that milk to buy more cows" - stranger
-// "I am pretty sure you dont know how dairy farming works" - farmer
-// "how long have you got till rent is due? why not try it and if it doesnt work you can sell your cow before then" - stranger
-// "Look mate, I have a whole dairy farm, 1 cow isnt going to change how much milk i can produce by very much" - farmer
-// "alright then how about a bet, I take this cow for a little bit and if my plan works I keep the cow and if it doesnt I will pay double what this cow is worth" - stranger
-// "ok fine, but you better have that money ready." - farmer
-// ------- for some reason we are the stranger now lol ------
-
-
+		// -- dumb version for game maybe
+		// Once upon a time a poor farmer was walking into town with a cow they planned on selling
+		// a mysterious stranger beconed to the farmer from a allyway
+		// "where are you taking that cow" - says the stranger
+		// "If I sell this cow at the market I can afford this months rent" says the farmer
+		// "why dont you milk the cow" - stranger
+		// "A few liters of milk isnt going to get me enough money" - farmer
+		// "well what if you use that milk to buy more cows" - stranger
+		// "I am pretty sure you dont know how dairy farming works" - farmer
+		// "how long have you got till rent is due? why not try it and if it doesnt work you can sell your cow before then" - stranger
+		// "Look mate, I have a whole dairy farm, 1 cow isnt going to change how much milk i can produce by very much" - farmer
+		// "alright then how about a bet, I take this cow for a little bit and if my plan works I keep the cow and if it doesnt I will pay double what this cow is worth" - stranger
+		// "ok fine, but you better have that money ready." - farmer
+		// ------- for some reason we are the stranger now lol ------
 
 
-var NumberofCOWS = CowInfo.length - 1; 
+
+
+ 
 
