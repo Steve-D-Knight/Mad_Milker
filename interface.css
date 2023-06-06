@@ -259,7 +259,7 @@ button:hover .hide{
 	display: grid;
 	grid-template-columns: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
 	grid-auto-rows: 60px;
-	gap: 2px;
+	gap: 3px;
 	overflow: hidden;
 	color: white;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;

@@ -17,7 +17,6 @@ function rarity_cycle(i){
       } 
 };
 
-
 function Cowchievments(i){
     for(j=0;j<=5;j++){ // x number of cows
         var cheivenumber = [1, 100, 1000, 10000, 100000, 1000000];
