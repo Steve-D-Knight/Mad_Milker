@@ -19,41 +19,25 @@ function rarity_cycle(i){
 
 
 function Cowchievments(i){
-    if(Total_cows[i] >= 1){
-        ACHIEVMENTS = ACHIEVMENTS + '<div class="Achievment_box_yes" id=' + rarity_cycle(0) + ' style="background-image: url(pics/cow/' + CowInfo[i].Cow_image + '); background-size: 90px;">1</div>';
-    }
-    else{
-        ACHIEVMENTS = ACHIEVMENTS + '<div class="Achievment_box_no" id=' + rarity_cycle(0) + '>1</div>';
+    for(j=0;j<=5;j++){ // x number of cows
+        var cheivenumber = [1, 100, 1000, 10000, 100000, 1000000];
+        var cheivtitle = ['1', '100', '1k', '10k', '100k', '1M']
+        if(Total_cows[i] >= cheivenumber[j]){
+            ACHIEVMENTS = ACHIEVMENTS +  '<div class="Achievment_box_yes" id=' + rarity_cycle(j) + ' style="background-image: url(pics/cow/cow/' + CowInfo[i].Achievment_image_Xcow + '); background-size: 90px;">' + cheivtitle[j] + '<br />Cows</div>';
+        }
+        else{
+            ACHIEVMENTS = ACHIEVMENTS + '<div class="Achievment_box_no" id=' + rarity_cycle(j) + '>' + cheivtitle[j] + '<br />Cows</div>';
+        };
     };
-    if(Total_cows[i] >= 100){
-        ACHIEVMENTS = ACHIEVMENTS + '<div class="Achievment_box_yes" id=' + rarity_cycle(1) + ' style="background-image: url(pics/cow/' + CowInfo[i].Cow_image + '); background-size: 90px;">100</div>';
-    }
-    else{
-        ACHIEVMENTS = ACHIEVMENTS + '<div class="Achievment_box_no" id=' + rarity_cycle(1) + '>100</div>';
-    };
-    if(Total_cows[i] >= 1000){
-        ACHIEVMENTS = ACHIEVMENTS + '<div class="Achievment_box_yes" id=' + rarity_cycle(2) + ' style="background-image: url(pics/cow/' + CowInfo[i].Cow_image + '); background-size: 90px;">1k</div>';
-    }
-    else{
-        ACHIEVMENTS = ACHIEVMENTS + '<div class="Achievment_box_no" id=' + rarity_cycle(2) + '>1K</div>';
-    };
-    if(Total_cows[i] >= 10000){
-        ACHIEVMENTS = ACHIEVMENTS + '<div class="Achievment_box_yes" id=' + rarity_cycle(3) + ' style="background-image: url(pics/cow/' + CowInfo[i].Cow_image + '); background-size: 90px;">10k</div>';
-    }
-    else{
-        ACHIEVMENTS = ACHIEVMENTS + '<div class="Achievment_box_no" id=' + rarity_cycle(3) + '>10K</div>';
-    };
-    if(Total_cows[i] >= 100000){
-        ACHIEVMENTS = ACHIEVMENTS + '<div class="Achievment_box_yes" id=' + rarity_cycle(4) + ' style="background-image: url(pics/cow/' + CowInfo[i].Cow_image + '); background-size: 90px;">100k</div>';
-    }
-    else{
-        ACHIEVMENTS = ACHIEVMENTS + '<div class="Achievment_box_no" id=' + rarity_cycle(4) + '>100K</div>';
-    };
-    if(Total_cows[i] >= 1000000){
-        ACHIEVMENTS = ACHIEVMENTS + '<div class="Achievment_box_yes" id=' + rarity_cycle(5) + ' style="background-image: url(pics/cow/' + CowInfo[i].Cow_image + '); background-size: 90px;">1M</div>';
-    }
-    else{
-        ACHIEVMENTS = ACHIEVMENTS + '<div class="Achievment_box_no" id=' + rarity_cycle(5) + '>1M</div>';
+    for(j=0;j<=5;j++){ // x number of cows
+        var cheivenumber = [1, 100, 1000, 10000, 100000, 1000000];
+        var cheivtitle = ['1', '100', '1k', '10k', '100k', '1M']
+        if( Total_bulls[i] >= cheivenumber[j]){
+            ACHIEVMENTS = ACHIEVMENTS +  '<div class="Achievment_box_yes" id=' + rarity_cycle(j) + ' style="background-image: url(pics/cow/bull/' + CowInfo[i].Achievment_image_Xbull + '); background-size: 90px;">' + cheivtitle[j] + '<br />Bulls</div>';
+        }
+        else{
+            ACHIEVMENTS = ACHIEVMENTS + '<div class="Achievment_box_no" id=' + rarity_cycle(j) + '>' + cheivtitle[j] + '<br />Bulls</div>';
+        };
     };
 };
 

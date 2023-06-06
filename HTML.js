@@ -1,4 +1,5 @@
 var initialisation = 0;
+
 var HTML = '<div id="HTML">Loading</div>';
 var HEADER = '<div><button>test</button></div>'
 var LEFTSTUFF = '<div>LEFTSTUFF test</div>'
@@ -33,14 +34,16 @@ window.setInterval(function HTML_REFRESH(){
         HEADER = HEADER + '<button onmousedown="change_tab_button(1)" class="button_grey" id="HTML_cell">Statistics</button>';
         HEADER = HEADER + '<button onmousedown="change_tab_button(0)" class="button_grey" id="HTML_cell">Return to game</button>';
         MAINSTUFF = ACHIEVMENTS;
-        RIGHTSTUFF = 'This is still a work in progress<br/>The images are a bit broken but you have the achievment if the box is white and not grey';
+        RIGHTSTUFF = '';
     };	
 
     HTML = '<div id="HTML">';
     HTML = HTML +'<div id="HTML_header">' + HEADER + '</div>';
     HTML = HTML + '<div id="HTML_cell">' + LEFTSTUFF + '</div>';
     HTML = HTML + '<div id="HTML_cell">' + MAINSTUFF + '</div>';
-    HTML = HTML + '<div id="HTML_cell">' + RIGHTSTUFF + '</div>'+ '</div>';
+    HTML = HTML + '<div id="HTML_cell">' + RIGHTSTUFF + '</div>' + '</div>';
     document.getElementById('HTML').innerHTML = HTML;
 }, 15);
+
+
 
