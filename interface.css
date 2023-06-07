@@ -27,6 +27,7 @@ table{
 	min-width: 255;
 	grid-column: 1;
 	margin-right: 1px;
+	height: 95px;
 }
 .div-table-col2{
 	grid-column: 2;
@@ -121,7 +122,7 @@ button:hover .hide{
 	text-align: left;
 	vertical-align: middle;
 }
-#buy_mult{
+/* #buy_mult{
 	min-width: 80px;
 	width: 50%;
 	height: 31px;
@@ -134,12 +135,12 @@ button:hover .hide{
 }
 #buy_mult3{
 	min-width: 30%;
-}
-#buy_mult4{
+} */
+/* #buy_mult4{
 	height: 31px;
 	padding: 3px;
 	border-radius: 4px;
-}
+} */
 #buy_mult_image{
 	height: 30px;
 }
@@ -217,11 +218,31 @@ button:hover .hide{
 }
 #MAINSTUFF_inner{
 	display: grid;
-	grid-template-columns: auto auto auto auto auto;
+	grid-template-columns: repeat(4, auto);
 }
 #MAINSTUFF_cell{
 	margin-right: 1px;
 	width: fit-content;
+}
+#MAINSTUFF_Buttons_container{
+	width: fit-content;
+	display: grid;
+	grid-template-columns: 300px 75px;
+	gap: 1px;
+	margin-bottom: 1px;
+}
+#MAINSTUFF_Buttons_container_bulls{
+	width: fit-content;
+	display: grid;
+	grid-template-columns: 200px 75px;
+	gap: 1px;
+	margin-bottom: 1px;
+}
+
+#MAINSTUFF_Buttons_multi{
+	display: grid;
+	grid-template-rows: auto;
+	gap: 1px; 
 }
 
 #HTML{
@@ -257,12 +278,13 @@ button:hover .hide{
 }
 .Achievment_container{
 	display: grid;
-	grid-template-columns: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
 	grid-auto-rows: 60px;
 	gap: 3px;
 	overflow: hidden;
 	color: white;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	grid-template-columns: 100px repeat(12, 60px);
+	grid-template-rows: repeat(2, 60px);
 }
 
 #Sprite1{

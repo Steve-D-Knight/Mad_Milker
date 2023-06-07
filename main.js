@@ -13,54 +13,6 @@ function MILK_(){
 	MILK = '<div class="div-table"><div class="div-table-col-milk"><button onmousedown="MilkClick()"><div class="left">Milk Cow<br />Milk per click:<br />' + Arbitrary_addsuffix(ClickPower) + ' </div><div class="right"><img src="pics/milkbucket.png"></div></button></div><div>Milk: ' + Arbitrary_addsuffix(Milk) + ' litres </div>' + '<div>MpS: ' + MPS_out_calc + '</div></div>'
 };
 
-var COW_COST_X10 = [];
-var COW_COST_X100 = [];
-var COW_COST_X1000 = [];
-function COWS_(A){	
-	COSTS(A);
-	COW_COST_X10[A] = Times_X_calculator(boughtcows[A], basecowcost[A], 1.1, 10);
-	COW_COST_X100[A] = Times_X_calculator(boughtcows[A], basecowcost[A], 1.1, 100);
-	COW_COST_X1000[A] = Times_X_calculator(boughtcows[A], basecowcost[A], 1.1, 1000);
-	if(cowsenabled[A] == 1){
-		COWS_DATA[A] = '<div class="div-table"><div class="div-table-col1">';
-		if (Milk >= cowcost[A]){
-			COWS_DATA[A] = COWS_DATA[A] + '<button width="75%" onmousedown="buycow(' + A + ")" + '" id="' + CowInfo[A].Rarity + '" class="button_background"><div class="left">' + CowInfo[A].Name + '<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(cowcost[A]) + ' Milk</div> Cows: ' + Arbitrary_addsuffix(Total_cows[A]) + '<div> Unmilked Cows: ' + Arbitrary_addsuffix((Total_cows[A] - Specialists[A])) + '</div><br /></div><div class="right">' + SPRITE_animation(i) + '</div></button>';
-		}
-		else{
-			COWS_DATA[A] = COWS_DATA[A] + '<button onmousedown="buycow(' + A + ")" + '" id="' + CowInfo[A].Rarity + '" class="button_background_grey"><div class="left">' + CowInfo[A].Name + '<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(cowcost[A]) + ' Milk</div> Cows: ' + Arbitrary_addsuffix(Total_cows[A]) + '<div> Unmilked Cows: ' + Arbitrary_addsuffix((Total_cows[A] - Specialists[A])) + '</div><br /></div><div class="right">' + SPRITE_animation(i) + '</div></button>';
-		};
-		COWS_DATA[A] = COWS_DATA[A] + '</div><div class="div-table-col2">';
-		COWS_DATA[A] = COWS_DATA[A] + '<div class="tooltip"><button width="24%" onmousedown="buycowx10(' + A + ')' + '" '
-		if (Milk >= COW_COST_X10[A]){
-			COWS_DATA[A] = COWS_DATA[A] + 'class="button_notgrey"'
-		}
-		else{
-			COWS_DATA[A] = COWS_DATA[A] + 'class="button_grey"'
-		};
-		COWS_DATA[A] = COWS_DATA[A] + 'id="buy_mult4" >Buy 10<span class="tooltiptext">Buy 10 Cows for ' + Arbitrary_addsuffix(COW_COST_X10[A]) + '</span></button></div>';
-		COWS_DATA[A] = COWS_DATA[A] + '<div class="tooltip"><button width="24%" onmousedown="buycowx100(' + A + ')' + '" '
-		if (Milk >= COW_COST_X100[A]){
-			COWS_DATA[A] = COWS_DATA[A] + 'class="button_notgrey"'
-		}
-		else{
-			COWS_DATA[A] = COWS_DATA[A] + 'class="button_grey"'
-		};
-		COWS_DATA[A] = COWS_DATA[A] + 'id="buy_mult4" >Buy 100<span class="tooltiptext">Buy 100 Cows for ' + Arbitrary_addsuffix(COW_COST_X100[A]) + '</span></button></div>';
-		COWS_DATA[A] = COWS_DATA[A] + '<div class="tooltip"><button width="24%" onmousedown="buycowx1000(' + A + ')' + '" '
-		if (Milk >= COW_COST_X1000[A]){
-			COWS_DATA[A] = COWS_DATA[A] + 'class="button_notgrey"'
-		}
-		else{
-			COWS_DATA[A] = COWS_DATA[A] + 'class="button_grey"'
-		};
-		COWS_DATA[A] = COWS_DATA[A] + 'id="buy_mult4" >Buy 1000<span class="tooltiptext">Buy 1000 Cows for ' + Arbitrary_addsuffix(COW_COST_X1000[A]) + '</span></button></div>';
-		COWS_DATA[A] = COWS_DATA[A] + '</div></div>';
-	}
-	else{
-		COWS_DATA[A] = '';
-	};
-};
-
 function buycow(cownumber){ // ----button function---- !! don't delete !!
 	if (Milk >= cowcost[cownumber]){
 		boughtcows[cownumber] = boughtcows[cownumber] + 1;
@@ -94,44 +46,6 @@ function COW_enable(C){
 	if(Total_bulls[C - 1] >= 5){
 		cowsenabled[C] = 1;
 	};
-};
-function SPECIALISTS_(G){
-	COSTS(G);
-	SPEC_IMAGE(G);
-	if(cowsenabled[G] == 1){
-		if(Milk >= Specialists_Cost[G]){
-			SPECIALISTS_DATA[G] = '<div class="div-table"><div class="div-table-col-spec"><div class="tooltip"><button onmousedown="buySpecialist(' + G + ')" class="button_notgrey"><div class="left">Buy Specialist<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialists_Cost[G]) + ' Milk</div> Specialists: <br />' + Arbitrary_addsuffix(Specialists[G]) + '<div>Power: ' + Arbitrary_addsuffix(Spec_power_value(G)) + '</div></div><div class="right">' + spec_image[G] + '</div><span class="tooltiptext">Specialists Milk 1 cow every 0.5 seconds. They take priorety over milk maids.<br />' + Spec_names[G] + ' produces ' + Arbitrary_addsuffix(Spec_Milk_Value(G)) + ' Milk per tick (' + Arbitrary_addsuffix(Spec_Milk_Value(G)*2) + ' MpS)</span></button></div></div></div>';
-		}
-		else{
-			SPECIALISTS_DATA[G] = '<div class="div-table"><div class="div-table-col-spec"><div class="tooltip"><button onmousedown="buySpecialist(' + G + ')" class="button_grey"><div class="left">Buy Specialist<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(Specialists_Cost[G]) + ' Milk</div> Specialists: <br />' + Arbitrary_addsuffix(Specialists[G]) + '<div>Power: ' + Arbitrary_addsuffix(Spec_power_value(G)) + '</div></div><div class="right">' + spec_image[G] + '</div><span class="tooltiptext">Specialists Milk 1 cow every 0.5 seconds. They take priorety over milk maids.<br />' + Spec_names[G] + ' produces ' + Arbitrary_addsuffix(Spec_Milk_Value(G)) + ' Milk per tick (' + Arbitrary_addsuffix(Spec_Milk_Value(G)*2) + ' MpS)</span></button></div></div></div>';
-		};
-		if(Milk >= (Specialists_Cost[G] * 10)){
-			SPECIALISTS_DATA_xTEN[G] = '<div class="tooltip"><button onmousedown="buySpecialistxTEN(' + G + ')" class="button_notgrey" id="buy_mult2">Buy 10<span class="tooltiptext">Buy 10 Specialists for ' + Arbitrary_addsuffix((10 * Specialists_Cost[G])) + ' Milk</span></button></div>';
-		}
-		else{
-			SPECIALISTS_DATA_xTEN[G] = '<div class="tooltip"><button onmousedown="buySpecialistxTEN(' + G + ')" class="button_grey" id="buy_mult2">Buy 10<span class="tooltiptext">Buy 10 Specialists for ' + Arbitrary_addsuffix((10 * Specialists_Cost[G])) + ' Milk</span></button></div>';
-		};
-		if(Milk >= (Specialists_Cost[G] * 100)){
-			SPECIALISTS_DATA_x100[G] = '<div class="tooltip"><button onmousedown="buySpecialistx100(' + G + ')" class="button_notgrey" id="buy_mult2">Buy 100<span class="tooltiptext">Buy 100 Specialists for ' + Arbitrary_addsuffix((100 * Specialists_Cost[G])) + ' Milk</span></button></div>';
-		}
-		else{
-			SPECIALISTS_DATA_x100[G] = '<div class="tooltip"><button onmousedown="buySpecialistx100(' + G + ')" class="button_grey" id="buy_mult2">Buy 100<span class="tooltiptext">Buy 100 Specialists for ' + Arbitrary_addsuffix((100 * Specialists_Cost[G])) + ' Milk</span></button></div>';
-		};
-		if(Milk >= ((Total_cows[G] - Specialists[G]) * Specialists_Cost[G])){
-			SPECIALISTS_DATA_xALL[G] = '<div style="margin-bottom:2px;" class="tooltip"><button onmousedown="buySpecialistxALL(' + G + ')" class="button_notgrey" id="buy_mult2">Buy Max<span class="tooltiptext">Buy ' + Arbitrary_addsuffix((Total_cows[G] - Specialists[G])) + ' Specialists for ' + Arbitrary_addsuffix(((Total_cows[G] - Specialists[G]) * Specialists_Cost[G])) + ' Milk</span></button></div>';
-		}
-		else{
-			SPECIALISTS_DATA_xALL[G] = '<div style="margin-bottom:2px;" class="tooltip"><button onmousedown="buySpecialistxALL(' + G + ')" class="button_grey" id="buy_mult2">Buy Max<span class="tooltiptext">Buy ' + Arbitrary_addsuffix((Total_cows[G] - Specialists[G])) + ' Specialists for ' + Arbitrary_addsuffix(((Total_cows[G] - Specialists[G]) * Specialists_Cost[G])) + ' Milk</span></button></div>';
-		};
-	}
-	else{
-		SPECIALISTS_DATA[G] = '';
-		SPECIALISTS_DATA_x100[G] = '';
-		SPECIALISTS_DATA_xTEN[G] = '';
-		SPECIALISTS_DATA_xALL[G] = '';
-	};
-
-	
 };
 function SPEC_IMAGE(P){
 	if(Spec_Level[P] < 5){
@@ -411,54 +325,6 @@ function Spec_Milk_Value(SMV){
 	};
 };
 
-var BULL_COST_X10 = [];
-var BULL_COST_X100 = [];
-var BULL_COST_X1000 = [];
-function BULLS_(B){	
-	COSTS(B);
-	BULL_COST_X10[B] = Times_X_calculator(boughtbulls[B], basebullcost[B], 1.1, 10);
-	BULL_COST_X100[B] = Times_X_calculator(boughtbulls[B], basebullcost[B], 1.1, 100);
-	BULL_COST_X1000[B] = Times_X_calculator(boughtbulls[B], basebullcost[B], 1.1, 1000);
-	if(cowsenabled[B] == 1){
-		BULLS_DATA[B] = '<div class="div-table"><div class="div-table-col-bulls"><div class="tooltip"><button onmousedown="buybull(' + B + ")" + '" ';
-		if (Milk >= bullcost[B]){
-			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_background"';
-		}
-		else{
-			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_background_grey"';
-		};
-		BULLS_DATA[B] = BULLS_DATA[B] + 'id="' + CowInfo[B].Rarity + '" ><div class="left"><br />Buy ' + CowInfo[B].Bull_Name + '<br /><div style="font-weight:bold;">' + Arbitrary_addsuffix(bullcost[B]) + ' Milk</div>Bulls: ' + Arbitrary_addsuffix(Total_bulls[B]) + '<br /><br /></div><div class="right"><img src="pics/cow/bull/' + CowInfo[B].Bull_image +'" id="imagesize"></div><span class="tooltiptext">Bulls create more cows every 10 seconds (requires at least 1 cow and 1 bull)</span></button></div>';
-		BULLS_DATA[B] = BULLS_DATA[B] + '</div><div class="div-table-col2">';
-		BULLS_DATA[B] = BULLS_DATA[B] + '<div class="tooltip"><button width="24%" onmousedown="buybullx10(' + B + ')' + '" '
-		if (Milk >= BULL_COST_X10[B]){
-			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_notgrey" '
-		}
-		else{
-			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_grey" '
-		};
-		BULLS_DATA[B] = BULLS_DATA[B] + 'id="buy_mult4" >Buy 10<span class="tooltiptext">Buy 10 Bulls for ' + Arbitrary_addsuffix(BULL_COST_X10[B]) + '</span></button></div>';
-		BULLS_DATA[B] = BULLS_DATA[B] + '<div class="tooltip"><button width="24%" onmousedown="buybullx100(' + B + ')' + '" '
-		if (Milk >= BULL_COST_X100[B]){
-			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_notgrey"'
-		}
-		else{
-			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_grey"'
-		};
-		BULLS_DATA[B] = BULLS_DATA[B] + 'id="buy_mult4" >Buy 100<span class="tooltiptext">Buy 100 Bulls for ' + Arbitrary_addsuffix(BULL_COST_X100[B]) + '</span></button></div>';
-		BULLS_DATA[B] = BULLS_DATA[B] + '<div class="tooltip"><button width="24%" onmousedown="buybullx100(' + B + ')' + '" '
-		if (Milk >= BULL_COST_X1000[B]){
-			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_notgrey"'
-		}
-		else{
-			BULLS_DATA[B] = BULLS_DATA[B] + 'class="button_grey"'
-		};
-		BULLS_DATA[B] = BULLS_DATA[B] + 'id="buy_mult4" >Buy 1000<span class="tooltiptext">Buy 1000 Bulls for ' + Arbitrary_addsuffix(BULL_COST_X1000[B]) + '</span></button></div>';
-		BULLS_DATA[B] = BULLS_DATA[B] + '</div></div>';
-	}
-	else{
-		BULLS_DATA[B] = '';
-	};
-};
 function buybull(bullnumber){ // ----button function---- !! don't delete !!
 		if (Milk >= bullcost[bullnumber]){
 		boughtbulls[bullnumber] = boughtbulls[bullnumber] + 1;

@@ -437,7 +437,7 @@ CowInfo.push({	Name:'Hathor',
 				Achievment_image_Xbull:'hathor_bull.png'});
 /*cows end*/
 
-var NumberofCOWS = CowInfo.length - 1;
+var NumberofCOWS = CowInfo.length;
 
 // -------------Game Notes--------------------------------------------
 
@@ -501,7 +501,12 @@ var NumberofCOWS = CowInfo.length - 1;
 //			- milkmaid buy 10/100/max
 //			- MIlk (not sure if this ever had one)
 
-// --- fix the refresh issues ---
+// --- fix the refresh issues --- 
+	// This is only really an issue to stop cheating
+	// If you can click faster than 60 times a second
+	// every click you manage to do in less than 16.6ms
+	// will allow you to buy every one of those clicks at 
+	// the pre tick price
 
 //	-- new/different game mechanics --
 //		-- prestige --

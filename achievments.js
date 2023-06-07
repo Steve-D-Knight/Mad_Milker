@@ -18,6 +18,7 @@ function rarity_cycle(i){
 };
 
 function Cowchievments(i){
+    ACHIEVMENTS = ACHIEVMENTS + '<div>' + CowInfo[i].Name + '</div>';
     for(j=0;j<=5;j++){ // x number of cows
         var cheivenumber = [1, 100, 1000, 10000, 100000, 1000000];
         var cheivtitle = ['1', '100', '1k', '10k', '100k', '1M']
