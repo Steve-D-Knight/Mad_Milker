@@ -531,6 +531,7 @@ var NumberofCOWS = CowInfo.length;
 // 		- More upgrades for specialists
 //		- different types of grass for cows
 // 		- feed upgrades?
+//		- Buy the button that allows you to buy max all specialists
 
 // -- Achievements
 //		Done ------> - unlock each cow
@@ -546,6 +547,9 @@ var NumberofCOWS = CowInfo.length;
 //			- bonus milk (multiply the milk from that cow for the chieve maybe?)
 //		- Achievment art
 //			- for not cows/bulls/specialists i will need to make new art
+
+// -- Balancing
+// 		- i think that the cows are to cheap fairly quickly
 
 // -- story line --
 //		- identical intro to jack and the bean stalk
@@ -586,7 +590,6 @@ var NumberofCOWS = CowInfo.length;
 		// "alright then how about a bet, I take this cow for a little bit and if my plan works I keep the cow and if it doesnt I will pay double what this cow is worth" - stranger
 		// "ok fine, but you better have that money ready." - farmer
 		// ------- for some reason we are the stranger now lol ------
-
 
 
 
