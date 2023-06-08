@@ -257,7 +257,7 @@ button:hover .hide{
 #HTML_header{
 	grid-column: 1 / 4;
 	display: grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: repeat(3, 300px);
 }
 
 .Achievment_box_no{
@@ -301,4 +301,17 @@ button:hover .hide{
 }
 #sprite_container{
 	overflow: hidden;
+}
+
+#science_button{
+	width: fit-content;
+	height: 75px;	
+}
+
+#science_Buttons_container{
+	width: fit-content;
+	display: grid;
+	grid-template-columns: 300px 75px;
+	gap: 1px;
+	margin-bottom: 1px;
 }

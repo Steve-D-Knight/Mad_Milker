@@ -8,11 +8,11 @@ var RIGHTSTUFF = '<div>RIGHTSTUFF test</div>'
 
 window.setInterval(function HTML_REFRESH(){
     LEFTSTUFF = '<div id="LEFTSTUFF"><div id="LEFTSTUFF_inner">'+ MILK + MILKMAID + SAVING + '</div></div>';
-
     HEADER = ''; 
     if(Visible_page == 0){
-        HEADER = HEADER + '<button onmousedown="change_tab_button(1)" class="button_grey" id="HTML_cell">Statistics</button>';
-        HEADER = HEADER + '<button onmousedown="change_tab_button(2)" class="button_grey" id="HTML_cell">Achievments</button>';
+        HEADER = HEADER + '<button onmousedown="change_tab_button(1)" class="button_notgrey" id="HTML_cell">Statistics</button>';
+        HEADER = HEADER + '<button onmousedown="change_tab_button(2)" class="button_notgrey" id="HTML_cell">Achievments</button>';
+        HEADER = HEADER + '<button onmousedown="change_tab_button(3)" class="button_notgrey" id="HTML_cell">Science</button>';
         MAINSTUFF = '<div id="MAINSTUFF"><div id="MAINSTUFF_inner">';
         for(sloop = NumberofCOWS; sloop >= 0; sloop--){
             MAINSTUFF = MAINSTUFF + '<div id="MAINSTUFF_cell">' + COWS_DATA[sloop] + '</div>';
@@ -25,16 +25,26 @@ window.setInterval(function HTML_REFRESH(){
     }
     else if(Visible_page == 1){
         HEADER = HEADER + '<button onmousedown="change_tab_button(0)" class="button_grey" id="HTML_cell">Return to game</button>';
-        HEADER = HEADER + '<button onmousedown="change_tab_button(2)" class="button_grey" id="HTML_cell">Achievments</button>';
-        MAINSTUFF = STATS;
+        HEADER = HEADER + '<button onmousedown="change_tab_button(2)" class="button_notgrey" id="HTML_cell">Achievments</button>';
+        HEADER = HEADER + '<button onmousedown="change_tab_button(3)" class="button_notgrey" id="HTML_cell">Science</button>';
+        MAINSTUFF = STATS + '</div>';
         RIGHTSTUFF = '';
     }
     else if(Visible_page == 2){
-        HEADER = HEADER + '<button onmousedown="change_tab_button(1)" class="button_grey" id="HTML_cell">Statistics</button>';
+        HEADER = HEADER + '<button onmousedown="change_tab_button(1)" class="button_notgrey" id="HTML_cell">Statistics</button>';
         HEADER = HEADER + '<button onmousedown="change_tab_button(0)" class="button_grey" id="HTML_cell">Return to game</button>';
+        HEADER = HEADER + '<button onmousedown="change_tab_button(3)" class="button_notgrey" id="HTML_cell">Science</button>';
         MAINSTUFF = ACHIEVMENTS;
         RIGHTSTUFF = '';
-    };	
+    }    
+    else if(Visible_page == 3){
+        SCIENCE_HTML = EXCAVATE_();
+        HEADER = HEADER + '<button onmousedown="change_tab_button(1)" class="button_notgrey" id="HTML_cell">Statistics</button>';
+        HEADER = HEADER + '<button onmousedown="change_tab_button(2)" class="button_notgrey" id="HTML_cell">Achievments</button>';
+        HEADER = HEADER + '<button onmousedown="change_tab_button(0)" class="button_grey" id="HTML_cell">Return to game</button>';
+        MAINSTUFF = SCIENCE_HTML + '</div>';
+        RIGHTSTUFF = '';
+    }
 
     HTML = '<div id="HTML">';
     HTML = HTML +'<div id="HTML_header">' + HEADER + '</div>';

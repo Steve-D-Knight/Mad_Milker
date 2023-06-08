@@ -34,3 +34,64 @@
 
     // ----- CURRENCY: science [or some kind of science cow pun]
     //          science unlocks stuff for the rest of the game, both digging stuff and milking stuff.
+
+var Science = 0;
+var SCIENCE_HTML = EXCAVATE_();
+var excavation = 0;
+var excavation_max = 100;
+var excavated = 0;
+var Science_load = 0;
+var Science_cost = 100;
+
+function Excavate_click(){ // ----button function---- !! don't delete !!
+	excavation = excavation + 1;
+	Total_clicks = Total_clicks + 1;
+    if(excavation >= excavation_max){
+        excavation = 0;
+        excavated = excavated + 1;
+    };
+    SCIENCE_HTML = EXCAVATE_();
+};
+
+window.setInterval(function SCIENCE_points(){
+    Science_load = Science_load + excavated;
+    if(Science_load >= Science_cost){
+        Science_load = Science_load - Science_cost;
+        Science = Science + 1;
+    };
+}, 250);
+
+function EXCAVATE_(){
+    var EXCAVATE_HTML = '';
+    EXCAVATE_HTML = EXCAVATE_HTML +'<div id="science_Buttons_container">'
+    EXCAVATE_HTML = EXCAVATE_HTML +     '<button onmousedown="Excavate_click()" class="button_background" id="science_button">'
+    EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="left">'
+    EXCAVATE_HTML = EXCAVATE_HTML +             'Dig'
+    EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
+    EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="right">'
+    EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/dirt_pile.png" id="imagesize">'
+    EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
+    EXCAVATE_HTML = EXCAVATE_HTML +     '</button>'
+    EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 0, 0, 0.5); width: 100px; border: solid 2px; border-radius: 4px;">'
+    EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 255, 0, 0.5); width: ' + Math.floor((excavation/excavation_max)*100) + 'px; height: 67px; padding: 2px;">'
+    EXCAVATE_HTML = EXCAVATE_HTML + excavation + '/' + excavation_max + '</div></div>'
+    EXCAVATE_HTML = EXCAVATE_HTML + '</div>';
+    if(excavated > 0){
+        EXCAVATE_HTML = EXCAVATE_HTML + '<div id="science_Buttons_container">';
+        EXCAVATE_HTML = EXCAVATE_HTML +     '<button class="button_background" id="science_button">'
+        EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="left">'
+        EXCAVATE_HTML = EXCAVATE_HTML +             'Scientists: '+ excavated +'<br />Science: ' + Science;
+        EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
+        EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="right">'
+        EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/mk3_scientist.png" id="imagesize">'
+        EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
+        EXCAVATE_HTML = EXCAVATE_HTML + '</button>';
+        EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 0, 0, 0.5); width: 100px; border: solid 2px; border-radius: 4px;">'
+        EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 255, 0, 0.5); width: ' + Math.floor((Science_load/Science_cost)*100) + 'px; height: 67px; padding: 2px;">'
+        EXCAVATE_HTML = EXCAVATE_HTML + Science_load + '/' + Science_cost + '</div>'
+    }
+    else{
+        EXCAVATE_HTML = EXCAVATE_HTML + '';
+    };
+    return EXCAVATE_HTML;
+};

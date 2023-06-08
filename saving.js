@@ -26,6 +26,10 @@ function save_(){
 		Time2Cow_active : Time2Cow_active,
 		MPS_out_calc : MPS_out_calc,
 		time_at_save : time_at_save,
+		excavation : excavation,
+		excavated : excavated,
+		Science : Science,
+		Science_load : Science_load,
 	};
 	localStorage.setItem("save",JSON.stringify(save));
 }
@@ -61,7 +65,11 @@ function load(){
 		if (typeof savegame.Time2Cow_active !== "undefined") Time2Cow_active = savegame.Time2Cow_active;
 		if (typeof savegame.MPS_out_calc !== "undefined") MPS_out_calc = savegame.MPS_out_calc;
 		if (typeof savegame.time_at_save !== "undefined") time_at_save = savegame.time_at_save;
-	
+		if (typeof savegame.excavation !== "undefined") excavation = savegame.excavation;
+		if (typeof savegame.excavated !== "undefined") excavated = savegame.excavated;
+		if (typeof savegame.Science !== "undefined") Science = savegame.Science;
+		if (typeof savegame.Science_load !== "undefined") Science_load = savegame.Science_load;
+		
 	Load_start_time = date.getTime();
 	Active_time_load = Active_time;
 	initialisation = 1;
