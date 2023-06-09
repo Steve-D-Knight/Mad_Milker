@@ -121,10 +121,10 @@ function EXCAVATE_(){
             EXCAVATE_HTML = EXCAVATE_HTML + 'class="button_background_grey"';
         }
         EXCAVATE_HTML = EXCAVATE_HTML +         '><div class="left">'
-        EXCAVATE_HTML = EXCAVATE_HTML +             'unlock new cow' + next_cow + '<br />' + Cow_science_cost[next_cow] + ' Science<br />' + cowsenabled;
+        EXCAVATE_HTML = EXCAVATE_HTML +             'unlock new cow<br />' + Cow_science_cost[next_cow] + ' Science<br />';
         EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
         EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="right">'
-        //EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/mk3_scientist.png" id="imagesize">'
+        EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/cow/cow/silhouette_cow.png" id="imagesize">'
         EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
         EXCAVATE_HTML = EXCAVATE_HTML + '</button></div>';
     }
