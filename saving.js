@@ -213,6 +213,7 @@ function number_suffix_change(){
 	Number_suffix = !Number_suffix;
 };
 
+//delsave(); //if the game breaks and you cant delete the save, uncomment this
 
 //This runs when the game is reset and means that the last save should be auto loaded and then auto save should be turned on.
 load(); //loads the save game

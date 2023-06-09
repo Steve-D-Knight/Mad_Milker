@@ -234,7 +234,7 @@ button:hover .hide{
 #MAINSTUFF_Buttons_container_bulls{
 	width: fit-content;
 	display: grid;
-	grid-template-columns: 200px 75px;
+	grid-template-columns: 210px 75px;
 	gap: 1px;
 	margin-bottom: 1px;
 }
@@ -311,7 +311,7 @@ button:hover .hide{
 #science_Buttons_container{
 	width: fit-content;
 	display: grid;
-	grid-template-columns: 300px 75px;
+	grid-template-columns: 300px 104px 200px;
 	gap: 1px;
 	margin-bottom: 1px;
 }

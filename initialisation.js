@@ -40,41 +40,44 @@ var Specialist_Level = []; // NEEDS to be saved (is saved)
 var Specialist_training_Unlock = 1; // NEEDS to be saved (is saved)
 var Total_Specialists = 0; // don't save (calculation)
 var Spec_Power = [];
-
+var Cow_science_cost = [];
 // this for loop initializes all of the variables that need an array the same length as the number of cows
-for (var spec_power_index = 0; spec_power_index < NumberofCOWS+1; spec_power_index++) {
-	Spec_Power[spec_power_index] = Math.pow(5, spec_power_index);	
-	Specialists_Cost[spec_power_index] = (spec_power_index + 1) * 100;
-	Specialists_Cost_Base[spec_power_index] = (spec_power_index + 1) * 100;
-	Specialists[spec_power_index] = 0;
-	Total_bulls[spec_power_index] = 0;
-	Total_cows[spec_power_index] = 0;
-	boughtbulls[spec_power_index] = 0;
-	boughtcows[spec_power_index] = 0;
-	bulls[spec_power_index] = 0;
-	if(spec_power_index == 0){
-		cows[spec_power_index] = 1;
-		cowsenabled[spec_power_index] = 1;
-		cowcost[spec_power_index] = 55;
-		basecowcost[spec_power_index] = 55;
-		bullcost[spec_power_index] = 500;
-		basebullcost[spec_power_index] = 500;
+for (var i = 0; i < NumberofCOWS + 1; i++) {
+	Spec_Power[i] = Math.pow(5, i);	
+	Specialists_Cost[i] = (i + 1) * 100;
+	Specialists_Cost_Base[i] = (i + 1) * 100;
+	Specialists[i] = 0;
+	Total_bulls[i] = 0;
+	Total_cows[i] = 0;
+	boughtbulls[i] = 0;
+	boughtcows[i] = 0;
+	bulls[i] = 0;
+	if(i == 0){
+		cows[i] = 1;
+		cowsenabled[i] = 1;
+		cowcost[i] = 55;
+		basecowcost[i] = 55;
+		bullcost[i] = 500;
+		basebullcost[i] = 500;
+		Cow_science_cost[i] = 0;
 	}
-	else if(spec_power_index == 1){
-		cows[spec_power_index] = 0;
-		cowsenabled[spec_power_index] = 0;
-		cowcost[spec_power_index] = (spec_power_index) * 100;
-		basecowcost[spec_power_index] = (spec_power_index) * 100;
-		bullcost[spec_power_index] = 2e3;
-		basebullcost[spec_power_index] = 2e3;
+	else if(i == 1){
+		cows[i] = 0;
+		cowsenabled[i] = 0;
+		cowcost[i] = (i) * 100;
+		basecowcost[i] = (i) * 100;
+		bullcost[i] = 2e3;
+		basebullcost[i] = 2e3;
+		Cow_science_cost[i] = 10;
 	}
 	else{
-		cows[spec_power_index] = 0;
-		cowsenabled[spec_power_index] = 0;
-		cowcost[spec_power_index] = (spec_power_index) * 100;
-		basecowcost[spec_power_index] = (spec_power_index) * 100;
-		bullcost[spec_power_index] = Math.pow(10,(spec_power_index + 2));
-		basebullcost[spec_power_index] = Math.pow(10,(spec_power_index + 2));
+		cows[i] = 0;
+		cowsenabled[i] = 0;
+		cowcost[i] = (i) * 100;
+		basecowcost[i] = (i) * 100;
+		bullcost[i] = Math.pow(10,(i + 2));
+		basebullcost[i] = Math.pow(10,(i + 2));
+		Cow_science_cost[i] = 10;
 	};
 };
 

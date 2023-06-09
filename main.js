@@ -42,11 +42,6 @@ function buycowx1000(cownumberx1000){ // ----button function---- !! don't delete
 	MILK_();
 };
 
-function COW_enable(C){
-	if(Total_bulls[C - 1] >= 5){
-		cowsenabled[C] = 1;
-	};
-};
 function SPEC_IMAGE(P){
 	if(Spec_Level[P] < 5){
 		spec_image[P] = '<img src="pics/mk3_milkmaid2.png" id="imagesize">';
@@ -87,9 +82,9 @@ window.setInterval(function COWS_update(){
 		SPECIALISTS_(i);
 		SPEC_TRAINING(i);
 	}; 
-	for(i = 1; i <= NumberofCOWS; i++){
-		COW_enable(i);
-	};
+	// for(i = 1; i <= NumberofCOWS; i++){
+	// 	COW_enable(i);
+	// };
 	for(i = (NumberofCOWS + 1); i >= 0; i--){
 		if(i == NumberofCOWS + 1){
 			Total_ALL_cows = 0;

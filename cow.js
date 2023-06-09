@@ -437,7 +437,7 @@ CowInfo.push({	Name:'Hathor',
 				Achievment_image_Xbull:'hathor_bull.png'});
 /*cows end*/
 
-var NumberofCOWS = CowInfo.length;
+var NumberofCOWS = CowInfo.length - 1;
 
 // -------------Game Notes--------------------------------------------
 

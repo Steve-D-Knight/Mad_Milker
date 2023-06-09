@@ -43,6 +43,15 @@ var excavated = 0;
 var Science_load = 0;
 var Science_cost = 100;
 
+// cow unlock 1 should cost around 10 science at the current rates
+// after playing (08/06/2023) it took a little under 3 minutes to unlock the 1st cow
+// at the current rate 1 scientist would genorate 7 science in 3 mins
+// therefore with the expectation that the player would likely grind out several scientists
+// 10 science seems like a good place for cow 1.
+
+// excavation_max should slightly increase with each excavated scientist
+
+
 function Excavate_click(){ // ----button function---- !! don't delete !!
 	excavation = excavation + 1;
 	Total_clicks = Total_clicks + 1;
@@ -54,28 +63,43 @@ function Excavate_click(){ // ----button function---- !! don't delete !!
 };
 
 window.setInterval(function SCIENCE_points(){
+    // if you get more than 100 science per tick i will need to make it give you more than 1 science per tick
     Science_load = Science_load + excavated;
-    if(Science_load >= Science_cost){
-        Science_load = Science_load - Science_cost;
-        Science = Science + 1;
+    while(1){
+        if(Science_load >= Science_cost){
+            Science_load = Science_load - Science_cost;
+            Science = Science + 1;
+        }
+        else{
+            break;
+        };        
     };
 }, 250);
 
+function Unlock_cow_button(i){
+    if(Science >= Cow_science_cost[i]){
+        Science = Science - Cow_science_cost[i];
+        cowsenabled[i] = 1;
+    };
+};
+
+function Next_cow(){
+    var next_cow_output;
+    for(i = 0; i <= NumberofCOWS; i++) {
+        if(cowsenabled[i] < 1){
+            next_cow_output = i;
+            break;
+        }
+        else{
+            next_cow_output = NumberofCOWS;
+        };
+    }
+    return next_cow_output;
+};
+
 function EXCAVATE_(){
+    var next_cow = Next_cow();
     var EXCAVATE_HTML = '';
-    EXCAVATE_HTML = EXCAVATE_HTML +'<div id="science_Buttons_container">'
-    EXCAVATE_HTML = EXCAVATE_HTML +     '<button onmousedown="Excavate_click()" class="button_background" id="science_button">'
-    EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="left">'
-    EXCAVATE_HTML = EXCAVATE_HTML +             'Dig'
-    EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
-    EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="right">'
-    EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/dirt_pile.png" id="imagesize">'
-    EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
-    EXCAVATE_HTML = EXCAVATE_HTML +     '</button>'
-    EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 0, 0, 0.5); width: 100px; border: solid 2px; border-radius: 4px;">'
-    EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 255, 0, 0.5); width: ' + Math.floor((excavation/excavation_max)*100) + 'px; height: 67px; padding: 2px;">'
-    EXCAVATE_HTML = EXCAVATE_HTML + excavation + '/' + excavation_max + '</div></div>'
-    EXCAVATE_HTML = EXCAVATE_HTML + '</div>';
     if(excavated > 0){
         EXCAVATE_HTML = EXCAVATE_HTML + '<div id="science_Buttons_container">';
         EXCAVATE_HTML = EXCAVATE_HTML +     '<button class="button_background" id="science_button">'
@@ -88,10 +112,38 @@ function EXCAVATE_(){
         EXCAVATE_HTML = EXCAVATE_HTML + '</button>';
         EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 0, 0, 0.5); width: 100px; border: solid 2px; border-radius: 4px;">'
         EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 255, 0, 0.5); width: ' + Math.floor((Science_load/Science_cost)*100) + 'px; height: 67px; padding: 2px;">'
-        EXCAVATE_HTML = EXCAVATE_HTML + Science_load + '/' + Science_cost + '</div>'
+        EXCAVATE_HTML = EXCAVATE_HTML + Science_load + '/' + Science_cost + '</div></div>'
+        EXCAVATE_HTML = EXCAVATE_HTML +     '<button onmousedown="Unlock_cow_button(' + next_cow + ')" id="science_button"' 
+        if(Science >= Cow_science_cost[next_cow]){
+            EXCAVATE_HTML = EXCAVATE_HTML + 'class="button_background"';
+        }
+        else{
+            EXCAVATE_HTML = EXCAVATE_HTML + 'class="button_background_grey"';
+        }
+        EXCAVATE_HTML = EXCAVATE_HTML +         '><div class="left">'
+        EXCAVATE_HTML = EXCAVATE_HTML +             'unlock new cow' + next_cow + '<br />' + Cow_science_cost[next_cow] + ' Science<br />' + cowsenabled;
+        EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
+        EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="right">'
+        //EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/mk3_scientist.png" id="imagesize">'
+        EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
+        EXCAVATE_HTML = EXCAVATE_HTML + '</button></div>';
     }
     else{
         EXCAVATE_HTML = EXCAVATE_HTML + '';
     };
+    EXCAVATE_HTML = EXCAVATE_HTML +'<div id="science_Buttons_container">'
+    EXCAVATE_HTML = EXCAVATE_HTML +     '<button onmousedown="Excavate_click()" class="button_background" id="science_button">'
+    EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="left">'
+    EXCAVATE_HTML = EXCAVATE_HTML +             'Dig'
+    EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
+    EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="right">'
+    EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/dirt_pile.png" id="imagesize">'
+    EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
+    EXCAVATE_HTML = EXCAVATE_HTML +     '</button>'
+    EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 0, 0, 0.5); width: 100px; border: solid 2px; border-radius: 4px;">'
+    EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 255, 0, 0.5); width: ' + Math.floor((excavation/excavation_max)*100) + 'px; height: 67px; padding: 2px;">'
+    EXCAVATE_HTML = EXCAVATE_HTML + excavation + '/' + excavation_max + '</div></div>'
+    EXCAVATE_HTML = EXCAVATE_HTML + '</div></div>';
+
     return EXCAVATE_HTML;
 };
