@@ -43,6 +43,11 @@ var excavated = 0;
 var Science_load = 0;
 var Science_cost = 100;
 var excavate_power = 1;
+var toools_price = [];
+
+for(i=0; i <= Digging_tools_info.length; i++){
+    toools_price[i] = Math.ceil(1000 * Math.pow(20, i));
+};
 
 // cow unlock 1 should cost around 10 science at the current rates
 // after playing (08/06/2023) it took a little under 3 minutes to unlock the 1st cow
@@ -56,8 +61,8 @@ function Excavate_click(){ // ----button function---- !! don't delete !!
 	excavation = excavation + excavate_power;
 	Total_clicks = Total_clicks + 1;
     if(excavation >= excavation_max){
-        excavation = 0;
-        excavated = excavated + excavate_power;
+        excavation = excavation - excavation_max;
+        excavated = excavated + 1;
     };
     SCIENCE_HTML = EXCAVATE_();
 };
@@ -65,14 +70,16 @@ function Excavate_click(){ // ----button function---- !! don't delete !!
 window.setInterval(function SCIENCE_points(){
     // if you get more than 100 science per tick i will need to make it give you more than 1 science per tick
     Science_load = Science_load + excavated;
-    while(1){
-        if(Science_load >= Science_cost){
+    if(Science_load >= Science_cost){
+        if((Science_load/Science_cost) >= 1){
+            Science = Science + Math.floor(Science_load/Science_cost);
+            var x = Math.floor(Science_load/Science_cost)
+            Science_load = Science_load - (x * Science_cost);
+        }
+        else{
             Science_load = Science_load - Science_cost;
             Science = Science + 1;
         }
-        else{
-            break;
-        };        
     };
 }, 250);
 
@@ -99,7 +106,7 @@ function Next_cow(){
 
 var next_tool = 0;
 function Buy_next_tool_button(){
-    if(Milk >= Digging_tools_info[next_tool].price){
+    if(Milk >= toools_price[next_tool]){
         excavate_power = excavate_power * 2;
         next_tool++;
     };
@@ -152,12 +159,12 @@ function EXCAVATE_(){
     EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 0, 0, 0.5); width: 100px; border: solid 2px; border-radius: 4px;">';
     EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 255, 0, 0.5); width: ' + Math.floor((excavation/excavation_max)*100) + 'px; height: 67px; padding: 2px;">';
     EXCAVATE_HTML = EXCAVATE_HTML + excavation + '/' + excavation_max + '</div></div>';
-    if(next_tool >= 4){
+    if(next_tool >= Digging_tools_info.length){
         EXCAVATE_HTML = EXCAVATE_HTML + '';
     }
     else{
         EXCAVATE_HTML = EXCAVATE_HTML + '<button onmousedown="Buy_next_tool_button()"';
-        if(Milk >= Digging_tools_info[next_tool].price){
+        if(Milk >= toools_price[next_tool]){
             EXCAVATE_HTML = EXCAVATE_HTML + 'class="button_notgrey"';
         }
         else{
@@ -165,7 +172,7 @@ function EXCAVATE_(){
         }
         EXCAVATE_HTML = EXCAVATE_HTML + '>';
         EXCAVATE_HTML = EXCAVATE_HTML + '<div class="left">Buy ' + Digging_tools_info[next_tool].Name + '<br />' ;
-        EXCAVATE_HTML = EXCAVATE_HTML + Arbitrary_addsuffix(Digging_tools_info[next_tool].price) + ' Milk</div>';
+        EXCAVATE_HTML = EXCAVATE_HTML + Arbitrary_addsuffix(toools_price[next_tool]) + ' Milk</div>';
         EXCAVATE_HTML = EXCAVATE_HTML + '<div class="right">' + Digging_tools_info[next_tool].image + '</div>';
         EXCAVATE_HTML = EXCAVATE_HTML + '</button>'
     };
