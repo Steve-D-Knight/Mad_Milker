@@ -61,8 +61,15 @@ function Excavate_click(){ // ----button function---- !! don't delete !!
 	excavation = excavation + excavate_power;
 	Total_clicks = Total_clicks + 1;
     if(excavation >= excavation_max){
-        excavation = excavation - excavation_max;
-        excavated = excavated + 1;
+        if((excavation/excavation_max) >= 1){
+            var x = Math.floor(excavation/excavation_max);
+            excavation = excavation - (x * excavation_max);
+            excavated = excavated + x
+        }
+        else{
+            excavation = excavation - excavation_max;
+            excavated = excavated + 1;
+        };
     };
     SCIENCE_HTML = EXCAVATE_();
 };
@@ -72,8 +79,8 @@ window.setInterval(function SCIENCE_points(){
     Science_load = Science_load + excavated;
     if(Science_load >= Science_cost){
         if((Science_load/Science_cost) >= 1){
-            Science = Science + Math.floor(Science_load/Science_cost);
             var x = Math.floor(Science_load/Science_cost)
+            Science = Science + x;
             Science_load = Science_load - (x * Science_cost);
         }
         else{
@@ -137,7 +144,7 @@ function EXCAVATE_(){
             EXCAVATE_HTML = EXCAVATE_HTML + 'class="button_background_grey"';
         }
         EXCAVATE_HTML = EXCAVATE_HTML +         '><div class="left">';
-        EXCAVATE_HTML = EXCAVATE_HTML +             'unlock new cow<br />' + Cow_science_cost[next_cow] + ' Science<br />';
+        EXCAVATE_HTML = EXCAVATE_HTML +             'unlock new cow<br />' + Arbitrary_addsuffix(Cow_science_cost[next_cow]) + ' Science<br />';
         EXCAVATE_HTML = EXCAVATE_HTML +         '</div>';
         EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="right">';
         EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/cow/cow/silhouette_cow.png" id="imagesize">';
@@ -150,7 +157,7 @@ function EXCAVATE_(){
     EXCAVATE_HTML = EXCAVATE_HTML +'<div id="science_Buttons_container">';
     EXCAVATE_HTML = EXCAVATE_HTML +     '<button onmousedown="Excavate_click()" class="button_background" id="science_button">';
     EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="left">';
-    EXCAVATE_HTML = EXCAVATE_HTML +             'Excavate<br />Digging Power: ' + excavate_power;
+    EXCAVATE_HTML = EXCAVATE_HTML +             'Excavate<br />Digging Power: ' + Arbitrary_addsuffix(excavate_power);
     EXCAVATE_HTML = EXCAVATE_HTML +         '</div>';
     EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="right">';
     EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/dirt_pile.png" id="imagesize">';
