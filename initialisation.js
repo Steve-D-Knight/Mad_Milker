@@ -41,6 +41,7 @@ var Specialist_training_Unlock = 1; // NEEDS to be saved (is saved)
 var Total_Specialists = 0; // don't save (calculation)
 var Spec_Power = [];
 var Cow_science_cost = [];
+
 // this for loop initializes all of the variables that need an array the same length as the number of cows
 for (var i = 0; i < NumberofCOWS + 1; i++) {
 	Spec_Power[i] = Math.pow(5, i);	
@@ -77,7 +78,8 @@ for (var i = 0; i < NumberofCOWS + 1; i++) {
 		basecowcost[i] = (i) * 100;
 		bullcost[i] = Math.pow(10,(i + 2));
 		basebullcost[i] = Math.pow(10,(i + 2));
-		Cow_science_cost[i] = 10;
+		Cow_science_cost[i] = Math.ceil(10 * Math.pow(2,i-1));
+		
 	};
 };
 

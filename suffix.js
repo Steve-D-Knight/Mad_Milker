@@ -49,3 +49,4 @@ function COSTS(cost_num){
 	MM_cost_10_();
 	MM_cost_100_();
 };
+

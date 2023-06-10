@@ -48,3 +48,4 @@ window.setInterval(function achievments(){
         };
     ACHIEVMENTS = ACHIEVMENTS + '</div>';
 }, 250);
+

@@ -51,13 +51,15 @@ var Science_cost = 100;
 
 // excavation_max should slightly increase with each excavated scientist
 
+var Tool_cost = [10, 10, 10, 10];
 
+var excavate_power = 1;
 function Excavate_click(){ // ----button function---- !! don't delete !!
-	excavation = excavation + 1;
+	excavation = excavation + excavate_power;
 	Total_clicks = Total_clicks + 1;
     if(excavation >= excavation_max){
         excavation = 0;
-        excavated = excavated + 1;
+        excavated = excavated + excavate_power;
     };
     SCIENCE_HTML = EXCAVATE_();
 };
@@ -93,7 +95,7 @@ function Next_cow(){
         else{
             next_cow_output = NumberofCOWS;
         };
-    }
+    };
     return next_cow_output;
 };
 
@@ -102,48 +104,55 @@ function EXCAVATE_(){
     var EXCAVATE_HTML = '';
     if(excavated > 0){
         EXCAVATE_HTML = EXCAVATE_HTML + '<div id="science_Buttons_container">';
-        EXCAVATE_HTML = EXCAVATE_HTML +     '<button class="button_background" id="science_button">'
-        EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="left">'
-        EXCAVATE_HTML = EXCAVATE_HTML +             'Scientists: '+ excavated +'<br />Science: ' + Science;
-        EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
-        EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="right">'
-        EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/mk3_scientist.png" id="imagesize">'
-        EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
+        EXCAVATE_HTML = EXCAVATE_HTML +     '<button class="button_background" id="science_button">';
+        EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="left">';
+        EXCAVATE_HTML = EXCAVATE_HTML +             'Scientists: '+ Arbitrary_addsuffix(excavated) +'<br />Science: ' + Arbitrary_addsuffix(Science);
+        EXCAVATE_HTML = EXCAVATE_HTML +         '</div>';
+        EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="right">';
+        EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/mk3_scientist.png" id="imagesize">';
+        EXCAVATE_HTML = EXCAVATE_HTML +         '</div>';
         EXCAVATE_HTML = EXCAVATE_HTML + '</button>';
-        EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 0, 0, 0.5); width: 100px; border: solid 2px; border-radius: 4px;">'
-        EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 255, 0, 0.5); width: ' + Math.floor((Science_load/Science_cost)*100) + 'px; height: 67px; padding: 2px;">'
-        EXCAVATE_HTML = EXCAVATE_HTML + Science_load + '/' + Science_cost + '</div></div>'
-        EXCAVATE_HTML = EXCAVATE_HTML +     '<button onmousedown="Unlock_cow_button(' + next_cow + ')" id="science_button"' 
+        EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 0, 0, 0.5); width: 100px; border: solid 2px; border-radius: 4px;">';
+        EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 255, 0, 0.5); width: ' + Math.floor((Science_load/Science_cost)*100) + 'px; height: 67px; padding: 2px;">';
+        EXCAVATE_HTML = EXCAVATE_HTML + Science_load + '/' + Science_cost + '</div></div>';
+        EXCAVATE_HTML = EXCAVATE_HTML +     '<button onmousedown="Unlock_cow_button(' + next_cow + ')" id="science_button"' ;
         if(Science >= Cow_science_cost[next_cow]){
             EXCAVATE_HTML = EXCAVATE_HTML + 'class="button_background"';
         }
         else{
             EXCAVATE_HTML = EXCAVATE_HTML + 'class="button_background_grey"';
         }
-        EXCAVATE_HTML = EXCAVATE_HTML +         '><div class="left">'
+        EXCAVATE_HTML = EXCAVATE_HTML +         '><div class="left">';
         EXCAVATE_HTML = EXCAVATE_HTML +             'unlock new cow<br />' + Cow_science_cost[next_cow] + ' Science<br />';
-        EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
-        EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="right">'
-        EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/cow/cow/silhouette_cow.png" id="imagesize">'
-        EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
+        EXCAVATE_HTML = EXCAVATE_HTML +         '</div>';
+        EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="right">';
+        EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/cow/cow/silhouette_cow.png" id="imagesize">';
+        EXCAVATE_HTML = EXCAVATE_HTML +         '</div>';
         EXCAVATE_HTML = EXCAVATE_HTML + '</button></div>';
     }
     else{
         EXCAVATE_HTML = EXCAVATE_HTML + '';
     };
-    EXCAVATE_HTML = EXCAVATE_HTML +'<div id="science_Buttons_container">'
-    EXCAVATE_HTML = EXCAVATE_HTML +     '<button onmousedown="Excavate_click()" class="button_background" id="science_button">'
-    EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="left">'
-    EXCAVATE_HTML = EXCAVATE_HTML +             'Dig'
-    EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
-    EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="right">'
-    EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/dirt_pile.png" id="imagesize">'
-    EXCAVATE_HTML = EXCAVATE_HTML +         '</div>'
-    EXCAVATE_HTML = EXCAVATE_HTML +     '</button>'
-    EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 0, 0, 0.5); width: 100px; border: solid 2px; border-radius: 4px;">'
-    EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 255, 0, 0.5); width: ' + Math.floor((excavation/excavation_max)*100) + 'px; height: 67px; padding: 2px;">'
-    EXCAVATE_HTML = EXCAVATE_HTML + excavation + '/' + excavation_max + '</div></div>'
-    EXCAVATE_HTML = EXCAVATE_HTML + '</div></div>';
+    EXCAVATE_HTML = EXCAVATE_HTML +'<div id="science_Buttons_container">';
+    EXCAVATE_HTML = EXCAVATE_HTML +     '<button onmousedown="Excavate_click()" class="button_background" id="science_button">';
+    EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="left">';
+    EXCAVATE_HTML = EXCAVATE_HTML +             'Excavate<br />Digging Power: ' + excavate_power;
+    EXCAVATE_HTML = EXCAVATE_HTML +         '</div>';
+    EXCAVATE_HTML = EXCAVATE_HTML +         '<div class="right">';
+    EXCAVATE_HTML = EXCAVATE_HTML +             '<img src="pics/dirt_pile.png" id="imagesize">';
+    EXCAVATE_HTML = EXCAVATE_HTML +         '</div>';
+    EXCAVATE_HTML = EXCAVATE_HTML +     '</button>';
+    EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 0, 0, 0.5); width: 100px; border: solid 2px; border-radius: 4px;">';
+    EXCAVATE_HTML = EXCAVATE_HTML + '<div style="background: rgba(0, 255, 0, 0.5); width: ' + Math.floor((excavation/excavation_max)*100) + 'px; height: 67px; padding: 2px;">';
+    EXCAVATE_HTML = EXCAVATE_HTML + excavation + '/' + excavation_max + '</div></div>';
+    EXCAVATE_HTML = EXCAVATE_HTML + '<button onmousedown="Buy_next_tool_button()">';
+    EXCAVATE_HTML = EXCAVATE_HTML + '<div class="left">Buy ' + Digging_tools_info[0].Name + '<br />' + Arbitrary_addsuffix(Digging_tools_info[0].price) + ' Milk</div>';
+    EXCAVATE_HTML = EXCAVATE_HTML + '<div class="right">' + Digging_tools_info[0].image + '</div>';
+    EXCAVATE_HTML = EXCAVATE_HTML + '</button>'
+    EXCAVATE_HTML = EXCAVATE_HTML + '</div></div>'
 
     return EXCAVATE_HTML;
 };
+
+
+

@@ -409,3 +409,4 @@ var Visible_page = 0;
 function change_tab_button(tab_number){
 	Visible_page = tab_number;
 };
+
