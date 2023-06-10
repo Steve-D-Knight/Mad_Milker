@@ -16,5 +16,9 @@ Digging_tools_info.push({   Name:'Pickaxe',
                             image: '<img src="pics/tool/pickaxe.png" id="imagesize">', 	
                             price: 1e6,	 
                             });
+// Digging_tools_info.push({   Name:'Pickaxe', 				
+//                             image: '<img src="pics/tool/pickaxe.png" id="imagesize">', 	
+//                             price: 1e7,	 
+//                             });                            
 
                             

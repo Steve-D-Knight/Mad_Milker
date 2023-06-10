@@ -30,7 +30,9 @@ function save_(){
 		excavated : excavated,
 		Science : Science,
 		Science_load : Science_load,
-	};
+		next_tool : next_tool,
+		excavate_power : excavate_power,
+		};
 	localStorage.setItem("save",JSON.stringify(save));
 }
 var savegame = 0;
@@ -69,6 +71,9 @@ function load(){
 		if (typeof savegame.excavated !== "undefined") excavated = savegame.excavated;
 		if (typeof savegame.Science !== "undefined") Science = savegame.Science;
 		if (typeof savegame.Science_load !== "undefined") Science_load = savegame.Science_load;
+		if (typeof savegame.next_tool !== "undefined") next_tool = savegame.next_tool;
+		if (typeof savegame.excavate_power !== "undefined") excavate_power = savegame.excavate_power;
+		
 		
 	Load_start_time = date.getTime();
 	Active_time_load = Active_time;
