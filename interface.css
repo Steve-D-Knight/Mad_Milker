@@ -315,6 +315,7 @@ button:hover .hide{
 	width: fit-content;
 	display: grid;
 	grid-template-columns: 300px 104px 250px;
+	grid-template-rows: 75px;
 	gap: 1px;
 	margin-bottom: 1px;
 }
